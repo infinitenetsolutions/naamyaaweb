@@ -66,7 +66,8 @@ $event_result = mysqli_query($connection, $event);
     <main>
         <!--slider area start-->
         <section class="slider_area">
-            <div class="img_topleft"><img class="slider_img" data-depth="1" src="assets/img/slider/slider.jpg" alt="img"></div>
+            <div class="img_topleft"><img class="slider_img" data-depth="1" src="assets/img/slider/slider.jpg"
+                    alt="img"></div>
             <!-- <div class="img_topright"><img data-depth="1.3" src="assets/img/slider/slider.jpg" alt="img"></div> -->
             <!-- <div class="img_bottomleft"><img data-depth="1.5" src="assets/img/slider/slider.jpg" alt="img"></div> -->
             <div class="slider_active">
@@ -78,7 +79,9 @@ $event_result = mysqli_query($connection, $event);
                                 <div class="slider_content text_space">
                                     <div class="slider_text text_overlay">
                                         <h6 class="slider_title"> <span>Make</span> <br> Donation</h6>
-                                        <div class="slider_button"><a href="event_upcoming.php" class="g_btn theme1_bg to_right2 slider_btn i_left rad-30 p-35"><i class="fal fa-heart"></i> Explore Events<span></span></a></div>
+                                        <div class="slider_button"><a href="event_upcoming.php"
+                                                class="g_btn theme1_bg to_right2 slider_btn i_left rad-30 p-35"><i
+                                                    class="fal fa-heart"></i> Explore Events<span></span></a></div>
                                     </div>
                                 </div>
                             </div>
@@ -103,21 +106,28 @@ $event_result = mysqli_query($connection, $event);
                     </div>
                     <div class="col-xxl-8">
                         <form action="" method="POST">
-                            <div class="donar_section d-lg-flex justify-content-center justify-content-xxl-end text-center">
+                            <div
+                                class="donar_section d-lg-flex justify-content-center justify-content-xxl-end text-center">
                                 <div class="donar_form d-inline-block mb-30">
-                                    <input name="name" required type="text" placeholder="Your name" class="donar_input mr-15">
-                                    <input name="email" required type="text" placeholder="Enter email" class="donar_input mr-15">
+                                    <input name="name" required type="text" placeholder="Your name"
+                                        class="donar_input mr-15">
+                                    <input name="email" required type="text" placeholder="Enter email"
+                                        class="donar_input mr-15">
                                 </div>
                                 <div class="donar_currency d-inline-block mb-30">
-                                    <select name="categories" type="number" class="currency mr-15" pattern="[0-9]+" title="please input any ammount only" placeholder="select Categories">
+                                    <select name="categories" type="number" class="currency mr-15" pattern="[0-9]+"
+                                        title="please input any ammount only" placeholder="select Categories">
                                         <option value="any">anyone</option>
                                         <?php while ($row = mysqli_fetch_array($result)) { ?>
-                                            <option value="<?php echo $row['name'];  ?>"><?php echo $row['name']; ?></option>
+                                        <option value="<?php echo $row['name'];  ?>"><?php echo $row['name']; ?>
+                                        </option>
                                         <?php } ?>
                                     </select>
                                 </div>
                                 <div class="donnar_button text-center">
-                                    <button name="donate" class="g_btn2 g_btn theme1_bg to_right2 donation rad-30 p-60 mb-30">Make a Donation</button>
+                                    <button name="donate"
+                                        class="g_btn2 g_btn theme1_bg to_right2 donation rad-30 p-60 mb-30">Make a
+                                        Donation</button>
                                 </div>
 
                             </div>
@@ -141,7 +151,8 @@ $event_result = mysqli_query($connection, $event);
                 <div class="row ">
                     <div class="col-xxl-12 text-center">
                         <div class="section_title back-border mb-45">
-                            <a class="anchertag" href="#"> <span class="sub_title"><i class="fal fa-heart"></i>Target</span>
+                            <a class="anchertag" href="#"> <span class="sub_title"><i
+                                        class="fal fa-heart"></i>Target</span>
                                 <h3 class="title">Target <span class="more">More</span></h3>
                             </a>
 
@@ -173,7 +184,8 @@ $event_result = mysqli_query($connection, $event);
                             </div>
                             <div class="single_cause_content single_cause_content_2">
                                 <div class="single_cause">
-                                    <h3 class="title"><a href="donation.php">The various agency help the poor, you also can try.</a></h3>
+                                    <h3 class="title"><a href="donation.php">The various agency help the poor, you also
+                                            can try.</a></h3>
                                 </div>
                                 <div class="single_cause_meta">
                                     <div class="single_meta d-inline-block">
@@ -214,7 +226,8 @@ $event_result = mysqli_query($connection, $event);
                             </div>
                             <div class="single_cause_content single_cause_content_2">
                                 <div class="single_cause">
-                                    <h3 class="title"><a href="donation.php">If poor will well educated, you and you country will</a></h3>
+                                    <h3 class="title"><a href="donation.php">If poor will well educated, you and you
+                                            country will</a></h3>
                                 </div>
                                 <div class="single_cause_meta">
                                     <div class="single_meta d-inline-block">
@@ -255,7 +268,8 @@ $event_result = mysqli_query($connection, $event);
                             </div>
                             <div class="single_cause_content single_cause_content_2">
                                 <div class="single_cause">
-                                    <h3 class="title"><a href="donation.php">Give your helping hand to teach poor people always</a></h3>
+                                    <h3 class="title"><a href="donation.php">Give your helping hand to teach poor people
+                                            always</a></h3>
                                 </div>
                                 <div class="single_cause_meta">
                                     <div class="single_meta d-inline-block">
@@ -297,7 +311,8 @@ $event_result = mysqli_query($connection, $event);
                             </div>
                             <div class="single_cause_content single_cause_content_2">
                                 <div class="single_cause">
-                                    <h3 class="title"><a href="donation.php">We have to careful and helpful to poor people always.</a></h3>
+                                    <h3 class="title"><a href="donation.php">We have to careful and helpful to poor
+                                            people always.</a></h3>
                                 </div>
                                 <div class="single_cause_meta">
                                     <div class="single_meta d-inline-block">
@@ -338,7 +353,8 @@ $event_result = mysqli_query($connection, $event);
                             </div>
                             <div class="single_cause_content single_cause_content_2">
                                 <div class="single_cause">
-                                    <h3 class="title"><a href="donation.php">Share your money to serve poor people as far possible.</a></h3>
+                                    <h3 class="title"><a href="donation.php">Share your money to serve poor people as
+                                            far possible.</a></h3>
                                 </div>
                                 <div class="single_cause_meta">
                                     <div class="single_meta d-inline-block">
@@ -379,7 +395,8 @@ $event_result = mysqli_query($connection, $event);
                             </div>
                             <div class="single_cause_content single_cause_content_2">
                                 <div class="single_cause">
-                                    <h3 class="title"><a href="donation.php">Donate now to forward for poor at this pandemic time.</a></h3>
+                                    <h3 class="title"><a href="donation.php">Donate now to forward for poor at this
+                                            pandemic time.</a></h3>
                                 </div>
                                 <div class="single_cause_meta">
                                     <div class="single_meta d-inline-block">
@@ -420,7 +437,8 @@ $event_result = mysqli_query($connection, $event);
                             </div>
                             <div class="single_cause_content single_cause_content_2">
                                 <div class="single_cause">
-                                    <h3 class="title"><a href="donation.php">Putting the power of law in people's hand</a></h3>
+                                    <h3 class="title"><a href="donation.php">Putting the power of law in people's
+                                            hand</a></h3>
                                 </div>
                                 <div class="single_cause_meta">
                                     <div class="single_meta d-inline-block">
@@ -456,16 +474,20 @@ $event_result = mysqli_query($connection, $event);
                             <div class="support_images_active swiper-container dots_style">
                                 <div class="swiper-wrapper">
                                     <div class="support_img_single swiper-slide img_effect_white">
-                                        <a href="volunteer.php"><img class="support-img" src="assets/img/bg/support1.jpg" alt="img"></a>
+                                        <a href="volunteer.php"><img class="support-img"
+                                                src="assets/img/bg/support1.jpg" alt="img"></a>
                                     </div>
                                     <div class="support_img_single swiper-slide img_effect_white">
-                                        <a href="volunteer.php"><img class="support-img" src="assets/img/bg/support3.jpg" alt="img"></a>
+                                        <a href="volunteer.php"><img class="support-img"
+                                                src="assets/img/bg/support3.jpg" alt="img"></a>
                                     </div>
                                     <div class="support_img_single swiper-slide img_effect_white">
-                                        <a href="volunteer.php"><img class="support-img" src="assets/img/bg/support4.jpg" alt="img"></a>
+                                        <a href="volunteer.php"><img class="support-img"
+                                                src="assets/img/bg/support4.jpg" alt="img"></a>
                                     </div>
                                     <div class="support_img_single swiper-slide img_effect_white">
-                                        <a href="volunteer.php"><img class="support-img" src="assets/img/bg/support3.jpg" alt="img"></a>
+                                        <a href="volunteer.php"><img class="support-img"
+                                                src="assets/img/bg/support3.jpg" alt="img"></a>
                                     </div>
                                 </div>
                                 <!-- Add Pagination -->
@@ -476,16 +498,16 @@ $event_result = mysqli_query($connection, $event);
                             <div class="support_wrapper">
                                 <div class="section_title back-border" style="margin-top:66px;">
                                     <span class="sub_title"><i class="fal fa-users"></i> Join Us</span>
-                                    <h3 class="title">Become an volunteer
-                                        for save children</h3>
+                                    <h3 class="title">Want to volunteer?</h3>
                                 </div>
-                                <p class="mb-45">NewLook unlike many traditional plastic surgery centers in San
-                                    Diego, are industry recognized experts in a wide variety of with an
-                                    cosmetic procedure and are dedicated</p>
+                                <p class="mb-45">Any individual who believes in ‘karma-yoga’ and ‘seva’ can join us for
+                                    the sheer joy of serving. We promise you will never regret.
+                                    </p>
 
                             </div>
 
-                            <a href="" data-toggle="modal" data-target="#modalContactForm" class="g_btn1  theme1_bg to_right2 i_right rad-30">Join Us</a>
+                            <a href="" data-toggle="modal" data-target="#modalContactForm"
+                                class="g_btn1  theme1_bg to_right2 i_right rad-30">Join Us</a>
                         </div>
 
                     </div>
@@ -516,28 +538,30 @@ $event_result = mysqli_query($connection, $event);
                                 $newdate = str_replace('-', '/', $str);
 
                             ?>
-                                <div class="single_events_wrapper tab-border mb-30">
-                                    <div class="row align-items-center">
-                                        <div class="col-xxl-3 col-xl-3 col-lg-3 d-md-none d-lg-block">
-                                            <div class="eventcount_img w_img">
-                                                <a href="event-details.php"><img src="assets/img/causes/cause1.jpg" alt="img"></a>
-                                            </div>
+                            <div class="single_events_wrapper tab-border mb-30">
+                                <div class="row align-items-center">
+                                    <div class="col-xxl-3 col-xl-3 col-lg-3 d-md-none d-lg-block">
+                                        <div class="eventcount_img w_img">
+                                            <a href="event-details.php"><img src="assets/img/causes/cause1.jpg"
+                                                    alt="img"></a>
                                         </div>
-                                        <div class="col-xxl-3 col-xl-4 col-lg-3 col-md-5 text-center text-md-start">
-                                            <div class="eventcount_text heading-clr">
-                                                <h5><a href="event-details.php"><?php echo $event_row['name']; ?></a></h5>
-                                                <span><?php echo $event_row['address'];
+                                    </div>
+                                    <div class="col-xxl-3 col-xl-4 col-lg-3 col-md-5 text-center text-md-start">
+                                        <div class="eventcount_text heading-clr">
+                                            <h5><a href="event-details.php"><?php echo $event_row['name']; ?></a></h5>
+                                            <span><?php echo $event_row['address'];
                                                         echo " , ";
                                                         echo $event_row['city'];
                                                         echo " , ";
                                                         echo $event_row['state']; ?></span>
-                                            </div>
-                                        </div>
-                                        <div class="col-xxl-6 col-xl-5 col-lg-6 col-md-7 text-center text-md-end">
-                                            <div class="count_down_box heading-clr" data-countdown="<?php echo $newdate; ?>"></div>
                                         </div>
                                     </div>
+                                    <div class="col-xxl-6 col-xl-5 col-lg-6 col-md-7 text-center text-md-end">
+                                        <div class="count_down_box heading-clr"
+                                            data-countdown="<?php echo $newdate; ?>"></div>
+                                    </div>
                                 </div>
+                            </div>
                             <?php } ?>
                         </div>
                         <div class="tab-pane fade" id="water" role="tabpanel" aria-labelledby="nav-water">
@@ -547,7 +571,8 @@ $event_result = mysqli_query($connection, $event);
                                 <div class="row mrt-40 align-items-center">
                                     <div class="col-xxl-3 col-xl-3 col-lg-3 d-md-none d-lg-block">
                                         <div class="eventcount_img w_img">
-                                            <a href="event-details.php"><img src="assets/img/causes/cause6.jpg" alt="img"></a>
+                                            <a href="event-details.php"><img src="assets/img/causes/cause6.jpg"
+                                                    alt="img"></a>
                                         </div>
                                     </div>
                                     <div class="col-xxl-3 col-xl-4 col-lg-3 col-md-5 text-center text-md-start">
@@ -575,7 +600,11 @@ $event_result = mysqli_query($connection, $event);
                                 <div class="heading">
                                     <h2>Our Reach</h>
                                 </div>
-                                <p class="text-gray">In keeping with its philosophy of 'Real Work Real Change', Smile Foundation , an <b>NGO in Delhi,</b> India to support the underserved, has taken its intervention into the interiors of India, reaching the unreached in the remotest of rural areas and urban slums with our services and making this <b>helping foundation in India,</b> the <b>best NGO in India.</b></p>
+                                <p class="text-gray">In keeping with its philosophy of 'Real Work Real Change', Smile
+                                    Foundation , an <b>NGO in Delhi,</b> India to support the underserved, has taken its
+                                    intervention into the interiors of India, reaching the unreached in the remotest of
+                                    rural areas and urban slums with our services and making this <b>helping foundation
+                                        in India,</b> the <b>best NGO in India.</b></p>
                                 <div class="row mrt-40 vdivide spacer">
                                     <div class="stories" id="stories">
                                         <div class="col-md-4 col-sm-4">
@@ -603,11 +632,13 @@ $event_result = mysqli_query($connection, $event);
                 </div>
             </div>
             <!-- Modal For map pop-up Start here-->
-            <div class="modal fade" id="map" tabindex="-1" role="dialog" aria-labelledby="project-4-label" aria-hidden="true">
+            <div class="modal fade" id="map" tabindex="-1" role="dialog" aria-labelledby="project-4-label"
+                aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                            <button type="button" class="close" data-dismiss="modal"><span
+                                    aria-hidden="true">×</span><span class="sr-only">Close</span></button>
                             <h3 class="modal-title" id="project-4-label" style="color:#fff;">Smile Foundation India</h3>
                         </div>
                         <div class="modal-body">
@@ -632,7 +663,8 @@ $event_result = mysqli_query($connection, $event);
                 <div class="container py-lg-3">
                     <div class="heading text-center mx-auto">
                         <h3 class="head back-border">What They Says</h3>
-                        <p class="my-3 head "> Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+                        <p class="my-3 head "> Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+                            cubilia Curae;
                             Nulla mollis dapibus nunc, ut rhoncus
                             turpis sodales quis. Integer sit amet mattis quam.</p>
                     </div>
@@ -653,11 +685,14 @@ $event_result = mysqli_query($connection, $event);
                                         <div class="card">
 
                                             <div class="card-body">
-                                                <img class="card-img-top img-responsive" src="assets/images/c1.jpg" alt="">
+                                                <img class="card-img-top img-responsive" src="assets/images/c1.jpg"
+                                                    alt="">
                                                 <h3 class="card-title mt-2">Henry Nicholas</h3>
                                                 <p class="sub-title mb-3">Photographer</p>
-                                                <p class="card-text"> "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                                                    consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+                                                <p class="card-text"> "Neque porro quisquam est, qui dolorem ipsum quia
+                                                    dolor sit amet,
+                                                    consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                                                    incidunt ut labore et
                                                     dolore"
                                                 </p>
 
@@ -669,11 +704,14 @@ $event_result = mysqli_query($connection, $event);
                                         <div class="card">
 
                                             <div class="card-body">
-                                                <img class="card-img-top img-responsive" src="assets/images/c2.jpg" alt="">
+                                                <img class="card-img-top img-responsive" src="assets/images/c2.jpg"
+                                                    alt="">
                                                 <h3 class="card-title mt-2">Mark Waugh</h3>
                                                 <p class="sub-title mb-3">Web Designer</p>
-                                                <p class="card-text"> "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                                                    consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+                                                <p class="card-text"> "Neque porro quisquam est, qui dolorem ipsum quia
+                                                    dolor sit amet,
+                                                    consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                                                    incidunt ut labore et
                                                     dolore"
                                                 </p>
 
@@ -685,11 +723,14 @@ $event_result = mysqli_query($connection, $event);
                                         <div class="card">
 
                                             <div class="card-body">
-                                                <img class="card-img-top img-responsive" src="assets/images/c3.jpg" alt="">
+                                                <img class="card-img-top img-responsive" src="assets/images/c3.jpg"
+                                                    alt="">
                                                 <h3 class="card-title mt-2">Sarina Willams</h3>
                                                 <p class="sub-title mb-3">Graphic Designer</p>
-                                                <p class="card-text"> "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                                                    consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+                                                <p class="card-text"> "Neque porro quisquam est, qui dolorem ipsum quia
+                                                    dolor sit amet,
+                                                    consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                                                    incidunt ut labore et
                                                     dolore"
                                                 </p>
 
@@ -707,11 +748,14 @@ $event_result = mysqli_query($connection, $event);
                                         <div class="card">
 
                                             <div class="card-body">
-                                                <img class="card-img-top img-responsive" src="assets/images/c2.jpg" alt="">
+                                                <img class="card-img-top img-responsive" src="assets/images/c2.jpg"
+                                                    alt="">
                                                 <h3 class="card-title mt-2">Mark Waugh</h3>
                                                 <p class="sub-title mb-3">Engineer</p>
-                                                <p class="card-text"> "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                                                    consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+                                                <p class="card-text"> "Neque porro quisquam est, qui dolorem ipsum quia
+                                                    dolor sit amet,
+                                                    consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                                                    incidunt ut labore et
                                                     dolore"
                                                 </p>
 
@@ -723,11 +767,14 @@ $event_result = mysqli_query($connection, $event);
                                         <div class="card">
 
                                             <div class="card-body">
-                                                <img class="card-img-top img-responsive" src="assets/images/c3.jpg" alt="">
+                                                <img class="card-img-top img-responsive" src="assets/images/c3.jpg"
+                                                    alt="">
                                                 <h3 class="card-title mt-2">Sarina Willams</h3>
                                                 <p class="sub-title mb-3">Engineer</p>
-                                                <p class="card-text"> "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                                                    consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+                                                <p class="card-text"> "Neque porro quisquam est, qui dolorem ipsum quia
+                                                    dolor sit amet,
+                                                    consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                                                    incidunt ut labore et
                                                     dolore"
                                                 </p>
 
@@ -741,11 +788,14 @@ $event_result = mysqli_query($connection, $event);
                                         <div class="card">
 
                                             <div class="card-body">
-                                                <img class="card-img-top img-responsive" src="assets/images/c1.jpg" alt="">
+                                                <img class="card-img-top img-responsive" src="assets/images/c1.jpg"
+                                                    alt="">
                                                 <h3 class="card-title mt-2">Henry Nicholas</h3>
                                                 <p class="sub-title mb-3">Engineer</p>
-                                                <p class="card-text"> "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                                                    consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+                                                <p class="card-text"> "Neque porro quisquam est, qui dolorem ipsum quia
+                                                    dolor sit amet,
+                                                    consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                                                    incidunt ut labore et
                                                     dolore"
                                                 </p>
 
