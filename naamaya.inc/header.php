@@ -85,7 +85,7 @@ $location_link = $contact_row['location_link'];
                  <div class="col-xxl-3 col-xl-3 col-lg-1 col-md-6 col-6">
                      <div class="header-right d-flex align-items-center justify-content-end">
                          <div class="header-sing d-inline-block d-none d-xl-block">
-                             <a class="g_btn hbtn_1 to_right1 rad-30" href="donation.php">Donate Now<span></span></a>
+                             <a class="g_btn hbtn_1 to_right1 rad-30" href="donation.php">Support us<span></span></a>
                          </div>
                          <div class="hamburger-menu menu-bar info-bar d-inline-block ml-20">
                              <button class="hamburger-btn open-mobile-menu"><i class="fal fa-bars"></i></button>
