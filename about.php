@@ -1,4 +1,5 @@
 <?php
+// here is detail of backend
 include './Backend/database.inc.php';
 include './Backend/database.inc.php';
 $female = "assets/img/team/me2.png";
