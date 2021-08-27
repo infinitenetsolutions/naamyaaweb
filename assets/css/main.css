@@ -1909,7 +1909,30 @@ margin-top: -40px;
   min-width: 140px;
   font-weight: 700;
   height: 60px;
-  line-height: 60px;
+ line-height: 60px;
+  z-index: 1;
+  color: var(--clr-common-white);
+  /* For Styling Button */
+  /* To Left Right Style */
+  /* To Right Style */
+  /* To Left Style */
+  /* To Top Style */
+  /* To Bottom Style */
+  /* To Diagonal Style */
+  /* ###################  
+  Hover start  
+  ###################### */
+}
+.g_btn2 {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  text-decoration: none;
+  text-align: center;
+  min-width: 140px;
+  font-weight: 700;
+  height: 43px;
+  line-height: 0px;
   z-index: 1;
   color: var(--clr-common-white);
   /* For Styling Button */
@@ -3510,7 +3533,6 @@ input.main-search-input:-ms-input-placeholder {
 @media (max-width: 767px) {
   .slider_content:is(.text_space) {
     margin-bottom: 0;
-   background-color:  #ffffff75;
   }
 }
 
@@ -4452,9 +4474,9 @@ input.main-search-input:-ms-input-placeholder {
 }
 
 .donar_input {
-  height: 60px;
+  height: 42px;
   border-radius: 50px;
-  padding: 15px 15px;
+
   padding-left: 30px;
   line-height: 60px;
   display: inline-block;
@@ -4482,7 +4504,7 @@ input.main-search-input:-ms-input-placeholder {
 @media (max-width: 767px) {
   .donar_input {
     width: 100%;
-    color: gray;
+
     background-color: #f6f6f6;
     border: transparent;
     margin-top: 10px;
@@ -4492,7 +4514,17 @@ input.main-search-input:-ms-input-placeholder {
 
 @media (min-width: 767px) and (max-width: 3000px) {
   .donar_input1 {
+    width: 46%;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: transparent;
+    background-color: #f6f6f6;
+  }
+  .donar_input2 {
     width: 100%;
+    padding: 40px;
+    border-radius: 10%;
     color: gray;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -4525,7 +4557,7 @@ input.main-search-input:-ms-input-placeholder {
   background-color: #f9f9f9;
   color: gray;
   min-width: 60px;
-  height: 60px;
+  height: 43px;
   display: inline-block;
   line-height: 60px;
   border-radius: 50px;
@@ -14740,5 +14772,11 @@ button.side-info-close:hover {
   
 }
 .member strong{
-color: #e61975;
+color: #0870b5;
+font-size: 30px;
+}
+.img-responsive{
+  padding-left: 100px;
+  padding-right: 100px;
+ 
 }

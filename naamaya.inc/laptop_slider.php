@@ -17,7 +17,7 @@ $location_link=$contact_row['location_link'];
 
             <div class="offset-widget offset-logo mb-30 pb-20">
                 <div class="row align-items-center">
-                    <div class="col-8"><a href="index.html"><img src="assets/img/logo/logo.png" alt="Logo"></a></div>
+                    <div class="col-8"><a href="index.html"><img src="assets/img/logo/logo-png.png" alt="Logo"></a></div>
                     <div class="col-4 text-end"><button class="side-info-close"><i class="fal fa-times"></i></button></div>
                 </div>
 

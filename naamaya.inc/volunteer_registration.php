@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
     }
 
 }
-$department_retrive="SELECT `Categries`  FROM `Event`  `status`=1 ";
+$department_retrive="SELECT * FROM `categories` WHERE  `status`='1'";
 $result1=mysqli_query($connection,$department_retrive);
 
 ?>
@@ -33,7 +33,9 @@ $result1=mysqli_query($connection,$department_retrive);
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header text-center">
-                <h4 class="modal-title w-100 font-weight-bold">Apply</h4>
+         
+                <h4 class="modal-title w-100 font-weight-bold">Come on Board</h4>
+               
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -41,8 +43,9 @@ $result1=mysqli_query($connection,$department_retrive);
             <div class="modal-body mx-3">
                 <form method="POST" action="">
                     <input name="name" type="text" placeholder="Enter Full Name" class="donar_input donar_input1 mr-15" pattern="[a-zA-Z]+" title="please input name" required>
+                    <input name="mobile" type="text" placeholder="Enter mobile Number" pattern="[0-9]+" maxlength="12" title="please input number in proper formet" class="donar_input donar_input1  mr-15" required>
                     <input name="email" type="email" placeholder="Enter Email" class="donar_input donar_input1 mr-15" required>
-                    <input name="mobile" type="text" placeholder="Enter mobile Number" pattern="[0-9]+" maxlength="12" title="please input number in proper formet" class="donar_input donar_input1 mr-15" required>
+                  
                     <select name="gender" class="donar_input donar_input1 mr-15">
                         <option selected disabled>Gender
 
@@ -75,7 +78,7 @@ $result1=mysqli_query($connection,$department_retrive);
                         </option>
                         
                         <?php while($depart=mysqli_fetch_array($result1)){ ?>
-                        <option value="<?php echo $depart['Categries']; ?>"><?php echo $depart['Categries']; ?></option>
+                        <option value="<?php echo $depart['name']; ?>"><?php echo $depart['name']; ?></option>
                         <?php } ?>
                         <option value="others">others</option>
                     </select>
@@ -92,9 +95,9 @@ $result1=mysqli_query($connection,$department_retrive);
                     </select>
 
                     <!-- <input name="image" type="file" placeholder="Enter Full Name" class="donar_input mr-15" required> -->
-                    <input name="whyjoin" type="text" class="donar_input donar_input1 mr-15" placeholder="Write Sonthing About you">
+                    <textarea rows="4" cols="30" name="whyjoin" type="text" class="donar_input2 " placeholder="Write Sonthing About you"></textarea>
                     <div class="modal-footer d-flex justify-content-center">
-                        <button type="submit" name="submit" class="rad-30 g_btn to_left applynow">Apply Now <span></span></button>
+                        <button type="submit" name="submit" class="rad-30 g_btn to_left applynow">Join Us <span></span></button>
                     </div>
 
                 </form>

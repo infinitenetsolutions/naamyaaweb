@@ -1,23 +1,23 @@
  <!-- Header One Start-->
- <?php
- include('./Backend/database.inc.php');
-$contact_data="SELECT * FROM `contact_data` WHERE 1";
-$contact_result=mysqli_query($connection,$contact_data);
-$contact_row=mysqli_fetch_array($contact_result);
-$location=$contact_row['location'];
-$email=$contact_row['email'];
-$phone=$contact_row['phone'];
-$location_link=$contact_row['location_link'];
+ 
+ <?php 
+//  here to geting the data of the contact
+$contact_data = "SELECT * FROM `contact_data` WHERE 1";
+$contact_result = mysqli_query($connection, $contact_data);
+$contact_row = mysqli_fetch_array($contact_result);
+$location = $contact_row['location'];
+$email = $contact_row['email'];
+$phone = $contact_row['phone'];
+$location_link = $contact_row['location_link'];
 ?>
-
  <header class="header-area">
      <div class="header_top_area d-none d-lg-block">
          <div class="container">
              <div class="row align-items-center">
                  <div class="col-xxl-9 col-xl-9 col-lg-8">
                      <div class="top_mailing">
-                         <a href="#" class="theme-1"><i class="fal fa-envelope"></i><span class="__cf_email__" data-cfemail="fa9b9e979394ba9e95979b9394d4999597">[email&#160;protected]</span></a>
-                         <a href="#" class="theme-2"><i class="fal fa-phone"></i><?php echo $phone; ?></a>
+                         <a href="mailto:<?php echo $email; ?>" class="theme-1"><i class="fal fa-envelope"></i><span class="__cf_email__" data-cfemail="fa9b9e979394ba9e95979b9394d4999597">[email&#160;protected]</span></a>
+                         <a href="tel:<?php echo $phone; ?>" class="theme-2"><i class="fal fa-phone"></i><?php echo $phone; ?></a>
                          <a href="#" class="theme-3"><i class="fal fa-map-marker-alt"></i><?php echo $location; ?></a>
                      </div>
                  </div>
@@ -70,9 +70,9 @@ $location_link=$contact_row['location_link'];
                                  <li class="menu-item-has-children"><a href="#">Events</a>
                                      <ul class="sub-menu">
 
-                                         <li><a href="../../naamyaa/event.php?event=upcoming">Upcoming Events</a>
-                                         <li><a href="../../naamyaa/event.php?event=ongoing">Ongoing Events</a>
-                                         <li><a href="../../naamyaa/event.php?event=held">Held Events</a>
+                                         <li><a href="../../naamyaa/event_upcoming.php">Upcoming Events</a>
+                                         <li><a href="../../naamyaa/event_ongoing.php">Ongoing Events</a>
+                                         <li><a href="../../naamyaa/event_held.php">Held Events</a>
                                      </ul>
                                  </li>
                                  <li><a href="achievement.php">Achievement</a></li>

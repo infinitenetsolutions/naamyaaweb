@@ -6,7 +6,7 @@
                     <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-7 col-sm-7">
                         <div class="footer_widget footer_about mb-50">
                             <div class="footer_logo mb-35">
-                                <a href="index.php" class="animation"><img src="assets/img/logo/logo-png.png" alt="img"></a>
+                                <a href="index.php" class="animation"><img src="assets/img/logo/logo-png.png" alt="img" style="height:135px;width:165px;margin-top:-35px;"></a>
                             </div>
                             <p class="mb-30">Eaque ipsa quae ab illo inventore veris
                                 quasi architecto beatae vitae dicta exp
@@ -101,7 +101,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xxl-12 text-center">
-                    <p>Copyright © <?php echo date('Y') ?> All Rights Reserved by <strong><a href="../../naamyaa/">Naamyaa</a></strong> <span class="poweredby">powered by <a target="_blank" class="infinitenetsolutions" href="http://infinitenetsolutions.com/">infinitenetsolutions</a></span></p> 
+                    <p>Copyright © <?php echo date('Y') ?> All Rights Reserved by <strong><a href="../../naamyaa/">Naamyaa Foundation</a></strong> <span class="poweredby">powered by <a target="_blank" class="infinitenetsolutions" href="http://infinitenetsolutions.com/">Infinite Net Solutions</a></span></p> 
                 </div>
             </div>
         </div>

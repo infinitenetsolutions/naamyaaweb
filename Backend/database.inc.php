@@ -1,4 +1,4 @@
 <?php
 // session_start();
-$connection=mysqli_connect("localhost","root","","Naamya_foundation");
+$connection=mysqli_connect("localhost","naamyaafoundation_db","nSsiXPc3","naamyaafoundation_db");
 ?>
