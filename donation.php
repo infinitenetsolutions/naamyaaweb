@@ -12,7 +12,7 @@ if (isset($_POST['donate'])) {
 
     if ($name != '' && $email != '' && $ammount != '') {
         $_SESSION['name'] = $name;
-        $_SESSION['email'] = $email;
+        $_SESSION['email1'] = $email;
         $_SESSION['ammount'] = $ammount;
         // $_SESSION['categories']=$_SESSION['categories']; categories already have in the session
         //redirect the payment getway page
@@ -24,7 +24,7 @@ if (isset($_POST['donate'])) {
 }
 if(isset($_GET['do'])){
 $name=$_SESSION['name'];
-$email=$_SESSION['email'];
+$email1=$_SESSION['email1'];
 }
 ?>
 
@@ -107,15 +107,15 @@ $email=$_SESSION['email'];
                             <div class="single_cause_meta mb-20">
                                 <div class="single_meta feature_meta feature_border d-inline-block">
                                     <span class="meta_text red_clr"><i class="fal fa-globe"></i> Goal</span>
-                                    <span class="meta_price red_clr">$4,5100</span>
+                                    <span class="meta_price red_clr">₹4,5100</span>
                                 </div>
                                 <div class="single_meta feature_meta feature_border d-inline-block">
                                     <span class="meta_text red_clr"><i class="fal fa-users"></i> Raised</span>
-                                    <span class="meta_price red_clr">$45,300</span>
+                                    <span class="meta_price red_clr">₹45,300</span>
                                 </div>
                                 <div class="single_meta feature_meta d-inline-block">
                                     <span class="meta_text red_clr"><i class="fal fa-reply"></i> To go</span>
-                                    <span class="meta_price red_clr">$45,200</span>
+                                    <span class="meta_price red_clr">₹45,200</span>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +136,7 @@ $email=$_SESSION['email'];
                                 <div class="input_info_wrapper">
 
                                     <div class="input_info_name info_input"><input name="name" value="<?php echo $name ; ?>" type="text" placeholder="Enter full name"><i class="fal fa-user"></i></div>
-                                    <div class="input_info_email info_input"><input name="email" value="<?php echo $email ; ?>" type="email" placeholder="Enter email"><i class="fal fa-envelope"></i></div>
+                                    <div class="input_info_email info_input"><input name="email" value="<?php echo $email1 ; ?>" type="email" placeholder="Enter email"><i class="fal fa-envelope"></i></div>
 
                                 </div>
                                 <div class=" d-inline-flex">

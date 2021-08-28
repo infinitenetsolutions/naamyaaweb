@@ -10,7 +10,7 @@ if (isset($_POST['donate'])) {
     $categories = $_POST['categories'];
     if ($name != '' && $email != '' && $categories != '') {
         $_SESSION['name'] = $name;
-        $_SESSION['email'] = $email;
+        $_SESSION['email1'] = $email;
         $_SESSION['categories'] = $categories;
         header("location:donation.php?do");
     } else {

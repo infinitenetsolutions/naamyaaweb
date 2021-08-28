@@ -14780,3 +14780,18 @@ font-size: 30px;
   padding-right: 100px;
  
 }
+.covid19{
+  position: absolute;
+  height: 30px !important;
+
+  padding-top:-10px;
+}
+.covid19 button{
+  background-color: #fecc16 !important;
+}
+.mr-left-20{
+  margin-left: -60px;
+}
+.top-padding{
+padding-top: -10px;
+}

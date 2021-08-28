@@ -21,14 +21,19 @@ $location_link = $contact_row['location_link'];
                          <a href="#" class="theme-3"><i class="fal fa-map-marker-alt"></i><?php echo $location; ?></a>
                      </div>
                  </div>
-                 <div class="col-xxl-3 col-xl-3 col-lg-4 text-start text-md-end">
+
+                 <div class="col-xxl-3 col-xl-3 col-lg-4 text-start text-md-end mr-left-20">
                      <div class="top_social">
                          <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
                          <a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
                          <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
                          <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
+                         <a class="covid19"  href="donation.php"><button name="donate" class="g_btn2 g_btn theme1_bg to_right2 donation rad-30 p-60 mb-30 ">Covid19</button></a>
                      </div>
                  </div>
+        
+                            
+               
              </div>
          </div>
      </div>
