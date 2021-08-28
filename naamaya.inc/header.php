@@ -28,7 +28,7 @@ $location_link = $contact_row['location_link'];
                          <a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
                          <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
                          <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
-                         <a class="covid19"  href="donation.php"><button name="donate" class="g_btn2 g_btn theme1_bg to_right2 donation rad-30 p-60 mb-30">Covid19 Support</button></a>
+                         <a class="covid19"  href="donation.php"><button name="donate" class="g_btn2 g_btn theme1_bg to_right2 donation rad-30 p-60 mb-30">Covid19&nbspSupport</button></a>
                      </div>
                  </div>
         
