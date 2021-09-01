@@ -38,7 +38,7 @@ $event_name = '';
     <!-- Main Area Start-->
     <main>
         <!--breadcrumb area start-->
-        <section class="breadcrumb_area breadcrumb_overlay" data-background="assets/img/bg/breadcrum_bg_2.jpg">
+        <section class="breadcrumb_area breadcrumb_overlay" data-background="assets/img/banners/Event.jpg">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">

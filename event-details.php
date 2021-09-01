@@ -41,7 +41,7 @@
     ?>
     <main>
         <!--breadcrumb area start-->
-        <section class="breadcrumb_area breadcrumb_overlay" data-background="assets/img/bg/breadcrumb_bg_4.jpg">
+        <section class="breadcrumb_area breadcrumb_overlay" data-background="assets/img/banners/Photo.jpg">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">

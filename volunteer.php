@@ -41,7 +41,7 @@ $result_kp = mysqli_query($connection, $retrive_keypople);
     <main>
         <!--breadcrumb area start-->
         <?php include './naamaya.inc/volunteer_registration.php';  ?>
-        <section class="breadcrumb_area breadcrumb_overlay" data-background="assets/img/bg/breadcrum_bg_2.jpg">
+        <section class="breadcrumb_area breadcrumb_overlay" data-background="assets/img/banners/Ourteam.jpg">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">

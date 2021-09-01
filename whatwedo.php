@@ -34,7 +34,7 @@ $arc_result = mysqli_query($connection, $arc_data);
     <!-- Main Area Start-->
     <main>
         <!--breadcrumb area start-->
-        <section class="breadcrumb_area breadcrumb_overlay" data-background="assets/img/bg/breadcrumb_bg_4.jpg">
+        <section class="breadcrumb_area breadcrumb_overlay" data-background="assets/img/banners/Whatwedo.jpg">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">

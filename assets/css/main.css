@@ -2728,10 +2728,12 @@ margin-top: -40px;
 }
 
 @media (max-width: 767px) {
-  .header_top_area {
-    padding: 30px 0;
+  .covid19{
+margin-left: 3rem;
   }
+
 }
+
 
 .top_social a {
   width: 50px;

@@ -28,7 +28,7 @@ $result = mysqli_query($connection, $media_data);
     <!-- slide-bar end -->
 
     <!-- Main Area Start-->
-    <section class="breadcrumb_area breadcrumb_overlay" data-background="assets/img/bg/breadcrum_bg_2.jpg">
+    <section class="breadcrumb_area breadcrumb_overlay" data-background="assets/img/banners/Media.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">

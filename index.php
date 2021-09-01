@@ -37,28 +37,25 @@ $event_result = mysqli_query($connection, $event);
 <html class="no-js" lang="en">
 
 <head>
-    <title>Home | naamaya</title>
-    <?php include './naamaya.inc/head.php' ?>
-
-    <link rel="stylesheet" href="./assets/css1/style-starter.css">
+    <title>Home | Naamyaa</title>
+    <?php include './naamaya.inc/head.php'; ?>
 </head>
 
 <body>
 
-    <!-- header start  -->
-    <?php
-    include './naamaya.inc/header.php';
-    ?>
+    <!-- Header One Start-->
+    <?php include './naamaya.inc/header.php'; ?>
     <!-- Header One End-->
-
     <!-- slide-bar start -->
 
     <!-- Sidebar for Mobile -->
+    <?php include './naamaya.inc/mobile_slider.php'; ?>
 
-    <?php include './naamaya.inc/mobile_slider.php' ?>
 
     <!-- Sidebar for Laptop -->
-    <?php include './naamaya.inc/laptop_slider.php' ?>
+    <?php include './naamaya.inc/laptop_slider.php'; ?>
+    <!-- slide-bar end -->
+
     <!-- slide-bar end -->
 
 

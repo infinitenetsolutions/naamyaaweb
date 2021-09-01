@@ -11,10 +11,10 @@ $phone = $contact_row['phone'];
 $location_link = $contact_row['location_link'];
 ?>
  <header class="header-area">
-     <div class="header_top_area d-none d-lg-block">
+     <div class="header_top_area">
          <div class="container">
              <div class="row align-items-center">
-                 <div class="col-xxl-9 col-xl-9 col-lg-8">
+                 <div class="col-xxl-9 col-xl-9 col-lg-8  d-none d-lg-block">
                      <div class="top_mailing">
                          <a href="mailto:<?php echo $email; ?>" class="theme-1"><i class="fal fa-envelope"></i><span class="__cf_email__" data-cfemail="fa9b9e979394ba9e95979b9394d4999597">[email&#160;protected]</span></a>
                          <a href="tel:<?php echo $phone; ?>" class="theme-2"><i class="fal fa-phone"></i><?php echo $phone; ?></a>
@@ -24,11 +24,12 @@ $location_link = $contact_row['location_link'];
 
                  <div class="col-xxl-3 col-xl-3 col-lg-4 text-start text-md-end mr-left-20">
                      <div class="top_social">
-                         <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                     
                          <a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
                          <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
                          <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
-                         <a class="covid19"  href="donation.php"><button name="donate" class="g_btn2 g_btn theme1_bg to_right2 donation rad-30 p-60 mb-30">Covid19&nbspSupport</button></a>
+                         <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                         <a class="covid19"  href="donation.php" name="donate" class="g_btn2 g_btn theme1_bg to_right2 donation rad-30 p-60 mb-30"><strong>Covid19&nbspSupport</strong> </a>
                      </div>
                  </div>
         

@@ -1,3 +1,12 @@
+<?php
+$contact_data = "SELECT * FROM `contact_data` WHERE 1";
+$contact_result = mysqli_query($connection, $contact_data);
+$contact_row = mysqli_fetch_array($contact_result);
+$location = $contact_row['location'];
+$email = $contact_row['email'];
+$phone = $contact_row['phone'];
+$location_link = $contact_row['location_link'];
+?>
 <footer>
     <div class="footer_top_area footer_top_2">
         <div class="footer_top_wrapper">
@@ -60,9 +69,9 @@
                                 <h4 class="footer_title footer_title_2">Keep In Touch</h4>
                             </div>
                             <div class="footer_info_content">
-                                <p><span><strong>Address :</strong>44 New Design Street, <br> Melbourne 005</span></p>
-                                <p><a href="tel:800433633"><span><strong>Phone :</strong>(01) 800 433 633</span></a></p>
-                                <p><a href="/cdn-cgi/l/email-protection#4c25222a230c09342d213c2029622f2321"><span><strong>Email :</strong><span class="__cf_email__" data-cfemail="80e9eee6efc0c5f8e1edf0ece5aee3efed">[email&#160;protected]</span></span></a></p>
+                                <p><span><strong>Address :</strong><?php echo $location ?></span></p>
+                                <p><a href="tel:<?php echo $phone; ?>"><span><strong>Phone :</strong><?php echo $phone; ?></span></a></p>
+                                <p><a href="mailto:<?php echo $email; ?>"><span><strong>Email :</strong> <span class="__cf_email__" data-cfemail="80e9eee6efc0c5f8e1edf0ece5aee3efed">[email&#160;protected]</span></span></a></p>
                             </div>
                         </div>
                     </div>

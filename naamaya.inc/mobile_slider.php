@@ -27,7 +27,7 @@ $location_link = $contact_row['location_link'];
             <div class="contact-list mobile_contact mb-30">
                 <h4>Contact Info</h4>
                 <a href="#" class="theme-1"><i class="fal fa-map-marker-alt"></i><span><?php echo $location; ?></span></a>
-                <a href="tel:088889797697" class="theme-2"><i class="fal fa-phone"></i><span><?php echo $phone; ?></span></a>
+                <a href="tel:<?php echo $phone; ?>" class="theme-2"><i class="fal fa-phone"></i><span><?php echo $phone; ?></span></a>
                 <a href="mailto:<?php echo $email; ?>" class="theme-3"><i class="far fa-envelope"></i><span><span class="__cf_email__" data-cfemail="ceafaaa3a7a08eaaa1a3afa7a0e0ada1a3">[email&#160;protected]</span></span></a>
 
             </div>

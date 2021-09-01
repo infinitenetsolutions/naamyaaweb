@@ -56,7 +56,7 @@ $email1=$_SESSION['email1'];
     <!-- Main Area Start-->
     <main>
         <!--breadcrumb area start-->
-        <section class="breadcrumb_area breadcrumb_overlay" data-background="assets/img/bg/breadcrum_bg_2.jpg">
+        <section class="breadcrumb_area breadcrumb_overlay"  style="background-image: url('assets/img/banners/becomeadonar.jpg');">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -66,7 +66,7 @@ $email1=$_SESSION['email1'];
                                 <li><span class="active">Donation</span></li>
                             </ul>
                             <div class="breadcrumb_title">
-                                <h2>Make Donation</h2>
+                                <h2> &nbsp; </h2>
                             </div>
                         </div>
                     </div>
