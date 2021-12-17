@@ -6,7 +6,7 @@ $event_name = '';
 // here the retring the data of the upcoming events
 
 $event_name = 'Held';
-$sql_query = "SELECT * FROM `Event` WHERE `date`<'$date'";
+$sql_query = "SELECT * FROM `Event` WHERE `date`<'$date' && `status`=1";
 $result = mysqli_query($connection, $sql_query);
 
 ?>
@@ -65,9 +65,11 @@ $result = mysqli_query($connection, $sql_query);
                                 <div class="nav tab_buttons" id="nav-tab" role="tablist">
                                     <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">All Categories</button>
                                     <?php
-                                    $cate_name = "SELECT * FROM `categories` WHERE 1";
+                                    $cate_name = "SELECT * FROM `categories` WHERE `status`=1";
                                     $cat_result = mysqli_query($connection, $cate_name);
                                     while ($data = mysqli_fetch_array($cat_result)) {
+
+
 
                                     ?>
                                         <button class="nav-link" id="nav-water" data-bs-toggle="tab" data-bs-target="#<?php echo $data['name']; ?>" type="button" role="tab" aria-controls="water" aria-selected="true"><?php echo $data['name']; ?></button>
@@ -81,12 +83,16 @@ $result = mysqli_query($connection, $sql_query);
 
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                        <?php while ($row1 = mysqli_fetch_array($result)) { ?>
+                        <?php while ($row1 = mysqli_fetch_array($result)) {
+                            $event_id = $row1['id'];
+                            $event_img = mysqli_query($connection, "SELECT * FROM `event_details` WHERE `event_id`='$event_id'");
+                            $event_img_result = mysqli_fetch_array($event_img);
+                        ?>
                             <div class="single_events_wrapper tab-border mb-30">
                                 <div class="row align-items-center">
                                     <div class="col-xxl-3 col-xl-3 col-lg-3 d-md-none d-lg-block">
                                         <div class="eventcount_img w_img">
-                                            <a href="event-details.php?id=<?php echo $row1['id']; ?>"><img src="assets/img/causes/cause1.jpg" alt="img"></a>
+                                            <a href="event-details.php?id=<?php echo $row1['id']; ?>"><img <?php echo ' src="data:image/jpeg;base64,' . base64_encode($event_img_result['image1']) . '"' ?>></a>
                                         </div>
                                     </div>
                                     <div class="col-xxl-3 col-xl-4 col-lg-3 col-md-5 text-center text-md-start">
@@ -109,37 +115,40 @@ $result = mysqli_query($connection, $sql_query);
                         <?php } ?>
                     </div>
                     <?php
-                    $cate_name = "SELECT * FROM `categories` WHERE 1";
+                    $cate_name = "SELECT * FROM `categories` WHERE `status`=1";
                     $cat_result = mysqli_query($connection, $cate_name);
                     while ($data = mysqli_fetch_array($cat_result)) {
                         $name = $data['name'];
-                        $id=$data['id'];
+                        $id = $data['id'];
 
 
                     ?>
                         <div class="tab-pane fade" id="<?php echo $name; ?>" role="tabpanel" aria-labelledby="nav-water">
 
-                            <?php  $sql_query = "SELECT * FROM `Event` WHERE `date`<'$date' && `categories_id`='$id'";
+                            <?php $sql_query = "SELECT * FROM `Event` WHERE `date`<'$date' && `categories_id`='$id'";
                             $result = mysqli_query($connection, $sql_query);
                             while ($row_cat = mysqli_fetch_array($result)) {
-                           ?>     
+                                $event_id = $row_cat['id'];
+                                $event_img = mysqli_query($connection, "SELECT * FROM `event_details` WHERE `event_id`='$event_id'");
+                                $event_img_result = mysqli_fetch_array($event_img);
+                            ?>
 
                                 <div class="single_events_wrapper tab-border mb-30">
                                     <div class="row align-items-center">
                                         <div class="col-xxl-3 col-xl-3 col-lg-3 d-md-none d-lg-block">
                                             <div class="eventcount_img w_img">
-                                                <a href="event-details.php?id=<?php echo $row1['id']; ?>"><img src="assets/img/causes/cause4.jpg" alt="img"></a>
+                                                <a href="event-details.php?id=<?php echo $row1['id']; ?>"><img <?php echo ' src="data:image/jpeg;base64,' . base64_encode($event_img_result['image1']) . '"' ?>></a>
                                             </div>
                                         </div>
                                         <div class="col-xxl-3 col-xl-4 col-lg-3 col-md-5 text-center text-md-start">
                                             <div class="eventcount_text heading-clr">
                                                 <h5><a href="event-details.php?id=<?php echo $row1['id']; ?>"><?php echo $row_cat['name'];  ?></a></h5>
                                                 <span><?php echo $row_cat['address'];
-                                                    echo " ' ";
-                                                    echo $row_cat['city'];
-                                                    echo $row_cat['state'];
-                                                    echo " , ";
-                                                    echo $row_cat['country'];  ?></span>
+                                                        echo " ' ";
+                                                        echo $row_cat['city'];
+                                                        echo $row_cat['state'];
+                                                        echo " , ";
+                                                        echo $row_cat['country'];  ?></span>
                                             </div>
                                         </div>
                                         <div class="col-xxl-6 col-xl-5 col-lg-6 col-md-7 text-center text-md-end">
@@ -156,9 +165,9 @@ $result = mysqli_query($connection, $sql_query);
                 </div>
 
                 <div class="row">
-                    <div class="cause_button text-center mt-10 mb-30">
+                    <!-- <div class="cause_button text-center mt-10 mb-30">
                         <a href="event.php" class="cause_btn g_btn to_right1 rad-30">Load More <i class="far fa-plus"></i> <span></span></a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>

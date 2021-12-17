@@ -22,9 +22,9 @@ if (isset($_POST['donate'])) {
         $error = "please Enter the Amount ";
     }
 }
-if(isset($_GET['do'])){
-$name=$_SESSION['name'];
-$email1=$_SESSION['email1'];
+if (isset($_GET['do'])) {
+    $name = $_SESSION['name'];
+    $email1 = $_SESSION['email1'];
 }
 ?>
 
@@ -39,7 +39,26 @@ $email1=$_SESSION['email1'];
 
 <body>
 
+    <?php
+    // getting the goal amount
+    $goal = "SELECT  SUM(goal_ammount) as `goal_amount` FROM `goal` WHERE 1 ";
+    $goal_result = mysqli_query($connection, $goal);
+    $goal_row = mysqli_fetch_array($goal_result);
 
+    // getting the donation amount
+    $donation = "SELECT  SUM(goal_ammount) as `donation_ammount` FROM `donation` WHERE 1 ";
+    $donation_result = mysqli_query($connection, $donation);
+    $donation_row = mysqli_fetch_array($donation_result);
+    // total donation amount
+    $donation_amount = $donation_row['donation_ammount'];
+    // total amount of the goal
+    $goal_amount = $goal_row['goal_amount'];
+    $total_amount = $goal_amount - $donation_amount;
+
+    // calculating the percentage for the amount
+    $percentage = $donation_amount / $goal_amount * 100;
+
+    ?>
     <!-- Header One Start-->
     <?php include './naamaya.inc/header.php'; ?>
     <!-- Header One End-->
@@ -56,7 +75,8 @@ $email1=$_SESSION['email1'];
     <!-- Main Area Start-->
     <main>
         <!--breadcrumb area start-->
-        <section class="breadcrumb_area breadcrumb_overlay"  style="background-image: url('assets/img/banners/becomeadonar.jpg');">
+        <section class="breadcrumb_area breadcrumb_overlay"
+            style="background-image: url('assets/img/banners/becomeadonar.jpg');">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -101,21 +121,31 @@ $email1=$_SESSION['email1'];
                                 alms: She asked for work, not charity. a charitable act or work.</p>
                             <div class="feature_progress_wrapper mb-25 mt-35">
                                 <div class="progress feature_progress">
-                                    <div class="progress-bar" role="progressbar" data-width="50%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"></div>
+                                    <div class="progress-bar" role="progressbar" data-width="<?php echo $percentage ?>%"
+                                        aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+                                    </div>
                                 </div>
                             </div>
                             <div class="single_cause_meta mb-20">
                                 <div class="single_meta feature_meta feature_border d-inline-block">
-                                    <span class="meta_text red_clr"><i class="fal fa-globe"></i> Goal</span>
-                                    <span class="meta_price red_clr">₹4,5100</span>
+                                    <span class="meta_text red_clr text-danger"><i class="fal fa-globe"></i> Goal</span>
+                                    <span class="meta_price red_clr">₹ <?php echo $goal_amount ?></span>
                                 </div>
                                 <div class="single_meta feature_meta feature_border d-inline-block">
-                                    <span class="meta_text red_clr"><i class="fal fa-users"></i> Raised</span>
-                                    <span class="meta_price red_clr">₹45,300</span>
+                                    <span class="meta_text red_clr text-danger"><i class="fal fa-users"></i>
+                                        Raised</span>
+                                    <span class="meta_price red_clr">₹<?php echo $donation_amount ?></span>
                                 </div>
                                 <div class="single_meta feature_meta d-inline-block">
-                                    <span class="meta_text red_clr"><i class="fal fa-reply"></i> To go</span>
-                                    <span class="meta_price red_clr">₹45,200</span>
+                                    <span class="meta_text red_clr text-danger"><i class="fal fa-reply"></i> To
+                                        go</span>
+                                    <?php
+                                    if ($total_amount < 0) {
+                                    ?>
+                                    <span class="meta_price red_clr">+ <?php echo abs($total_amount) ?></span>
+                                    <?php } else { ?>
+                                    <span class="meta_price red_clr"><?php echo $total_amount ?></span>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
@@ -135,19 +165,25 @@ $email1=$_SESSION['email1'];
                             <form action="" method="POST">
                                 <div class="input_info_wrapper">
 
-                                    <div class="input_info_name info_input"><input name="name" value="<?php echo $name ; ?>" type="text" placeholder="Enter full name"><i class="fal fa-user"></i></div>
-                                    <div class="input_info_email info_input"><input name="email" value="<?php echo $email1 ; ?>" type="email" placeholder="Enter email"><i class="fal fa-envelope"></i></div>
+                                    <div class="input_info_name info_input"><input name="name"
+                                            value="<?php if(isset($_SESSION['name'])){ echo $name; } ?>" type="text"
+                                            placeholder="Enter full name"><i class="fal fa-user"></i></div>
+                                    <div class="input_info_email info_input"><input name="email"
+                                            value="<?php if(isset($_SESSION['email1'])){ echo $email1;  }?>"
+                                            type="email" placeholder="Enter email"><i class="fal fa-envelope"></i></div>
 
                                 </div>
                                 <div class=" d-inline-flex">
                                     <div class="donation_submit_wrapper">
                                         <div class="donation_submit_box w_208">
                                             <button type="submit">Donation</button>
-                                            <input class="gray_color" name="ammount" type="text" placeholder="₹ Ammount">
+                                            <input class="gray_color" name="ammount" type="text"
+                                                placeholder="₹ Ammount">
                                         </div>
                                     </div>
                                     <div class="submit_info_button">
-                                        <button name="donate" type="submit" class="g_btn hbtn_1 to_right1 rad-30" href="donation.php">Make Donation<span></span></button>
+                                        <button name="donate" type="submit" class="g_btn hbtn_1 to_right1 rad-30"
+                                            href="donation.php">Make Donation<span></span></button>
                                     </div>
                                 </div>
                             </form>

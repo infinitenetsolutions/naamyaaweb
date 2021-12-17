@@ -38,6 +38,7 @@ $location_link = $contact_row['location_link'];
              </div>
          </div>
      </div>
+
      <div id="sticky-header" class="header_menu_area header_menu_area_2">
          <div class="container">
              <div class="row align-items-center">
@@ -88,6 +89,7 @@ $location_link = $contact_row['location_link'];
                          </nav>
                      </div>
                  </div>
+                 
                  <div class="col-xxl-3 col-xl-3 col-lg-1 col-md-6 col-6">
                      <div class="header-right d-flex align-items-center justify-content-end">
                          <div class="header-sing d-inline-block d-none d-xl-block">

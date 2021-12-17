@@ -1,6 +1,6 @@
 <?php
 include './Backend/database.inc.php';
-$arc_data = "SELECT * FROM `whatwedo` WHERE 1";
+$arc_data = "SELECT * FROM `whatwedo` WHERE `status`=1";
 $arc_result = mysqli_query($connection, $arc_data);
 
 

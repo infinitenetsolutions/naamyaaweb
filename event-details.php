@@ -27,6 +27,12 @@
 
     <!-- Main Area Start-->
     <?php
+
+
+    $event1 = "SELECT  * FROM `Event` WHERE `status`=1   ORDER BY id DESC  LIMIT 8  ";
+    $event_result1 = mysqli_query($connection, $event1);
+
+
     $id = $_GET['id'];
     $data = "SELECT * FROM `event_details` WHERE `event_id`='$id'";
     $event_result = mysqli_query($connection, $data);
@@ -48,10 +54,10 @@
                         <div class="breadcrumb_section">
                             <ul class="breadcrumb-list volunteer_breadcrumb">
                                 <li class="bhas_border"><a href="index.php">Home</a></li>
-                                <li><span class="active">Cause Details</span></li>
+                                <li><span class="active"><?php echo $title ?></span></li>
                             </ul>
                             <div class="breadcrumb_title">
-                                <h2>Redcurrant food for homeless</h2>
+                                <h2><?php echo $title ?></h2>
                             </div>
                         </div>
                     </div>
@@ -76,16 +82,7 @@
                                 <h4 class="details_title"><?php echo $title; ?></h4>
                                 <p class="mb-40"><?php echo $details;  ?></p>
 
-                                <div class="row mb-45">
-                                    <div class="col-6 w_img">
-                                    <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($event_row['image2']) . '">' ?> 
-                                    </div>
-                                    <div class="col-6 w_img">
-                                    <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($event_row['image3']) . '">' ?> 
-                                    </div>
-                                </div>
 
-                                <p class="mb-30"> <?php echo $details1; ?> </p>
 
 
                             </div>
@@ -96,117 +93,35 @@
 
                             <div class="sidebar_widget has_border feed_widget mb-40">
                                 <div class="sidebar_title">
-                                    <h4 class="sidebar_title_text has_border"><span class="theme-1">//</span>Upcoming
+                                    <h4 class="sidebar_title_text has_border"><span class="theme-1">//</span>More
                                         Events</h4>
                                 </div>
                                 <div class="feed_widget_content">
-                                    <div class="single_feed_widget has_border">
-                                        <div class="feed_widget_img"><a href="blog-details.php"><img src="assets/img/news/blog_feed1.jpg" alt="img"></a></div>
-                                        <div class="feed_widget_text">
-                                            <h5 class="feed_widget_title theme-1"><a href="blog-details.php">How to
-                                                    improve knowledge for myself</a></h5>
-                                            <a href="#" class="feed_widget_date theme-1"><i class="fal fa-calendar-alt"></i>24th March 2022</a>
+
+                                    <?php while ($event_row1 = mysqli_fetch_array($event_result1)) {
+                                        $str = $event_row1['date'];
+                                        $newdate = str_replace('-', '/', $str);
+
+
+                                        $event_id = $event_row1['id'];
+                                        $event_img = mysqli_query($connection, "SELECT * FROM `event_details` WHERE `event_id`='$event_id'");
+                                        $event_img_result = mysqli_fetch_array($event_img);
+
+                                    ?>
+
+                                        <div class="single_feed_widget has_border">
+                                            <div class="feed_widget_img"><a href="event-details.php?id=<?php echo $event_row1['id']; ?>"><img <?php echo ' src="data:image/jpeg;base64,' . base64_encode($event_img_result['image1']) . '"' ?>></a></div>
+                                            <div class="feed_widget_text">
+                                                <h5 class="feed_widget_title theme-1"><a href="blog-details.php"> <?php echo $event_row1['name']; ?> </a></h5>
+                                                <a href="#" class="feed_widget_date theme-1"><i class="fal fa-calendar-alt"></i><?php echo $newdate; ?></a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="single_feed_widget has_border">
-                                        <div class="feed_widget_img"><a href="blog-details.php"><img src="assets/img/news/blog_feed2.jpg" alt="img"></a></div>
-                                        <div class="feed_widget_text">
-                                            <h5 class="feed_widget_title theme-1"><a href="blog-details.php">Everybody
-                                                    needs to know how to help myself</a></h5>
-                                            <a href="#" class="feed_widget_date theme-1"><i class="fal fa-calendar-alt"></i>24th March 2022</a>
-                                        </div>
-                                    </div>
-                                    <div class="single_feed_widget has_border">
-                                        <div class="feed_widget_img"><a href="blog-details.php"><img src="assets/img/news/blog_feed3.jpg" alt="img"></a></div>
-                                        <div class="feed_widget_text">
-                                            <h5 class="feed_widget_title theme-1"><a href="blog-details.php">Good foods
-                                                    available on behalf of fundraise</a></h5>
-                                            <a href="#" class="feed_widget_date theme-1"><i class="fal fa-calendar-alt"></i>24th Sep 2021</a>
-                                        </div>
-                                    </div>
-                                    <div class="single_feed_widget">
-                                        <div class="feed_widget_img"><a href="blog-details.php"><img src="assets/img/news/blog_feed4.jpg" alt="img"></a></div>
-                                        <div class="feed_widget_text">
-                                            <h5 class="feed_widget_title theme-1"><a href="blog-details.php">Keep focus
-                                                    on you to find out yourself</a></h5>
-                                            <a href="#" class="feed_widget_date theme-1"><i class="fal fa-calendar-alt"></i>24th March 2022</a>
-                                        </div>
-                                    </div>
+                                    <?php } ?>
 
                                 </div>
                             </div>
 
-                            <div class="single_widget has_border post_widget mb-40">
-                                <div class="single_widget_title">
-                                    <h4 class="widget_title_text has_border">Donors Post</h4>
-                                </div>
-                                <div class="donor_post_wrapper">
-                                    <div class="single_donor_post">
-                                        <div class="donar_post_img"><a href="volunteer-details.php"><img src="assets/img/causes/donar1.jpg" alt="img"></a></div>
-                                        <div class="donar_post_content">
-                                            <h5 class="donar_name"><a href="volunteer-details.php">Nilmarendra Max</a>
-                                            </h5>
-                                            <div class="donar_meta">
-                                                <a href="#" class="donar_amount theme-1 sep">₹900</a>
-                                                <a href="#" class="donar_date theme-2"><i class="fal fa-calendar-alt"></i> February 20, 2022</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single_donor_post">
-                                        <div class="donar_post_img"><a href="volunteer-details.php"><img src="assets/img/causes/donar2.jpg" alt="img"></a></div>
-                                        <div class="donar_post_content">
-                                            <h5 class="donar_name"><a href="volunteer-details.php">Miranda H. Hilix</a>
-                                            </h5>
-                                            <div class="donar_meta">
-                                                <a href="#" class="donar_amount theme-1 sep">₹500</a>
-                                                <a href="#" class="donar_date theme-2"><i class="fal fa-calendar-alt"></i> February 20, 2022</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single_donor_post">
-                                        <div class="donar_post_img"><a href="volunteer-details.php"><img src="assets/img/causes/donar3.jpg" alt="img"></a></div>
-                                        <div class="donar_post_content">
-                                            <h5 class="donar_name"><a href="volunteer-details.php">Anayatulla Abbasi</a>
-                                            </h5>
-                                            <div class="donar_meta">
-                                                <a href="#" class="donar_amount theme-1 sep">₹900</a>
-                                                <a href="#" class="donar_date theme-2"><i class="fal fa-calendar-alt"></i> February 20, 2022</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single_donor_post">
-                                        <div class="donar_post_img"><a href="volunteer-details.php"><img src="assets/img/causes/donar4.jpg" alt="img"></a></div>
-                                        <div class="donar_post_content">
-                                            <h5 class="donar_name"><a href="volunteer-details.php">Ahmadullah Fokir</a>
-                                            </h5>
-                                            <div class="donar_meta">
-                                                <a href="#" class="donar_amount theme-1 sep">₹300</a>
-                                                <a href="#" class="donar_date theme-2"><i class="fal fa-calendar-alt"></i> February 20, 2022</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single_donor_post">
-                                        <div class="donar_post_img"><a href="volunteer-details.php"><img src="assets/img/causes/donar5.jpg" alt="img"></a></div>
-                                        <div class="donar_post_content">
-                                            <h5 class="donar_name"><a href="volunteer-details.php">Ahmed Riad</a></h5>
-                                            <div class="donar_meta">
-                                                <a href="#" class="donar_amount theme-1 sep">₹500</a>
-                                                <a href="#" class="donar_date theme-2"><i class="fal fa-calendar-alt"></i> February 20, 2022</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single_donor_post">
-                                        <div class="donar_post_img"><a href="volunteer-details.php"><img src="assets/img/causes/donar6.jpg" alt="img"></a></div>
-                                        <div class="donar_post_content">
-                                            <h5 class="donar_name"><a href="volunteer-details.php">Andreu R.</a></h5>
-                                            <div class="donar_meta">
-                                                <a href="#" class="donar_amount theme-1 sep">₹500</a>
-                                                <a href="#" class="donar_date theme-2"><i class="fal fa-calendar-alt"></i> February 20, 2022</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
