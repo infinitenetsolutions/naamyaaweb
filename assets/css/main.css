@@ -10353,7 +10353,7 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
 */
 
 .member_social a {
-    margin-top: -25px !important;
+    margin-top: -23px !important;
     display: inline-block;
 
   
@@ -10416,14 +10416,14 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
 }
 
 .single_team .designation {
-    margin-bottom: 10px;
+
     display: block;
     color: var(--clr-theme-2);
     font-size: 16px;
 }
 
 .single_team .member_name {
-    margin-bottom: 25px;
+    margin-bottom: 6px;
     font-size: 24px;
 }
 

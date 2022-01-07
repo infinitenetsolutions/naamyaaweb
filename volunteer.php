@@ -88,7 +88,7 @@ $result_kp = mysqli_query($connection, $retrive_keypople);
                                 </div>
                                 <span class="designation"><?php echo $row['post']; ?></span>
                                 <h5 class="member_name"><a href="#"><?php echo $row['name']; ?></a>  </h5>
-                                <p><?php echo substr($description,0,35)  ?>  <span class="name3" id="show<?php echo $id ?>"><?php echo substr($description,36)  ?></span><b class="text-danger" href="#" onclick="show('<?php echo $id ?>')">Read more</b></p>
+                                <small><?php echo substr($description,0,35)  ?>  <span class="name3" id="show<?php echo $id ?>"><?php echo substr($description,36)  ?></span><b class="text-danger" href="#" onclick="show('<?php echo $id ?>')">Read more</b></small>
                                 <?php $retrive_keypople_link = "SELECT * FROM `social_media` WHERE  `reid`='$id' && `table_name`='keypepole' LIMIT 4";
                                 $result_link = mysqli_query($connection, $retrive_keypople_link); ?>
                                 <div class="member_social">
