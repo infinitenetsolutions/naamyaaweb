@@ -88,7 +88,7 @@ $result_kp = mysqli_query($connection, $retrive_keypople);
                                 </div>
                                 <span class="designation"><?php echo $row['post']; ?></span>
                                 <h5 class="member_name"><a href="#"><?php echo $row['name']; ?></a>  </h5>
-                                <p><?php echo substr($description,0,35)  ?>  <span id="show<?php echo $id ?>"><?php echo substr($description,36)  ?></span><b class="text-danger" href="#" onclick="show('<?php echo $id ?>')">Read more</b></p>
+                                <p><?php echo substr($description,0,35)  ?>  <span class="name3" id="show<?php echo $id ?>"><?php echo substr($description,36)  ?></span><b class="text-danger" href="#" onclick="show('<?php echo $id ?>')">Read more</b></p>
                                 <?php $retrive_keypople_link = "SELECT * FROM `social_media` WHERE  `reid`='$id' && `table_name`='keypepole' LIMIT 4";
                                 $result_link = mysqli_query($connection, $retrive_keypople_link); ?>
                                 <div class="member_social">
@@ -124,9 +124,9 @@ $result_kp = mysqli_query($connection, $retrive_keypople);
 
                                 <div class="team_thumb img_effect_white">
                                     <?php if ($row['gender'] == 'm') { ?>
-                                        <a href="#"><img src=<?php echo $male ?> alt="img"></a>
+                                        <a href="#"><img class="male" src=<?php echo $male ?> alt="img"></a>
                                     <?php } else { ?>
-                                        <a href="#"><img src=<?php echo $female ?> alt="img"></a>
+                                        <a href="#"><img class="female" src=<?php echo $female ?> alt="img"></a>
                                     <?php } ?>
                                 </div>
                                 <span class="designation"><?php echo $row['occupation']; ?></span>
@@ -174,7 +174,7 @@ $result_kp = mysqli_query($connection, $retrive_keypople);
 </html>
 
 <script>
-        $("span").hide();
+        $(".name3").hide();
 function show(id){
     $("#show"+id).toggle();
   }

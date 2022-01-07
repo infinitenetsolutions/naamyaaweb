@@ -10353,15 +10353,11 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
 */
 
 .member_social a {
-    width: 50px;
-    height: 50px;
+    margin-top: -25px !important;
     display: inline-block;
-    background-color: var(--clr-soft-grey);
-    border-radius: 10px 10px 0 0;
-    text-align: center;
-    line-height: 50px;
-    color: var(--clr-body-heading-color);
-    margin: 0px 3px;
+
+  
+   
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -15218,4 +15214,40 @@ only screen and (min-width: 1200px) and (max-width: 1400px) {
 
 .eventcount_text h5{
     font-size: 20px;
+}
+.male ,.female{
+    max-height: 200px !important;
+    min-height: 200px !important;
+}
+.member_name{
+    font-size: 15px !important;
+    color: black;
+    font-family: 'Font Awesome 5 Brands' !important;
+}
+.fab{
+    padding: 0px !important;
+    font-size: 23px;
+
+}
+.fa-facebook-square{
+    color: blue !important;
+}
+.fa-youtube-square{
+    color: red !important;
+}
+.fa-twitter-square{
+    color: rgb(87, 149, 168) !important;
+}
+.fa-linkedIn-square{
+    color: skyblue !important;
+}
+.fa-pinterest-square{
+    color: rgb(145, 20, 20) !important;
+}
+
+.fa-instagram-square{
+    color: orange !important;
+} 
+.fa-reddit-square{
+    color: #c40f3e !important;
 }
