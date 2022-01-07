@@ -341,7 +341,7 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                                             <div class="col-xxl-6 col-xl-5 col-lg-6 col-md-7 text-center text-md-end">
                                                 <div class="container">
                                                     <div class="row">
-                                                        <span> <?php echo  substr($event_img_result['details'], 0, 155);  ?>.. <a class="text-danger" href="event-details.php?id=<?php echo $event_row['id']; ?>">Read more</a> </span>
+                                                        <span class="justify"> <?php echo  substr($event_img_result['details'], 0, 155);  ?>.. <a class="text-danger" href="event-details.php?id=<?php echo $event_row['id']; ?>">Read more</a> </span>
 
                                                     </div>
 

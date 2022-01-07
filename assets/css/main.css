@@ -15251,3 +15251,12 @@ only screen and (min-width: 1200px) and (max-width: 1400px) {
 .fa-reddit-square{
     color: #c40f3e !important;
 }
+
+.d-flex{
+    text-align: justify !important;
+    font-size: 14px;
+}
+.justify{
+    text-align: justify !important;
+
+}
