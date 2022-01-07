@@ -63,9 +63,9 @@ $result1 = mysqli_query($connection, $department_retrive);
                         <option selected disabled>Gender
 
                         </option>
-                        <option value="m">male</option>
-                        <option value="f">female</option>
-                        <option value="o">others</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="others">Others</option>
                     </select>
                     <select onkeyup="enable(this.value)"  id="initial_5" name="cities" class="donar_input donar_input1 mr-15">
                         <option selected disabled>City
@@ -81,11 +81,11 @@ $result1 = mysqli_query($connection, $department_retrive);
                         <option selected disabled>Occupation
 
                         </option>
-                        <option value="jamshedpur">High school</option>
-                        <option value="Ranchi">College</option>
-                        <option value="Gaya">Working</option>
-                        <option value="Ranchi">Self Employed</option>
-                        <option value="Gaya">Others</option>
+                        <option value="Student">Student</option>
+                        <option value="Private Employee">Private Employee</option>
+                        <option value="Govt. Employee">Govt. Employee</option>
+                        <option value="Self Employed/ Business">Self Employed/ Business</option>
+                        <option value="Others">Others</option>
                     </select>
                     <select onkeyup="enable(this.value)"  id="initial_7" name="department" class="donar_input donar_input1 mr-15">
                         <option selected disabled>Department
@@ -99,14 +99,14 @@ $result1 = mysqli_query($connection, $department_retrive);
                     </select>
 
                     <select onkeyup="enable(this.value)"  id="initial_8" name="know" class="donar_input donar_input1 mr-15">
-                        <option selected="" disabled="">How did
+                        <option selected="" disabled="">How do you know about Naamyaa
 
                         </option>
-                        <option value="school">School</option>
-                        <option value="college">College</option>
+                        <option value="School/College/University">School/College/University</option>
+                        <option value="Friends & Relatives">Friends & Relatives</option>
                         <option value="Social Media">Social Media</option>
                         <option value="Website">Website</option>
-                        <option value="News">News</option>
+                        <option value="News & Media">News & Media</option>
                     </select>
 
                     <!-- <input onkeyup="enable(this.value)"  id="initial_1" name="image" type="file" placeholder="Enter Full Name" class="donar_input mr-15" required> -->

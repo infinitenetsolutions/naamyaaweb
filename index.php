@@ -122,7 +122,8 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                                 </div>
                                 <div class="donar_currency d-inline-block mb-30">
                                     <select name="categories" type="number" class="currency mr-15" title="please select the category" placeholder="select Categories">
-                                        <option value="any">anyone</option>
+                                        <option selected disabled >-Select your cause-</option>
+                                    <option value="any">Anyone</option>
                                         <?php while ($row = mysqli_fetch_array($result)) { ?>
                                             <option value="<?php echo $row['name'];  ?>"><?php echo $row['name']; ?>
                                             </option>
