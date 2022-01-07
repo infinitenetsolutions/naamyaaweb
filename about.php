@@ -82,7 +82,7 @@ $result = mysqli_query($connection, $retrive_m_and_v);
                                         <span class="sub_title sub_title_2"><?php echo $about_row['type']; ?></span>
                                         <h3 class="title title_2 mb-20"><?php echo $about_row['title']; ?></h3>
                                     </div>
-                                    <p class="mb-40"><?php echo $about_row['description']; ?></p>
+                                    <p class="mb-40 justify"><?php echo $about_row['description']; ?></p>
 
                                     <a href="about.php" class="g_btn trans_btn rad-50 p-45">Learn More <span></span></a>
 
@@ -130,7 +130,7 @@ $result = mysqli_query($connection, $retrive_m_and_v);
                                             <span class="sub_title sub_title_2">OUR <?php echo $row['type']; ?></span>
                                             <h3 class="title title_2 no_br"><?php echo $row['title']; ?></h3>
                                         </div>
-                                        <p class="mb-55"><?php echo $row['description']; ?></p>
+                                        <p class="mb-55 justify"><?php echo $row['description']; ?></p>
 
                                     </div>
                                 </div>
