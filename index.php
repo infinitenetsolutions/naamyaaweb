@@ -449,7 +449,7 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
 
 
                         <h3 class="head back-border p-3"> <a href="" data-toggle="modal" data-target="#feedback" class="btn btn-info float-right">
-                                Feedback</a>What They Says</h3>
+                                Feedback</a>What They Say</h3>
 
                     </div>
 

@@ -15215,3 +15215,7 @@ only screen and (min-width: 1200px) and (max-width: 1400px) {
     margin-left: -658px;
   }
 }
+
+.eventcount_text h5{
+    font-size: 20px;
+}
