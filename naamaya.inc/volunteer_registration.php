@@ -63,9 +63,9 @@ $result1 = mysqli_query($connection, $department_retrive);
                         <option selected disabled>Gender
 
                         </option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="others">Others</option>
+                        <option value="m">Male</option>
+                        <option value="f">Female</option>
+                        <option value="o">Others</option>
                     </select>
                     <select onkeyup="enable(this.value)"  id="initial_5" name="cities" class="donar_input donar_input1 mr-15">
                         <option selected disabled>City
