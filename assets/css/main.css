@@ -15203,3 +15203,15 @@ only screen and (min-width: 1200px) and (max-width: 1400px) {
 }
 
 
+@media (min-width: 1380px) {
+    .slider{
+        background: #ffffffad;
+        background-size: cover;
+        border-top-right-radius: 20px;
+      
+    }
+  .custom-btn {
+    margin-top: 288px;
+    margin-left: -658px;
+  }
+}

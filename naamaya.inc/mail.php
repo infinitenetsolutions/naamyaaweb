@@ -2,7 +2,7 @@
 
 function prospectus_mail($description, $name, $email, $mobile, $occupation,$department)
 {
-   $reciever_email = "rohit83013@gmail.com";
+   $reciever_email = "care@naamyaafoundation.org";
 
 
    $smtp_host = "smtp.gmail.com";
@@ -25,7 +25,7 @@ function prospectus_mail($description, $name, $email, $mobile, $occupation,$depa
    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
    $mail->Port = $port;                                    // TCP port to connect to
 
-   $mail->setFrom($sender_email_id, 'Srinath University');
+   $mail->setFrom($sender_email_id, 'Naamyaa foundation');
    $mail->addAddress($reciever_email, $reciever_name);     // Add a recipient
    // $mail->addAddress('ellen@example.com');               // Name is optional
    // $mail->addReplyTo($reciever_email, 'Information');  // if You want to giving the reply then you can enable 
@@ -36,7 +36,7 @@ function prospectus_mail($description, $name, $email, $mobile, $occupation,$depa
    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
    $mail->isHTML(true);                                  // Set email format to HTML
 
-   $mail->Subject = 'Volunteer Mail Confirmation';
+   $mail->Subject = 'Volunteer mail confirmation';
    $mail->Body    = '<table bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;vertical-align:top;background-color:#fff;border-spacing:0;min-width:320px;table-layout:fixed;width:100%" valign="top" width="100%">
    <tbody>
        <tr style="border-collapse:collapse;vertical-align:top" valign="top">
@@ -106,7 +106,7 @@ function prospectus_mail($description, $name, $email, $mobile, $occupation,$depa
                                            </tbody>
                                        </table>
                                        <div align="center" style="padding-top:30px;padding-right:10px;padding-bottom:10px;padding-left:10px">
-                                           <a href="https://naamyaafoundation.org/Admin/pages/user-master/user.php" style="text-decoration:none;display:inline-block;color:#ffffff;background-color:#e61975;border-radius:5px;width:auto;width:auto;border-top:1px solid #e61975;border-right:1px solid #e61975;border-bottom:1px solid #e61975;border-left:1px solid #e61975;padding-top:10px;padding-bottom:10px;font-family:Montserrat,Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;text-align:center;word-break:keep-all" target="_blank"><span style="padding-left:60px;padding-right:60px;font-size:16px;display:inline-block;letter-spacing:undefined"><span style="font-size:16px;line-height:2;word-break:break-word"><strong>Seen Volunteer</strong></span></span></a>
+                                           <a href="https://naamyaafoundation.org/Admin/pages/user-master/user.php" style="text-decoration:none;display:inline-block;color:#ffffff;background-color:#e61975;border-radius:5px;width:auto;width:auto;border-top:1px solid #e61975;border-right:1px solid #e61975;border-bottom:1px solid #e61975;border-left:1px solid #e61975;padding-top:10px;padding-bottom:10px;font-family:Montserrat,Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;text-align:center;word-break:keep-all" target="_blank"><span style="padding-left:60px;padding-right:60px;font-size:16px;display:inline-block;letter-spacing:undefined"><span style="font-size:16px;line-height:2;word-break:break-word"><strong>See volunteer</strong></span></span></a>
                                        </div>
                                    </div>
                                </div>

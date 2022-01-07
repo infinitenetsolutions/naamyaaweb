@@ -1,4 +1,5 @@
 <?php
+$flag = 0;
 $inputerr = '';
 include './Backend/sessionstart.php';
 include './Backend/database.inc.php';
@@ -14,15 +15,26 @@ if (isset($_POST['donate'])) {
         $_SESSION['categories'] = $categories;
         header("location:donation.php?do");
     } else {
-        $inputerr = "please input proper Email and Name";
+        $inputerr = "Please input proper email and name";
     }
 }
+
+// show the all data of project
+$total_event="SELECT * FROM `Event`";
+$total_whatwedo="SELECT * FROM `whatwedo`";
+$total_archievment="SELECT  * FROM `archievment`";
+
+$total_event_result=mysqli_query($connection,$total_event);
+$total_whatwedo_result=mysqli_query($connection,$total_event);
+$total_archievment_result=mysqli_query($connection,$total_event);
+
+
 
 // Retriving the Categories from the database
 $categorie = "SELECT * FROM `categories` WHERE `status`=1";
 $result = mysqli_query($connection, $categorie);
 
-$event = "SELECT  * FROM `Event` WHERE `status`=1   ORDER BY id DESC  LIMIT 8  ";
+$event = "SELECT  * FROM `Event` WHERE `status`=1   ORDER BY `date` DESC  LIMIT 8  ";
 $event_result = mysqli_query($connection, $event);
 
 // getting the data for the goal 
@@ -73,15 +85,15 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
             <!-- <div class="img_topright"><img data-depth="1.3" src="assets/img/slider/slider.jpg" alt="img"></div> -->
             <!-- <div class="img_bottomleft"><img data-depth="1.5" src="assets/img/slider/slider.jpg" alt="img"></div> -->
             <div class="slider_active">
-                <div class="single_slider slider_height p-rel d-flex align-items-center align-items-md-end">
+                <div class="single_slider slider_height  flex align-items-center ">
                     <!-- <div class="img_bottomright"><img data-depth="0.8" src="assets/img/slider/slider.jpg" alt="img"></div> -->
                     <div class="container">
-                        <div class="row mrt-40 mrt-40">
-                            <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-9">
+                        <div class="row ">
+                            <div class="col-sm-7 slider ">
                                 <div class="slider_content text_space">
                                     <div class="slider_text text_overlay">
                                         <h6 class="slider_title"> <span>Make</span> <br> Donation</h6>
-                                        <div class="slider_button"><a href="event_upcoming.php" class="g_btn theme1_bg to_right2 slider_btn i_left rad-30 p-35"><i class="fal fa-heart"></i> Explore Events<span></span></a></div>
+                                        <div class="slider_button"><a href="event_upcoming.php" class="custom-btn g_btn theme1_bg to_right2  rad-30 p-35"><i class="fal fa-heart"></i> Explore Events<span></span></a></div>
                                     </div>
                                 </div>
                             </div>
@@ -97,19 +109,19 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                 <div class="row mrt-40 mrt-40 align-items-center">
                     <div class="col-xxl-4 text-center text-xxl-start">
                         <div class="section_title_2 mb-30">
-                            <span class="sub_title_2">Make Donation</span>
-                            <h3 class="section_title_2 mb-0">Become a Donar</h3>
+                            <!-- <span class="sub_title_2">Make Donation</span> -->
+                            <h3 class="section_title_2 mb-0">Become a Donor</h3>
                         </div>
                     </div>
                     <div class="col-xxl-8">
                         <form action="" method="POST">
                             <div class="donar_section d-lg-flex justify-content-center justify-content-xxl-end text-center">
                                 <div class="donar_form d-inline-block mb-30">
-                                    <input name="name" required type="text" placeholder="Your name" class="donar_input mr-15">
-                                    <input name="email" required type="text" placeholder="Enter email" class="donar_input mr-15">
+                                    <input name="name" required type="text" placeholder="Your name" title="Please input the full name" class="donar_input mr-15">
+                                    <input name="email" required type="text" placeholder="Email address" title="Please input email address" class="donar_input mr-15">
                                 </div>
                                 <div class="donar_currency d-inline-block mb-30">
-                                    <select name="categories" type="number" class="currency mr-15" pattern="[0-9]+" title="please input any ammount only" placeholder="select Categories">
+                                    <select name="categories" type="number" class="currency mr-15" title="please select the category" placeholder="select Categories">
                                         <option value="any">anyone</option>
                                         <?php while ($row = mysqli_fetch_array($result)) { ?>
                                             <option value="<?php echo $row['name'];  ?>"><?php echo $row['name']; ?>
@@ -139,88 +151,91 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
 
         <!-- causes area start-->
         <section class="causes_area grey-bg pt-15 pb-385" data-background="assets/img/causes/cause_map.png">
-            <div class="container">
-                <div class="row ">
-                    <div class="col-xxl-12 text-center">
-                        <div class="section_title back-border mb-45">
-                            <a class="anchertag" href="#"> <span class="sub_title"><i class="fal fa-heart"></i>Target</span>
-                                <h3 class="title">Target <span class="more">More</span></h3>
-                            </a>
+            <?php if (mysqli_num_rows($goal_result) > 0) { ?>
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-xxl-12 text-center">
+                            <div class="section_title back-border mb-45">
+                                <a class="anchertag" href="#"> <span class="sub_title"><i class="fal fa-heart"></i>Target</span>
+                                    <h3 class="title">Target <span class="more">More</span></h3>
+                                </a>
+
+                            </div>
 
                         </div>
-
                     </div>
-                </div>
-                <div class="swiper-container1 cause_container_active" id="testimonials">
-                    <div class="swiper-wrapper">
-                        <?php while ($goal_row = mysqli_fetch_array($goal_result)) {
-                            $categorie_name = $goal_row['categories_name'];
-                            $donation = "SELECT  SUM(goal_ammount) as `goal_ammount` FROM `donation` WHERE `categories_name`='$categorie_name' ";
-                            $donation_result = mysqli_query($connection, $donation);
-                            $donation_row = mysqli_fetch_array($donation_result);
-                            $donation_amount = $donation_row['goal_ammount'];
-                            // total amount of the donation
-                            $goal_amount = $goal_row['goal_ammount'];
-                            $total_amount = $goal_amount - $donation_amount;
+                    <div class="swiper-container1 cause_container_active" id="testimonials">
+                        <div class="swiper-wrapper">
+                            <?php while ($goal_row = mysqli_fetch_array($goal_result)) {
+                                $flag = 1;
+                                $categorie_name = $goal_row['categories_name'];
+                                $donation = "SELECT  SUM(goal_ammount) as `goal_ammount` FROM `donation` WHERE `categories_name`='$categorie_name' ";
+                                $donation_result = mysqli_query($connection, $donation);
+                                $donation_row = mysqli_fetch_array($donation_result);
+                                $donation_amount = $donation_row['goal_ammount'];
+                                // total amount of the donation
+                                $goal_amount = $goal_row['goal_ammount'];
+                                $total_amount = $goal_amount - $donation_amount;
 
-                            // calculating the percentage for the amount
-                            $percentage = $donation_amount / $goal_amount * 100;
-                        ?>
+                                // calculating the percentage for the amount
+                                $percentage = $donation_amount / $goal_amount * 100;
+                            ?>
 
-                            <div class="single_cause swiper-slide mb-30">
-                                <div class="single_cause_img img_effect_white p-rel">
-                                    <a href="donation.php"> <img <?php echo ' src="data:image/jpeg;base64,' . base64_encode($goal_row['image']) . '"' ?>></a>
-                                    <div class="progress_wrapper pbar_1">
-                                        <div class="progress_circle" data-percentage="<?php echo $percentage; ?>">
-                                            <span class="progress-left">
-                                                <span class="progress-bar"></span>
-                                            </span>
-                                            <span class="progress-right">
-                                                <span class="progress-bar"></span>
-                                            </span>
-                                            <div class="progress-value">
-                                                <div>
-                                                    <?php echo $percentage; ?>%
+                                <div class="single_cause swiper-slide mb-30">
+                                    <div class="single_cause_img img_effect_white p-rel">
+                                        <a href="donation.php"> <img <?php echo ' src="data:image/jpeg;base64,' . base64_encode($goal_row['image']) . '"' ?>></a>
+                                        <div class="progress_wrapper pbar_1">
+                                            <div class="progress_circle" data-percentage="<?php echo $percentage; ?>">
+                                                <span class="progress-left">
+                                                    <span class="progress-bar"></span>
+                                                </span>
+                                                <span class="progress-right">
+                                                    <span class="progress-bar"></span>
+                                                </span>
+                                                <div class="progress-value">
+                                                    <div>
+                                                        <?php echo $percentage; ?>%
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <span><?php echo $goal_row['categories_name']; ?></span>
                                         </div>
-                                        <span><?php echo $goal_row['categories_name']; ?></span>
+                                    </div>
+                                    <div class="single_cause_content single_cause_content_2">
+                                        <div class="single_cause">
+                                            <h3 class="title"><a href="donation.php"><?php echo $goal_row['name']; ?></a></h3>
+                                        </div>
+                                        <div class="single_cause_meta">
+                                            <div class="single_meta d-inline-block">
+                                                <span class="meta_text clr_theme1"><i class="fal fa-globe"></i> Goal</span>
+                                                <span class="meta_price clr_theme1 text-info">₹ <?php echo $goal_row['goal_ammount']; ?></span>
+                                            </div>
+                                            <div class="single_meta d-inline-block">
+                                                <span class="meta_text clr_theme2"><i class="fal fa-users"></i> Raised</span>
+                                                <span class="meta_price clr_theme2">₹ <?php echo $donation_amount; ?></span>
+                                            </div>
+                                            <div class="single_meta d-inline-block">
+                                                <span class="meta_text clr_theme3 "><i class="fal fa-reply"></i> To go</span>
+                                                <?php
+                                                if ($total_amount < 0) {
+                                                ?>
+                                                    <span class="meta_price clr_theme3 text-danger">₹ +<?php echo abs($total_amount) ?></span>
+                                                <?php } else { ?>
+                                                    <span class="meta_price clr_theme3 text-danger">₹ <?php echo $total_amount ?></span>
+
+                                                <?php } ?>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="single_cause_content single_cause_content_2">
-                                    <div class="single_cause">
-                                        <h3 class="title"><a href="donation.php"><?php echo $goal_row['name']; ?></a></h3>
-                                    </div>
-                                    <div class="single_cause_meta">
-                                        <div class="single_meta d-inline-block">
-                                            <span class="meta_text clr_theme1"><i class="fal fa-globe"></i> Goal</span>
-                                            <span class="meta_price clr_theme1 text-info">₹ <?php echo $goal_row['goal_ammount']; ?></span>
-                                        </div>
-                                        <div class="single_meta d-inline-block">
-                                            <span class="meta_text clr_theme2"><i class="fal fa-users"></i> Raised</span>
-                                            <span class="meta_price clr_theme2">₹ <?php echo $donation_amount; ?></span>
-                                        </div>
-                                        <div class="single_meta d-inline-block">
-                                            <span class="meta_text clr_theme3 "><i class="fal fa-reply"></i> To go</span>
-                                            <?php
-                                            if ($total_amount < 0) {
-                                            ?>
-                                                <span class="meta_price clr_theme3 text-danger">₹ +<?php echo abs($total_amount) ?></span>
-                                            <?php } else { ?>
-                                                <span class="meta_price clr_theme3 text-danger">₹ <?php echo $total_amount ?></span>
+                            <?php } ?>
 
-                                            <?php } ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php } ?>
-
+                        </div>
                     </div>
+
+
                 </div>
-
-
-            </div>
+            <?php } ?>
         </section>
         <!-- causes area end-->
         <?php include './naamaya.inc/volunteer_registration.php';  ?>
@@ -291,7 +306,7 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                                 $str = $event_row['date'];
                                 $newdate = str_replace('-', '/', $str);
 
-
+                                $present_date = date('Y-m-d');
                                 $event_id = $event_row['id'];
                                 $event_img = mysqli_query($connection, "SELECT * FROM `event_details` WHERE `event_id`='$event_id'");
                                 $event_img_result = mysqli_fetch_array($event_img);
@@ -304,7 +319,7 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                                     <div class="row align-items-center">
                                         <div class="col-xxl-3 col-xl-3 col-lg-3 d-md-none d-lg-block">
                                             <div class="eventcount_img w_img">
-                                                <a href="event-details.php?id=<?php echo $event_row['id']; ?>" ><img <?php echo ' src="data:image/jpeg;base64,' . base64_encode($event_img_result['image1']) . '"' ?>></a>
+                                                <a href="event-details.php?id=<?php echo $event_row['id']; ?>"><img <?php echo ' src="data:image/jpeg;base64,' . base64_encode($event_img_result['image1']) . '"' ?>></a>
                                             </div>
                                         </div>
                                         <div class="col-xxl-3 col-xl-4 col-lg-3 col-md-5 text-center text-md-start">
@@ -317,9 +332,21 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                                                         echo $event_row['state']; ?></span>
                                             </div>
                                         </div>
-                                        <div class="col-xxl-6 col-xl-5 col-lg-6 col-md-7 text-center text-md-end">
-                                            <div class="count_down_box heading-clr" data-countdown="<?php echo $newdate; ?>"></div>
-                                        </div>
+                                        <?php if ($newdate > $present_date) { ?>
+                                            <div class="col-xxl-6 col-xl-5 col-lg-6 col-md-7 text-center text-md-end">
+                                                <div class="count_down_box heading-clr" data-countdown="<?php echo $newdate; ?>"></div>
+                                            </div>
+                                        <?php } else { ?>
+                                            <div class="col-xxl-6 col-xl-5 col-lg-6 col-md-7 text-center text-md-end">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <span> <?php echo  substr($event_img_result['details'],0,155);  ?>.. <a class="text-danger" href="event-details.php?id=<?php echo $event_row['id']; ?>">Read more</a> </span>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             <?php } ?>
@@ -359,19 +386,16 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                                 <div class="heading">
                                     <h2>Our Reach</h>
                                 </div>
-                                <p class="text-gray">In keeping with its philosophy of 'Real Work Real Change', Smile
-                                    Foundation , an <b>NGO in Delhi,</b> India to support the underserved, has taken its
-                                    intervention into the interiors of India, reaching the unreached in the remotest of
-                                    rural areas and urban slums with our services and making this <b>helping foundation
-                                        in India,</b> the <b>best NGO in India.</b></p>
+                                <p class="text-gray"><b>We rise by lifting others.
+                                        Naamyaa smile foundation a ngo in Jamshedpur , Jharkhand . To support the underserved has taken its intervention to the interiors of East Singhbhum , reaching the unreached in the remote areas and urban slums with our services and making this helping foundation in India , the best NGO in India.</b></p>
                                 <div class="row mrt-40 vdivide spacer">
                                     <div class="stories" id="stories">
                                         <div class="col-md-4 col-sm-4">
-                                            <h6 class="our-reach">25</h6>
-                                            <h6 class="text-color">States</h6>
+                                            <h6 class="our-reach">20+</h6>
+                                            <h6 class="text-color">District</h6>
                                         </div>
                                         <div class="col-md-4 col-sm-4">
-                                            <h6 class="our-reach">400+</h6>
+                                            <h6 class="our-reach"><?php echo mysqli_num_rows($total_event_result)+ mysqli_num_rows($total_whatwedo_result)+mysqli_num_rows($total_archievment_result) ?>+</h6>
                                             <h6 class="text-color">Projects</h6>
                                         </div>
                                         <div class="col-md-4 col-sm-4">
@@ -414,7 +438,7 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
             <!-- Modal For banner pop-up end here-->
         </section>
 
-<?php include './naamaya.inc/feedback.php'; ?>
+        <?php include './naamaya.inc/feedback.php'; ?>
         <!--featureevent area end-->
         <section class="w3l-testimonials" id="testimonials">
             <div class="customers-6-content py-5">

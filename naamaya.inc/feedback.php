@@ -41,20 +41,20 @@ $result1 = mysqli_query($connection, $department_retrive);
                     <div class="row">
 
                         <div class="col-sm-6 mt-3">
-                            <input name="name" type="text" placeholder="Enter Full Name" class="form-control " title="please input name" required>
+                            <input name="name" type="text" placeholder="Enter full name" class="form-control " title="Enter your name" required>
                         </div>
                         <div class="col-sm-6 mt-3">
-                            <input name="post" type="text" placeholder="Enter you designation" class="form-control" title="please input name" required>
+                            <input name="post" type="text" placeholder="Enter you designation" class="form-control" title="Enter designation name" required>
                         </div>
                         <div class="col-sm-6 mt-3">
-                            <input name="image" type="file" title="Enter your photo (optional)" placeholder="Enter your photo (optional)" class="form-control " title="please input name" required>
+                            <input name="image" type="file" title="your photo (optional)" placeholder="Enter your photo (optional)" class="form-control " title="please input name" required>
 
                         </div>
 
 
 
                     <div class="col-sm-12 mt-3">
-                        <textarea rows="4" cols="30" name="desc" type="text" class="form-control " placeholder="Write Something About you"></textarea>
+                        <textarea rows="4" cols="30" name="desc" type="text" class="form-control " placeholder="Write something about you"></textarea>
                         <span class="float-right">maximum 150 character</span>
 
                     </div>

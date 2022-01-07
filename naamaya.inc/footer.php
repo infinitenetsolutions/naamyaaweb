@@ -21,9 +21,8 @@ $location_link = $contact_row['location_link'];
                                 quasi architecto beatae vitae dicta exp
                                 enim ipsam voluptatem.</p>
                             <div class="footer_social_2">
-                                <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="behance"><i class="fab fa-behance"></i></a>
+                                <a href="https://www.facebook.com/Namya-106766691275997/" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://twitter.com/TeamNaamyaa?t=TJ2RV4xfZVgxdNGKyCF9vw&s=03" class="twitter"><i class="fab fa-twitter"></i></a>
                                 <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
                             </div>
                         </div>
@@ -37,9 +36,9 @@ $location_link = $contact_row['location_link'];
                                 <ul>
                                     <li><a href="about.php">About Us</a></li>
                                     <li><a href="volunteer.php">Meet The Team</a></li>
-                                    <li><a href="volunteer.php">Volenteers</a></li>
+                                    <li><a href="volunteer.php">Volunteers</a></li>
                                     <li><a href="about.php">Service Provided</a></li>
-                                    <li><a href="blog.php">Latest News</a></li>
+                                    <li><a href="event_upcoming.php">Events</a></li>
                                     <li><a href="contact.php">Contact Us</a></li>
                                 </ul>
                             </div>
@@ -50,14 +49,14 @@ $location_link = $contact_row['location_link'];
                             <div class="footer_widget_title mb-25">
                                 <h4 class="footer_title footer_title_2">Donations</h4>
                             </div>
-                            <div class="footer_links footer_links_2">
+                            <!-- <div class="footer_links footer_links_2">
                                 <ul>
                                     <li><a href="donation.php">How to Donate</a></li>
                                     <li><a href="donation.php">Donation List</a></li>
                                     <li><a href="cause.php">Recent Causes</a></li>
                                     <li><a href="faq.php">FAQ</a></li>
                                 </ul>
-                            </div>
+                            </div> -->
                             <div class="footer_btn">
                                 <a href="about.php" class="g_btn fbtn_2 to_right1 p-40 rad-50">Get Support<span></span></a>
                             </div>

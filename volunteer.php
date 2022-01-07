@@ -7,7 +7,7 @@ $male = "assets/img/team/me.png";
 $retrive_volienter = "SELECT * FROM `volunteer` WHERE `status`=1";
 $result = mysqli_query($connection, $retrive_volienter);
 //key pepole 
-$retrive_keypople = "SELECT * FROM `keypepole` WHERE  `status`=1";
+$retrive_keypople = "SELECT * FROM `keypepole` WHERE  `status`=1 ORDER BY `priority`" ;
 $result_kp = mysqli_query($connection, $retrive_keypople);
 // retriving the social media link from the database
 
@@ -51,7 +51,8 @@ $result_kp = mysqli_query($connection, $retrive_keypople);
                                 <li><span class="active">Team</span></li>
                             </ul>
                             <div class="breadcrumb_title">
-                                <h2> OUR Team</h2>
+                                <h2>&nbsp;</h2>
+                                <!-- <h2> OUR Team</h2> -->
                             </div>
 
 

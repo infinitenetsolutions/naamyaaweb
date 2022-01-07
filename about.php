@@ -9,7 +9,7 @@ $retrive_about = "SELECT * FROM `about_us` WHERE `type`='About us'";
 $result = mysqli_query($connection, $retrive_about);
 $about_row = mysqli_fetch_array($result);
 //retriving the about mission and vission
-$retrive_m_and_v = "SELECT * FROM `about_us` WHERE `type`!='About us'";
+$retrive_m_and_v = "SELECT * FROM `about_us` WHERE `type`!='About us' && `type`!='donation'";
 $result = mysqli_query($connection, $retrive_m_and_v);
 ?>
 <!doctype php>
@@ -65,7 +65,8 @@ $result = mysqli_query($connection, $retrive_m_and_v);
                             <div class="col-xxl-6 col-xl-4 col-lg-4">
                                 <div class="donate_img_wrapper about_img_wrapper mr-10">
                                     <div class="donate_img_inner about_img_inner p-rel">
-                                        <img class="about_block" src="assets/img/about/aboutus1.jpg" alt="img">
+                                        <!-- row<img class="about_block" src="assets/img/about/aboutus1.jpg" alt="img"> -->
+                                        <img class="about_block" <?php echo ' src="data:image/jpeg;base64,' . base64_encode($about_row['images']) . '"' ?>>
 
                                         <div class="about_champ_card about_abs_single">
                                             <i class="flaticon-creativity"></i>
@@ -111,7 +112,11 @@ $result = mysqli_query($connection, $retrive_m_and_v);
                                 <div class="col-xl-6">
                                     <div class="about_signle_video mb-40">
                                         <div class="img_effect_white about_video_image_wrapper">
-                                            <a href="event.php"><img class="about_img" src="assets/img/bg/mission.jpg" alt="img"></a>
+                                            <a href="event.php">
+                                            <img <?php echo ' src="data:image/jpeg;base64,' . base64_encode($row['images']) . '"' ?>>
+    
+                                            <!-- <img class="about_img" src="assets/img/bg/mission.jpg" alt="img"> -->
+                                        </a>
                                         </div>
 
                                         <a href="<?php echo $row['youtube']; ?>" class="video_icon">
@@ -183,7 +188,7 @@ $result = mysqli_query($connection, $retrive_m_and_v);
                     <div class="row">
                         <div class="col-xxl-12">
                             <div class="about_video_section text-center p-2500 bg_cover" data-background="assets/img/bg/video_bg.jpg">
-                                <a href="https://www.youtube.com/watch?v=B4GwnBrp41s" class="play_btn p-rel popup-video ab_4"><i class="fas fa-play"></i></a>
+                                <a href="#" class="play_btn p-rel popup-video ab_4"><i class="fas fa-play"></i></a>
                             </div>
                         </div>
                     </div>

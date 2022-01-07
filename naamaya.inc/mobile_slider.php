@@ -33,10 +33,9 @@ $location_link = $contact_row['location_link'];
             </div>
 
             <div class="top_social offset_social mt-20 mb-30">
-                <a href="#" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/Namya-106766691275997/" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+               
             </div>
         </div>
 

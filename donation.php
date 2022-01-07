@@ -40,13 +40,18 @@ if (isset($_GET['do'])) {
 <body>
 
     <?php
+    // dynamic data changed
+
+    $retrieve_donation = "SELECT * FROM `about_us` WHERE `type`='donation'";
+    $donation_result = mysqli_query($connection, $retrieve_donation);
+    $donation_row_data = mysqli_fetch_array($donation_result);
     // getting the goal amount
-    $goal = "SELECT  SUM(goal_ammount) as `goal_amount` FROM `goal` WHERE 1 ";
+    $goal = "SELECT  SUM(goal_ammount) as `goal_amount` FROM `goal` WHERE `status`=1 ";
     $goal_result = mysqli_query($connection, $goal);
     $goal_row = mysqli_fetch_array($goal_result);
 
     // getting the donation amount
-    $donation = "SELECT  SUM(goal_ammount) as `donation_ammount` FROM `donation` WHERE 1 ";
+    $donation = "SELECT  SUM(goal_ammount) as `donation_ammount` FROM `donation` WHERE `status`=1 ";
     $donation_result = mysqli_query($connection, $donation);
     $donation_row = mysqli_fetch_array($donation_result);
     // total donation amount
@@ -75,8 +80,7 @@ if (isset($_GET['do'])) {
     <!-- Main Area Start-->
     <main>
         <!--breadcrumb area start-->
-        <section class="breadcrumb_area breadcrumb_overlay"
-            style="background-image: url('assets/img/banners/becomeadonar.jpg');">
+        <section class="breadcrumb_area breadcrumb_overlay" style="background-image: url('assets/img/banners/becomeadonar.jpg');">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -102,7 +106,7 @@ if (isset($_GET['do'])) {
                     <div class="col-xxl-6 col-xl-6 col-lg-5">
                         <div class="single_donation_img_wrapper pr-30">
                             <div class="single_donation_img mb-40">
-                                <img src="assets/img/donation/donation_single1.jpg" alt="img">
+                            <img <?php echo ' src="data:image/jpeg;base64,' . base64_encode($donation_row_data['images']) . '"' ?>>
                             </div>
                             <div class="single_donation_img mb-40">
                                 <img src="assets/img/donation/donation_single2.jpg" alt="img">
@@ -112,17 +116,14 @@ if (isset($_GET['do'])) {
                     <div class="col-xxl-6 col-xl-6 col-lg-7">
                         <div class="single_donation_content donation_border">
                             <div class="section_title">
-                                <a href="#" class="sub_title sub_title_2">Water</a>
+                                <a href="#" class="sub_title sub_title_2">Donation</a>
                             </div>
-                            <h4 class="donation_title">The community state of the art <br>
-                                recurring donation.</h4>
-                            <p>generous actions or donations to aid the poor, ill, or needy: to devote
-                                one's life to charity. something given to a person or persons in need;
-                                alms: She asked for work, not charity. a charitable act or work.</p>
+                            <h4 class="donation_title"><?php echo $donation_row_data['title'] ?> <br>
+                            </h4>
+                            <p><?php echo $donation_row_data['description']; ?></p>
                             <div class="feature_progress_wrapper mb-25 mt-35">
                                 <div class="progress feature_progress">
-                                    <div class="progress-bar" role="progressbar" data-width="<?php echo $percentage ?>%"
-                                        aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+                                    <div class="progress-bar" role="progressbar" data-width="<?php echo $percentage ?>%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
                                     </div>
                                 </div>
                             </div>
@@ -142,9 +143,9 @@ if (isset($_GET['do'])) {
                                     <?php
                                     if ($total_amount < 0) {
                                     ?>
-                                    <span class="meta_price red_clr">+ <?php echo abs($total_amount) ?></span>
+                                        <span class="meta_price red_clr">+ <?php echo abs($total_amount) ?></span>
                                     <?php } else { ?>
-                                    <span class="meta_price red_clr"><?php echo $total_amount ?></span>
+                                        <span class="meta_price red_clr"><?php echo $total_amount ?></span>
                                     <?php } ?>
                                 </div>
                             </div>
@@ -165,25 +166,23 @@ if (isset($_GET['do'])) {
                             <form action="" method="POST">
                                 <div class="input_info_wrapper">
 
-                                    <div class="input_info_name info_input"><input name="name"
-                                            value="<?php if(isset($_SESSION['name'])){ echo $name; } ?>" type="text"
-                                            placeholder="Enter full name"><i class="fal fa-user"></i></div>
-                                    <div class="input_info_email info_input"><input name="email"
-                                            value="<?php if(isset($_SESSION['email1'])){ echo $email1;  }?>"
-                                            type="email" placeholder="Enter email"><i class="fal fa-envelope"></i></div>
+                                    <div class="input_info_name info_input"><input name="name" value="<?php if (isset($_SESSION['name'])) {
+                                                                                                            echo $name;
+                                                                                                        } ?>" type="text" placeholder="Enter full name"><i class="fal fa-user"></i></div>
+                                    <div class="input_info_email info_input"><input name="email" value="<?php if (isset($_SESSION['email1'])) {
+                                                                                                            echo $email1;
+                                                                                                        } ?>" type="email" placeholder="Enter email"><i class="fal fa-envelope"></i></div>
 
                                 </div>
                                 <div class=" d-inline-flex">
                                     <div class="donation_submit_wrapper">
                                         <div class="donation_submit_box w_208">
                                             <button type="submit">Donation</button>
-                                            <input class="gray_color" name="ammount" type="text"
-                                                placeholder="₹ Ammount">
+                                            <input class="gray_color" name="ammount" type="text" placeholder="₹ Amount">
                                         </div>
                                     </div>
                                     <div class="submit_info_button">
-                                        <button name="donate" type="submit" class="g_btn hbtn_1 to_right1 rad-30"
-                                            href="donation.php">Make Donation<span></span></button>
+                                        <button name="donate" type="submit" class="g_btn hbtn_1 to_right1 rad-30" href="donation.php">Make Donation<span></span></button>
                                     </div>
                                 </div>
                             </form>

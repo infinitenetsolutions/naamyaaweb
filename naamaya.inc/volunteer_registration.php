@@ -13,9 +13,10 @@ if (isset($_POST['submit1'])) {
     $occupation = $_POST['occupation'];
     $whyjoin = $_POST['whyjoin'];
     $know = $_POST['know'];
-    $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+    // $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+    $image='NULL';
 
-    echo $insert_query = "INSERT INTO `volunteer`(`name`, `gender`, `email`, `phone`, `department`, `address`, `occupation`, `wheretoknow`, `whyjoin`,`priraty`,  `Image`, `status`) VALUES
+    $insert_query = "INSERT INTO `volunteer`(`name`, `gender`, `email`, `phone`, `department`, `address`, `occupation`, `wheretoknow`, `whyjoin`,`priraty`,  `Image`, `status`) VALUES
                                                  ('$name','$gender','$email','$mobile','$department','$cities','$occupation','$know','$whyjoin', '0' , '$image','0')";
     $result = mysqli_query($connection, $insert_query);
     if ($result) {
@@ -27,7 +28,7 @@ if (isset($_POST['submit1'])) {
    </script>';
     } else {
         echo '  <script>
-       alert("somthing is worng")
+       alert('.$connection->error.')
        
         </script>';
     }
@@ -54,9 +55,9 @@ $result1 = mysqli_query($connection, $department_retrive);
             </div>
             <div class="modal-body mx-3">
                 <form method="POST" action="">
-                    <input name="name" type="text" placeholder="Enter Full Name" class="donar_input donar_input1 mr-15" title="please input name" required>
-                    <input name="mobile" type="text" placeholder="Enter mobile Number" pattern="[0-9]+" maxlength="12" title="please input number in proper formet" class="donar_input donar_input1  mr-15" required>
-                    <input name="email" type="email" placeholder="Enter Email" class="donar_input donar_input1 mr-15" required>
+                    <input name="name" type="text" placeholder=" Name" class="donar_input donar_input1 mr-15" title="Enter your name" required>
+                    <input name="mobile" type="text" placeholder=" Number" pattern="[0-9]+" maxlength="12" title="Enter your 10 digit valid number " class="donar_input donar_input1  mr-15" required>
+                    <input name="email" type="email" placeholder=" Email" class="donar_input donar_input1 mr-15" title="Enter your email address" required>
 
                     <select name="gender" class="donar_input donar_input1 mr-15">
                         <option selected disabled>Gender
@@ -67,7 +68,7 @@ $result1 = mysqli_query($connection, $department_retrive);
                         <option value="o">others</option>
                     </select>
                     <select name="cities" class="donar_input donar_input1 mr-15">
-                        <option selected disabled>Cities
+                        <option selected disabled>City
 
                         </option>
                         <?php foreach ($Allcity as  $value) { ?>
@@ -98,7 +99,7 @@ $result1 = mysqli_query($connection, $department_retrive);
                     </select>
 
                     <select name="know" class="donar_input donar_input1 mr-15">
-                        <option selected="" disabled="">How did You known About naamya
+                        <option selected="" disabled="">How did
 
                         </option>
                         <option value="school">School</option>
@@ -109,7 +110,7 @@ $result1 = mysqli_query($connection, $department_retrive);
                     </select>
 
                     <!-- <input name="image" type="file" placeholder="Enter Full Name" class="donar_input mr-15" required> -->
-                    <textarea rows="4" cols="30" name="whyjoin" type="text" class="donar_input2 " placeholder="Write Something About you"></textarea>
+                    <textarea rows="4" cols="30" name="whyjoin" type="text" class="donar_input2 " placeholder="Write something about you"></textarea>
                     <div class="modal-footer d-flex justify-content-center">
                         <button type="submit" name="submit1" class="rad-30 g_btn to_left applynow">Join Us <span></span></button>
                     </div>

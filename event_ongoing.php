@@ -4,7 +4,7 @@ $date = date("Y-m-d");
 $event_name = '';
 
 
-$event_name = 'Oncoming';
+$event_name = 'Ongoing';
 $sql_query = "SELECT * FROM `Event` WHERE `date`='$date' && `status`=1";
 $result = mysqli_query($connection, $sql_query);
 
