@@ -74,6 +74,8 @@ $result_kp = mysqli_query($connection, $retrive_keypople);
                 <div class="row team_area ">
 
                     <?php while ($row = mysqli_fetch_array($result_kp)) {
+                        $description = $row['description'];
+                      
                        $id= $row['id']; ?>
                         <div class="col-xxl-3 col-xl-4 col-lg-4 col-sm-6 text-center">
 
@@ -85,8 +87,8 @@ $result_kp = mysqli_query($connection, $retrive_keypople);
 
                                 </div>
                                 <span class="designation"><?php echo $row['post']; ?></span>
-                                <h5 class="member_name"><a href="#"><?php echo $row['name']; ?></a></h5>
-                                <p><?php echo $row['description']; ?></p>
+                                <h5 class="member_name"><a href="#"><?php echo $row['name']; ?></a>  </h5>
+                                <p><?php echo substr($description,0,35)  ?>  <span id="show<?php echo $id ?>"><?php echo substr($description,36)  ?></span><b class="text-danger" href="#" onclick="show('<?php echo $id ?>')">Read more</b></p>
                                 <?php $retrive_keypople_link = "SELECT * FROM `social_media` WHERE  `reid`='$id' && `table_name`='keypepole' LIMIT 4";
                                 $result_link = mysqli_query($connection, $retrive_keypople_link); ?>
                                 <div class="member_social">
@@ -170,3 +172,10 @@ $result_kp = mysqli_query($connection, $retrive_keypople);
 </body>
 
 </html>
+
+<script>
+        $("span").hide();
+function show(id){
+    $("#show"+id).toggle();
+  }
+</script>

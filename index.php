@@ -20,13 +20,13 @@ if (isset($_POST['donate'])) {
 }
 
 // show the all data of project
-$total_event="SELECT * FROM `Event`";
-$total_whatwedo="SELECT * FROM `whatwedo`";
-$total_archievment="SELECT  * FROM `archievment`";
+$total_event = "SELECT * FROM `Event`";
+$total_whatwedo = "SELECT * FROM `whatwedo`";
+$total_archievment = "SELECT  * FROM `archievment`";
 
-$total_event_result=mysqli_query($connection,$total_event);
-$total_whatwedo_result=mysqli_query($connection,$total_event);
-$total_archievment_result=mysqli_query($connection,$total_event);
+$total_event_result = mysqli_query($connection, $total_event);
+$total_whatwedo_result = mysqli_query($connection, $total_event);
+$total_archievment_result = mysqli_query($connection, $total_event);
 
 
 
@@ -340,7 +340,7 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                                             <div class="col-xxl-6 col-xl-5 col-lg-6 col-md-7 text-center text-md-end">
                                                 <div class="container">
                                                     <div class="row">
-                                                        <span> <?php echo  substr($event_img_result['details'],0,155);  ?>.. <a class="text-danger" href="event-details.php?id=<?php echo $event_row['id']; ?>">Read more</a> </span>
+                                                        <span> <?php echo  substr($event_img_result['details'], 0, 155);  ?>.. <a class="text-danger" href="event-details.php?id=<?php echo $event_row['id']; ?>">Read more</a> </span>
 
                                                     </div>
 
@@ -395,7 +395,7 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                                             <h6 class="text-color">District</h6>
                                         </div>
                                         <div class="col-md-4 col-sm-4">
-                                            <h6 class="our-reach"><?php echo mysqli_num_rows($total_event_result)+ mysqli_num_rows($total_whatwedo_result)+mysqli_num_rows($total_archievment_result) ?>+</h6>
+                                            <h6 class="our-reach"><?php echo mysqli_num_rows($total_event_result) + mysqli_num_rows($total_whatwedo_result) + mysqli_num_rows($total_archievment_result) ?>+</h6>
                                             <h6 class="text-color">Projects</h6>
                                         </div>
                                         <div class="col-md-4 col-sm-4">
@@ -584,3 +584,4 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
 <script src="assets/js/main.js"></script>
 
 </html>
+

@@ -14,7 +14,7 @@ if (isset($_POST['submit1'])) {
     $whyjoin = $_POST['whyjoin'];
     $know = $_POST['know'];
     // $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
-    $image='NULL';
+    $image = 'NULL';
 
     $insert_query = "INSERT INTO `volunteer`(`name`, `gender`, `email`, `phone`, `department`, `address`, `occupation`, `wheretoknow`, `whyjoin`,`priraty`,  `Image`, `status`) VALUES
                                                  ('$name','$gender','$email','$mobile','$department','$cities','$occupation','$know','$whyjoin', '0' , '$image','0')";
@@ -28,7 +28,7 @@ if (isset($_POST['submit1'])) {
    </script>';
     } else {
         echo '  <script>
-       alert('.$connection->error.')
+       alert(' . $connection->error . ')
        
         </script>';
     }
@@ -47,7 +47,7 @@ $result1 = mysqli_query($connection, $department_retrive);
         <div class="modal-content">
             <div class="modal-header text-center">
 
-                <h4 class="modal-title w-100 font-weight-bold">Come on Board</h4>
+                <h4 class="modal-title w-100 font-weight-bold">Come Onboard</h4>
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -55,11 +55,11 @@ $result1 = mysqli_query($connection, $department_retrive);
             </div>
             <div class="modal-body mx-3">
                 <form method="POST" action="">
-                    <input name="name" type="text" placeholder=" Name" class="donar_input donar_input1 mr-15" title="Enter your name" required>
-                    <input name="mobile" type="text" placeholder=" Number" pattern="[0-9]+" maxlength="12" title="Enter your 10 digit valid number " class="donar_input donar_input1  mr-15" required>
-                    <input name="email" type="email" placeholder=" Email" class="donar_input donar_input1 mr-15" title="Enter your email address" required>
+                    <input onkeyup="enable(this.value)"  id="name"  name="name" type="text" placeholder=" Name" class="donar_input donar_input1 mr-15" title="Enter your name" required>
+                    <input onkeyup="enable(this.value)"  id="initial_2" name="mobile" type="text" placeholder=" Number" pattern="[0-9]+" maxlength="12" title="Enter your 10 digit valid number " class="donar_input donar_input1  mr-15" required>
+                    <input onkeyup="enable(this.value)"  id="initial_3" name="email" type="email" placeholder=" Email" class="donar_input donar_input1 mr-15" title="Enter your email address" required>
 
-                    <select name="gender" class="donar_input donar_input1 mr-15">
+                    <select onkeyup="enable(this.value)"  id="initial_4" name="gender" class="donar_input donar_input1 mr-15">
                         <option selected disabled>Gender
 
                         </option>
@@ -67,7 +67,7 @@ $result1 = mysqli_query($connection, $department_retrive);
                         <option value="f">female</option>
                         <option value="o">others</option>
                     </select>
-                    <select name="cities" class="donar_input donar_input1 mr-15">
+                    <select onkeyup="enable(this.value)"  id="initial_5" name="cities" class="donar_input donar_input1 mr-15">
                         <option selected disabled>City
 
                         </option>
@@ -77,7 +77,7 @@ $result1 = mysqli_query($connection, $department_retrive);
                         <?php } ?>
 
                     </select>
-                    <select name="occupation" class="donar_input donar_input1 mr-15">
+                    <select onkeyup="enable(this.value)"  id="initial_6" name="occupation" class="donar_input donar_input1 mr-15">
                         <option selected disabled>Occupation
 
                         </option>
@@ -87,7 +87,7 @@ $result1 = mysqli_query($connection, $department_retrive);
                         <option value="Ranchi">Self Employed</option>
                         <option value="Gaya">Others</option>
                     </select>
-                    <select name="department" class="donar_input donar_input1 mr-15">
+                    <select onkeyup="enable(this.value)"  id="initial_7" name="department" class="donar_input donar_input1 mr-15">
                         <option selected disabled>Department
 
                         </option>
@@ -98,7 +98,7 @@ $result1 = mysqli_query($connection, $department_retrive);
                         <option value="others">others</option>
                     </select>
 
-                    <select name="know" class="donar_input donar_input1 mr-15">
+                    <select onkeyup="enable(this.value)"  id="initial_8" name="know" class="donar_input donar_input1 mr-15">
                         <option selected="" disabled="">How did
 
                         </option>
@@ -109,10 +109,10 @@ $result1 = mysqli_query($connection, $department_retrive);
                         <option value="News">News</option>
                     </select>
 
-                    <!-- <input name="image" type="file" placeholder="Enter Full Name" class="donar_input mr-15" required> -->
-                    <textarea rows="4" cols="30" name="whyjoin" type="text" class="donar_input2 " placeholder="Write something about you"></textarea>
+                    <!-- <input onkeyup="enable(this.value)"  id="initial_1" name="image" type="file" placeholder="Enter Full Name" class="donar_input mr-15" required> -->
+                    <textarea onkeyup="enable(this.value)"  id="initial_9" rows="4" cols="30" name="whyjoin" type="text" class="donar_input2 " placeholder="Write something about you"></textarea>
                     <div class="modal-footer d-flex justify-content-center">
-                        <button type="submit" name="submit1" class="rad-30 g_btn to_left applynow">Join Us <span></span></button>
+                        <button disabled id="submits" type="submit" name="submit1" class="rad-30  g_btn to_left applynow">Join Us <span></span></button>
                     </div>
 
                 </form>
@@ -121,3 +121,31 @@ $result1 = mysqli_query($connection, $department_retrive);
         </div>
     </div>
 </div>
+
+
+
+<script>
+            document.getElementById('submits').style.opacity="50%"
+
+    function enable(data){
+    initial_1 = document.getElementById('name').value
+    initial_2 = document.getElementById('initial_2').value
+    initial_3 = document.getElementById('initial_3').value
+    initial_4 = document.getElementById('initial_4').value
+    initial_5 = document.getElementById('initial_5').value
+    initial_6 = document.getElementById('initial_6').value
+    initial_7 = document.getElementById('initial_7').value
+    initial_8 = document.getElementById('initial_8').value
+    initial_9 = document.getElementById('initial_9').value
+
+    console.log(data);
+    console.log(initial_1);
+    if (initial_1 != '' && initial_2 != '' && initial_3 != '' && initial_4 != '' && initial_5 != '' && initial_6 != '' && initial_7 != '' && initial_8 != '' && initial_9 != '') {
+        document.getElementById('submits').disabled=false
+        document.getElementById('submits').style.opacity="100%"
+
+    } else {
+        document.getElementById('submits').disabled=true
+    }
+}
+</script>
