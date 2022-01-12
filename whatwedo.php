@@ -59,10 +59,11 @@ $arc_result = mysqli_query($connection, $arc_data);
         <section class="spacer">
 
             <div class="container"><br>
-                <p class="partnertext" align="justify">We are a team of individuals with common spring of inspiration to uplift ‘the standard of life’ of each individual. We believe that every citizen is Naamyaa i.e., worthy of honour. Our common great goal of nation-building can be accomplished effectively by the three paramounts- Education, Health Care and Employment. We have structured our social services in such a way that we can reach masses and enrich all the spheres of their lives.</p>
-                <p class="partnertext" align="justify">Realizing this, <a style="color: #339933;" href="https://www.Naamyaa
-foundationindia.org/"><b>Naamyaa
-                            Foundation,</b></a> </p|>
+                <p class="partnertext" align="justify">We are a team of individuals with common spring of inspiration to uplift ‘the standard of life’ of each individual. We believe that every citizen is Naamyaa i.e., worthy of honour. Our common great goal of nation-building can be accomplished effectively by the three paramounts- Education, Health Care and Employment. We have structured our social services in such a way that we can reach masses and enrich all the spheres of their lives.
+                    <a style="color: #339933;" href="https://www.Naamyaa
+foundationindia.org/"><b> Naamyaa
+                            Foundation,</b></a>
+                </p>
             </div>
         </section>
         <section class="spacer" id="ways">
@@ -87,7 +88,7 @@ foundationindia.org/"><b>Naamyaa
                                             </div>
                                             <p class="partnertext" align="justify"><?php echo $row['description']; ?></p><br><br>
 
-                               
+
                                         </div>
                                     </div>
                                 </div>

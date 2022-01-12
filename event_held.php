@@ -99,10 +99,10 @@ $result = mysqli_query($connection, $sql_query);
                                         <div class="eventcount_text heading-clr">
                                             <h5><a href="event-details.php?id=<?php echo $row1['id']; ?>"><?php echo $row1['name']; ?></a></h5>
                                             <span><?php echo $row1['address'];
-                                                    echo " ' ";
-                                                    echo $row1['city'];
+                                                    echo ", ";
+                                                    echo $row1['city'].', ';
                                                     echo $row1['state'];
-                                                    echo " , ";
+                                                    echo ", ";
                                                     echo $row1['country'];  ?></span>
                                         </div>
                                     </div>
@@ -146,7 +146,7 @@ $result = mysqli_query($connection, $sql_query);
                                                 <span><?php echo $row_cat['address'];
                                                         echo " ' ";
                                                         echo $row_cat['city'];
-                                                        echo $row_cat['state'];
+                                                        echo ', '. $row_cat['state'];
                                                         echo " , ";
                                                         echo $row_cat['country'];  ?></span>
                                             </div>

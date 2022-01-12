@@ -17,9 +17,7 @@ $location_link = $contact_row['location_link'];
                             <div class="footer_logo mb-35">
                                 <a href="index.php" class="animation"><img src="assets/img/logo/logo-png.png" alt="img" style="height:135px;width:165px;margin-top:-35px;"></a>
                             </div>
-                            <p class="mb-30">Eaque ipsa quae ab illo inventore veris
-                                quasi architecto beatae vitae dicta exp
-                                enim ipsam voluptatem.</p>
+                            <p class="mb-30">Don’t be afraid. Be focused. Be determined. Be hopeful. Be empowered.</p>
                             <div class="footer_social_2">
                                 <a href="https://www.facebook.com/Namya-106766691275997/" class="facebook"><i class="fab fa-facebook-f"></i></a>
                                 <a href="https://twitter.com/TeamNaamyaa?t=TJ2RV4xfZVgxdNGKyCF9vw&s=03" class="twitter"><i class="fab fa-twitter"></i></a>
@@ -37,7 +35,7 @@ $location_link = $contact_row['location_link'];
                                     <li><a href="about.php">About Us</a></li>
                                     <li><a href="volunteer.php">Meet The Team</a></li>
                                     <li><a href="volunteer.php">Volunteers</a></li>
-                                    <li><a href="about.php">Service Provided</a></li>
+                                    <li><a href="whatwedo.php">Service Provided</a></li>
                                     <li><a href="event_upcoming.php">Events</a></li>
                                     <li><a href="contact.php">Contact Us</a></li>
                                 </ul>
@@ -82,7 +80,7 @@ $location_link = $contact_row['location_link'];
                             <img src="assets/img/footer/fcta2_1.png" alt="img">
                             <div class="fcta_text">
                                 <h4>Help & Support Now</h4>
-                                <span>Might as well say Would you Could be you be mine? </span>
+                                <span>It’s not how much we give but how much love we put into giving.</span>
                             </div>
                             <div class="fcta_button">
                                 <a href="donation.php" class="g_btn fca_btn1 to_right2 p-40 rad-50">Donate <span></span></a>
@@ -94,7 +92,7 @@ $location_link = $contact_row['location_link'];
                             <img src="assets/img/footer/fcta2_2.png" alt="img">
                             <div class="fcta_text">
                                 <h4>Join as Volunteer</h4>
-                                <span>Might as well say Would you Could be you be mine? </span>
+                                <span>If you can dream it, you can do it. </span>
                             </div>
                             <div class="fcta_button">
                                 <a href="../../naamyaa/volunteer.php" class="g_btn fca_btn to_left p-40 rad-50">Join <span></span></a>
@@ -109,7 +107,7 @@ $location_link = $contact_row['location_link'];
         <div class="container">
             <div class="row">
                 <div class="col-xxl-12 text-center">
-                    <p>Copyright © <?php echo date('Y') ?> All Rights Reserved by <strong><a href="../../naamyaa/">Naamyaa Foundation</a></strong> <span class="poweredby">powered by <a target="_blank" class="infinitenetsolutions" href="http://infinitenetsolutions.com/">Infinite Net Solutions</a></span></p> 
+                    <p>Copyright © <?php echo date('Y') ?> All Rights Reserved by <strong><a href="../../naamyaa/">Naamyaa Foundation</a></strong> <span class="poweredby">powered by <a target="_blank" class="infinitenetsolutions" href="http://infinitenetsolutions.com/">Infinite Net Solutions</a></span></p>
                 </div>
             </div>
         </div>

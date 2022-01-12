@@ -70,7 +70,7 @@ $result = mysqli_query($connection, $retrive_m_and_v);
 
                                         <div class="about_champ_card about_abs_single">
                                             <i class="flaticon-creativity"></i>
-                                            <h3 class="abs_numb">40 <span class="plus">+</span></h3>
+                                            <h5 class="abs_numb">40 <span class="plus">+</span></h5>
                                             <span>Years Experience</span>
                                         </div>
                                     </div>
@@ -79,12 +79,12 @@ $result = mysqli_query($connection, $retrive_m_and_v);
                             <div class="col-xxl-6 col-xl-8 col-lg-8">
                                 <div class="about_wrapper pl-30">
                                     <div class="section_title">
-                                        <span class="sub_title sub_title_2"><?php echo $about_row['type']; ?></span>
-                                        <h3 class="title title_2 mb-20"><?php echo $about_row['title']; ?></h3>
+                                        <!-- <span class="sub_title sub_title_2"><?php echo $about_row['type']; ?></span> -->
+                                        <h5 class="title title_2 mb-20"><?php echo $about_row['title']; ?></h5>
                                     </div>
                                     <p class="mb-40 justify"><?php echo $about_row['description']; ?></p>
 
-                                    <a href="about.php" class="g_btn trans_btn rad-50 p-45">Learn More <span></span></a>
+                                    <!-- <a href="about.php" class="g_btn trans_btn rad-50 p-45">Learn More <span></span></a> -->
 
                                 </div>
                             </div>
@@ -115,7 +115,6 @@ $result = mysqli_query($connection, $retrive_m_and_v);
                                             <a href="event.php">
                                             <img <?php echo ' src="data:image/jpeg;base64,' . base64_encode($row['images']) . '"' ?>>
     
-                                            <!-- <img class="about_img" src="assets/img/bg/mission.jpg" alt="img"> -->
                                         </a>
                                         </div>
 
@@ -127,8 +126,8 @@ $result = mysqli_query($connection, $retrive_m_and_v);
                                 <div class="col-xl-6">
                                     <div class="about_wrapper pl-50 mb-40">
                                         <div class="section_title mb-30">
-                                            <span class="sub_title sub_title_2">OUR <?php echo $row['type']; ?></span>
-                                            <h3 class="title title_2 no_br"><?php echo $row['title']; ?></h3>
+                                            <!-- <span class="sub_title sub_title_2">OUR <?php echo $row['type']; ?></span> -->
+                                            <h5 class="title title_2 no_br"><?php echo $row['title']; ?></h5>
                                         </div>
                                         <p class="mb-55 justify"><?php echo $row['description']; ?></p>
 
@@ -146,31 +145,31 @@ $result = mysqli_query($connection, $retrive_m_and_v);
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-6">
-                            <a href="cause.php" class="single_iconbox text-center theme-1 mb-40">
+                            <a href="#" class="single_iconbox text-center theme-1 mb-40">
                                 <i class="flaticon-lotus-flower"></i>
                                 <h5 class="icon_title">Community & Culture</h5>
                             </a>
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-6">
-                            <a href="cause.php" class="single_iconbox text-center theme-2 mb-40">
+                            <a href="#" class="single_iconbox text-center theme-2 mb-40">
                                 <i class="flaticon-graduation-cap"></i>
                                 <h5 class="icon_title">Family & Education</h5>
                             </a>
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-6">
-                            <a href="cause.php" class="single_iconbox text-center theme-3 mb-40">
+                            <a href="#" class="single_iconbox text-center theme-3 mb-40">
                                 <i class="flaticon-care"></i>
                                 <h5 class="icon_title">Charity & Causes</h5>
                             </a>
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-6">
-                            <a href="cause.php" class="single_iconbox text-center theme-5 mb-40">
+                            <a href="#" class="single_iconbox text-center theme-5 mb-40">
                                 <i class="flaticon-dumbbell"></i>
                                 <h5 class="icon_title">Sports & Fitness</h5>
                             </a>
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-6">
-                            <a href="cause.php" class="single_iconbox text-center theme-6 mb-40">
+                            <a href="#" class="single_iconbox text-center theme-6 mb-40">
                                 <i class="flaticon-creativity"></i>
                                 <h5 class="icon_title">Conference & Ideas</h5>
                             </a>

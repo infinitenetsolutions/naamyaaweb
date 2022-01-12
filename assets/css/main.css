@@ -5357,7 +5357,7 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
 
 @media only screen and (min-width: 1200px) and (max-width: 1400px) {
     .title:is(.title_2) {
-        font-size: 45px;
+        font-size: 30px;
     }
 }
 

@@ -252,14 +252,15 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                                         <a href="volunteer.php"><img class="support-img" src="assets/img/bg/support1.jpg" alt="img"></a>
                                     </div>
                                     <div class="support_img_single swiper-slide img_effect_white">
+                                        <a href="volunteer.php"><img class="support-img" src="assets/img/bg/support2.jpg" alt="img"></a>
+                                    </div>
+                                    <div class="support_img_single swiper-slide img_effect_white">
                                         <a href="volunteer.php"><img class="support-img" src="assets/img/bg/support3.jpg" alt="img"></a>
                                     </div>
                                     <div class="support_img_single swiper-slide img_effect_white">
                                         <a href="volunteer.php"><img class="support-img" src="assets/img/bg/support4.jpg" alt="img"></a>
                                     </div>
-                                    <div class="support_img_single swiper-slide img_effect_white">
-                                        <a href="volunteer.php"><img class="support-img" src="assets/img/bg/support3.jpg" alt="img"></a>
-                                    </div>
+                               
                                 </div>
                                 <!-- Add Pagination -->
                                 <div class="swiper-pagination-join text-center"></div>
