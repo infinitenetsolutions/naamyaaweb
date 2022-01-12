@@ -27,8 +27,9 @@ $location_link = $contact_row['location_link'];
                      
                          <a target="_blank" href="https://twitter.com/TeamNaamyaa?t=TJ2RV4xfZVgxdNGKyCF9vw&s=03" class="twitter"><i class="fab fa-twitter"></i></a>
                          <a target="_blank" href="https://www.facebook.com/Namya-106766691275997/" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                         <a href="#">&nbsp;</a>
+                         <a target="_blank" href="https://www.facebook.com/Namya-106766691275997/" class="instagram"><i class="fab fa-instagram"></i></a>
 
+<span> &nbsp;</span>
                          <a class="covid19"  href="donation.php" name="donate" class="g_btn2 g_btn theme1_bg to_right2 donation rad-30 p-60 mb-30"><strong>Covid19&nbspSupport</strong> </a>
                      </div>
                  </div>
