@@ -112,7 +112,7 @@
                                         <div class="single_feed_widget has_border">
                                             <div class="feed_widget_img"><a href="event-details.php?id=<?php echo $event_row1['id']; ?>"><img <?php echo ' src="data:image/jpeg;base64,' . base64_encode($event_img_result['image1']) . '"' ?>></a></div>
                                             <div class="feed_widget_text">
-                                                <h5 class="feed_widget_title theme-1"><a href="blog-details.php"> <?php echo $event_row1['name']; ?> </a></h5>
+                                                <h5 class="feed_widget_title theme-1"><a href="event-details.php?id=<?php echo $event_row1['id']; ?>"> <?php echo $event_row1['name']; ?> </a></h5>
                                                 <a href="#" class="feed_widget_date theme-1"><i class="fal fa-calendar-alt"></i><?php echo $newdate; ?></a>
                                             </div>
                                         </div>
