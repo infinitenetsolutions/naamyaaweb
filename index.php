@@ -125,7 +125,8 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                                         <option selected disabled>-Select your cause-</option>
                                         <option value="any">Anyone</option>
                                         <?php while ($row = mysqli_fetch_array($result)) {
-                                            if ($row['name'] != "Social Media" || $row['name'] != "Misc") {
+                                            $cat_name=$row['name'] ;
+                                            if ($cat_name!= "Social Media" && $cat_name != "Misc") {
 
                                         ?>
                                                 <option value="<?php echo $row['name'];  ?>"><?php echo $row['name']; ?>
