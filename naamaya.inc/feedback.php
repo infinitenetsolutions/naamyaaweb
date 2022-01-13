@@ -60,7 +60,7 @@ $result1 = mysqli_query($connection, $department_retrive);
                     </div>
 
                     <div class="modal-footer d-flex justify-content-center">
-                        <button type="submit" name="submit" class="rad-30 g_btn to_left applynow">Join Us <span></span></button>
+                        <button type="submit" name="submit" class="rad-30 g_btn to_left applynow">Submit <span></span></button>
                     </div>
                     </div>
 

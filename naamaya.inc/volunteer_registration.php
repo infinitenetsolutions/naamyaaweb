@@ -99,7 +99,7 @@ $result1 = mysqli_query($connection, $department_retrive);
                     </select>
 
                     <select onkeyup="enable(this.value)"  id="initial_8" name="know" class="donar_input donar_input1 mr-15">
-                        <option selected="" disabled="">How do you know about Naamyaa
+                        <option selected="" disabled="">How do you get to know about Naamyaa
 
                         </option>
                         <option value="School/College/University">School/College/University</option>

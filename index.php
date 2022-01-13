@@ -125,7 +125,7 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                                         <option selected disabled>-Select your cause-</option>
                                         <option value="any">Anyone</option>
                                         <?php while ($row = mysqli_fetch_array($result)) {
-                                            if ($row['name'] != "Social Media" && $row['name'] != "Art & Culture") {
+                                            if ($row['name'] != "Social Media" || $row['name'] != "Misc") {
 
                                         ?>
                                                 <option value="<?php echo $row['name'];  ?>"><?php echo $row['name']; ?>
@@ -276,7 +276,7 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                                     <span class="sub_title text-title"><i class="fal fa-users"></i> Join Us</span>
                                     <h3 class="title">Want to volunteer?</h3>
                                 </div>
-                                <p class="mb-45">Any individual who believes in ‘karma-yoga’ and ‘seva’ can join us for
+                                <p class="mb-45 mt-2">Any individual who believes in ‘karma-yoga’ and ‘seva’ can join us for
                                     the sheer joy of serving. We promise you will never regret.
                                 </p>
 
