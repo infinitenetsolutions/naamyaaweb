@@ -122,12 +122,16 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                                 </div>
                                 <div class="donar_currency d-inline-block mb-30">
                                     <select name="categories" type="number" class="currency mr-15" title="please select the category" placeholder="select Categories">
-                                        <option selected disabled >-Select your cause-</option>
-                                    <option value="any">Anyone</option>
-                                        <?php while ($row = mysqli_fetch_array($result)) { ?>
-                                            <option value="<?php echo $row['name'];  ?>"><?php echo $row['name']; ?>
-                                            </option>
-                                        <?php } ?>
+                                        <option selected disabled>-Select your cause-</option>
+                                        <option value="any">Anyone</option>
+                                        <?php while ($row = mysqli_fetch_array($result)) {
+                                            if ($row['name'] != "Social Media" && $row['name'] != "Art & Culture") {
+
+                                        ?>
+                                                <option value="<?php echo $row['name'];  ?>"><?php echo $row['name']; ?>
+                                                </option>
+                                        <?php }
+                                        } ?>
                                     </select>
                                 </div>
                                 <div class="donnar_button text-center">
@@ -260,7 +264,7 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                                     <div class="support_img_single swiper-slide img_effect_white">
                                         <a href="volunteer.php"><img class="support-img" src="assets/img/bg/support4.jpg" alt="img"></a>
                                     </div>
-                               
+
                                 </div>
                                 <!-- Add Pagination -->
                                 <div class="swiper-pagination-join text-center"></div>
@@ -586,4 +590,3 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
 <script src="assets/js/main.js"></script>
 
 </html>
-
