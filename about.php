@@ -1,4 +1,8 @@
 <?php
+
+$experience=2020;
+$date=date('Y');
+$experience=$date-$experience;
 // here is detail of backend
 include './Backend/database.inc.php';
 include './Backend/database.inc.php';
@@ -70,7 +74,7 @@ $result = mysqli_query($connection, $retrive_m_and_v);
 
                                         <div class="about_champ_card about_abs_single">
                                             <i class="flaticon-creativity"></i>
-                                            <h5 class="abs_numb">40 <span class="plus">+</span></h5>
+                                            <h5 class="abs_numb"><?php echo $experience ?> <span class="plus">+</span></h5>
                                             <span>Years Experience</span>
                                         </div>
                                     </div>

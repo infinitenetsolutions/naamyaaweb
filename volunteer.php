@@ -1,5 +1,5 @@
 <?php
-$id='';
+$id = '';
 include './Backend/database.inc.php';
 $female = "assets/img/team/me2.png";
 $male = "assets/img/team/me.png";
@@ -7,11 +7,13 @@ $male = "assets/img/team/me.png";
 $retrive_volienter = "SELECT * FROM `volunteer` WHERE `status`=1";
 $result = mysqli_query($connection, $retrive_volienter);
 //key pepole 
-$retrive_keypople = "SELECT * FROM `keypepole` WHERE  `status`=1 ORDER BY `priority`" ;
+$retrive_keypople = "SELECT * FROM `keypepole` WHERE  `status`=1 ORDER BY `priority`";
 $result_kp = mysqli_query($connection, $retrive_keypople);
 // retriving the social media link from the database
 
-
+// our team
+$retrive_team = "SELECT * FROM `volunteer` WHERE `status`=1";
+$result_team = mysqli_query($connection, $retrive_team);
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -69,14 +71,14 @@ $result_kp = mysqli_query($connection, $retrive_keypople);
             <div class="container">
                 <div class="back-border mrp">
 
-                <h4>Key People </h4>
+                    <h4>Key People </h4>
                 </div>
                 <div class="row team_area ">
 
                     <?php while ($row = mysqli_fetch_array($result_kp)) {
                         $description = $row['description'];
-                      
-                       $id= $row['id']; ?>
+
+                        $id = $row['id']; ?>
                         <div class="col-xxl-3 col-xl-4 col-lg-4 col-sm-6 text-center">
 
                             <div class="single_team mb-30">
@@ -87,14 +89,16 @@ $result_kp = mysqli_query($connection, $retrive_keypople);
 
                                 </div>
                                 <span class="designation"><?php echo $row['post']; ?></span>
-                                <h5 class="member_name"><a href="#"><?php echo $row['name']; ?></a>  </h5>
-                                <small ><?php echo substr($description,0,35)  ?>  <span class="name3 " id="show<?php echo $id ?>"> <p class="d-flex">  <?php echo substr($description,36)  ?>  </p></span><b class="text-danger" href="#" onclick="show('<?php echo $id ?>')">Read more</b></small>
+                                <h5 class="member_name"><a href="#"><?php echo $row['name']; ?></a> </h5>
+                                <small><?php echo substr($description, 0, 35)  ?> <span class="name3 " id="show<?php echo $id ?>">
+                                        <p class="d-flex"> <?php echo substr($description, 36)  ?> </p>
+                                    </span><b class="text-danger" href="#" onclick="show('<?php echo $id ?>')">Read more</b></small>
                                 <?php $retrive_keypople_link = "SELECT * FROM `social_media` WHERE  `reid`='$id' && `table_name`='keypepole' LIMIT 4";
                                 $result_link = mysqli_query($connection, $retrive_keypople_link); ?>
                                 <div class="member_social">
-                                    <?php while($link_row=mysqli_fetch_array($result_link)){ ?>
-                                    <a href="<?php echo $link_row['link']  ?>" class="<?php echo $link_row['name'] ?>"><i class="fab fa-<?php echo $link_row['name']; ?>-square"></i></a>
-                                    <?php }?>
+                                    <?php while ($link_row = mysqli_fetch_array($result_link)) { ?>
+                                        <a href="<?php echo $link_row['link']  ?>" class="<?php echo $link_row['name'] ?>"><i class="fab fa-<?php echo $link_row['name']; ?>-square"></i></a>
+                                    <?php } ?>
                                 </div>
                             </div>
 
@@ -111,13 +115,68 @@ $result_kp = mysqli_query($connection, $retrive_keypople);
         <div class="">
             <div class="container">
                 <div class="back-border mrp">
-                <a href="" data-toggle="modal" data-target="#modalContactForm" class="apply_btn g_btn theme1_bg to_right2 i_right rad-30 p-45">Apply Here<i class="fal fa-long-arrow-right"></i><span></span></a>
-                <h4>OUR Volunteer </h4>
+                    <h4>Our Team Member's </h4>
+                </div>
+                <div class="row team_area top-margin">
+
+                    <?php while ($row = mysqli_fetch_array($result_team)) {
+                        $id = $row['id'];
+                        $name = $row['name'];
+                        if (strpos($name, 'team') !== false) {
+                            $name = str_replace('-team', '', $name);
+                    ?>
+                            <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6 text-center">
+
+                                <div class="single_team mb-30">
+
+                                    <div class="team_thumb img_effect_white">
+                                        <?php if (!empty($row['Image'])) { ?>
+
+                                            <a href="#"> <?php echo '<img class="male" src="data:image/jpeg;base64,' . base64_encode($row['Image']) . '"/>'; ?></a>
+
+                                        <?php  } elseif ($row['gender'] == 'm') { ?>
+                                            <a href="#"><img class="male" src=<?php echo $male ?> alt="img"></a>
+                                        <?php } else { ?>
+                                            <a href="#"><img class="female" src=<?php echo $female ?> alt="img"></a>
+                                        <?php } ?>
+                                    </div>
+
+                                    <span class="designation"><?php echo $row['occupation']; ?></span>
+                                    <h5 class="member_name"><a href="#"><?php echo $name ?></a></h5>
+
+                                    <small><span class="name3 " id="show<?php echo $id ?>">
+                                        <p class="d-flex"> <i class="fa fa-envelope mt-1" aria-hidden="true"></i> <?php echo ' '. $row['email']  ?> <br> Phone: <?php echo $row['phone']  ?>  </p>
+                                    </span><b class="text-danger" href="#" onclick="show('<?php echo $id ?>')">Read more</b></small>
+
+                                    <?php $retrive_keypople_link = "SELECT * FROM `social_media` WHERE  `reid`='$id' && `table_name`='volunteer' LIMIT 3";
+                                    $result_link = mysqli_query($connection, $retrive_keypople_link); ?>
+                                    <div class="member_social">
+                                        <?php while ($link_row = mysqli_fetch_array($result_link)) { ?>
+                                            <a href="<?php echo $link_row['link']  ?>" class="<?php echo $link_row['name'] ?>"><i class="fab fa-<?php echo $link_row['name']; ?>-square"></i></a>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+
+                            </div>
+                    <?php }
+                    } ?>
+                </div>
+            </div>
+        </div>
+        <!-- Team area end -->
+
+        <!-- Team area start -->
+
+        <div class="">
+            <div class="container">
+                <div class="back-border mrp">
+                    <a href="" data-toggle="modal" data-target="#modalContactForm" class="apply_btn g_btn theme1_bg to_right2 i_right rad-30 p-45">Apply Here<i class="fal fa-long-arrow-right"></i><span></span></a>
+                    <h4> Our Volunteer </h4>
                 </div>
                 <div class="row team_area top-margin">
 
                     <?php while ($row = mysqli_fetch_array($result)) {
-                        $id=$row['id']; ?>
+                        $id = $row['id']; ?>
                         <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6 text-center">
 
                             <div class="single_team mb-30">
@@ -134,9 +193,9 @@ $result_kp = mysqli_query($connection, $retrive_keypople);
                                 <?php $retrive_keypople_link = "SELECT * FROM `social_media` WHERE  `reid`='$id' && `table_name`='volunteer' LIMIT 3";
                                 $result_link = mysqli_query($connection, $retrive_keypople_link); ?>
                                 <div class="member_social">
-                                    <?php while($link_row=mysqli_fetch_array($result_link)){ ?>
-                                    <a href="<?php echo $link_row['link']  ?>" class="<?php echo $link_row['name'] ?>"><i class="fab fa-<?php echo $link_row['name']; ?>-square"></i></a>
-                                    <?php }?>
+                                    <?php while ($link_row = mysqli_fetch_array($result_link)) { ?>
+                                        <a href="<?php echo $link_row['link']  ?>" class="<?php echo $link_row['name'] ?>"><i class="fab fa-<?php echo $link_row['name']; ?>-square"></i></a>
+                                    <?php } ?>
                                 </div>
                             </div>
 
@@ -146,8 +205,6 @@ $result_kp = mysqli_query($connection, $retrive_keypople);
             </div>
         </div>
         <!-- Team area end -->
-
-
 
 
 
@@ -174,8 +231,9 @@ $result_kp = mysqli_query($connection, $retrive_keypople);
 </html>
 
 <script>
-        $(".name3").hide();
-function show(id){
-    $("#show"+id).toggle();
-  }
+    $(".name3").hide();
+
+    function show(id) {
+        $("#show" + id).toggle();
+    }
 </script>
