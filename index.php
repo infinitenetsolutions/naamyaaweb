@@ -311,7 +311,7 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                         <div class="">
                             <?php while ($event_row = mysqli_fetch_array($event_result)) {
                                 $str = $event_row['date'];
-                                $newdate = str_replace('-', '/', $str);
+                                $newdate = str_replace('/', '-', $str);
 
                                 $present_date = date('Y-m-d');
                                 $event_id = $event_row['id'];

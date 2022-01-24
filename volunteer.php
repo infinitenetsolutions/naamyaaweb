@@ -145,7 +145,7 @@ $result_team = mysqli_query($connection, $retrive_team);
                                     <h5 class="member_name"><a href="#"><?php echo $name ?></a></h5>
 
                                     <small><span class="name3 " id="show<?php echo $id ?>">
-                                        <p class="d-flex"> <i class="fa fa-envelope mt-1" aria-hidden="true"></i> <?php echo ' '. $row['email']  ?> <br> Phone: <?php echo $row['phone']  ?>  </p>
+                                        <p class="d-flex"> <i class="fa fa-envelope mt-1" aria-hidden="true"></i> &nbsp; <?php echo ' '. $row['email']  ?> <br> Phone : <?php echo $row['phone']  ?>  </p>
                                     </span><b class="text-danger" href="#" onclick="show('<?php echo $id ?>')">Read more</b></small>
 
                                     <?php $retrive_keypople_link = "SELECT * FROM `social_media` WHERE  `reid`='$id' && `table_name`='volunteer' LIMIT 3";
