@@ -141,7 +141,7 @@ $result_team = mysqli_query($connection, $retrive_team);
                                         <?php } ?>
                                     </div>
 
-                                    <span class="designation"><?php echo $row['occupation']; ?></span>
+                                    <span class="designation"><?php echo $row['department']; ?></span>
                                     <h5 class="member_name"><a href="#"><?php echo $name ?></a></h5>
 
                                     <small><span class="name3 " id="show<?php echo $id ?>">
@@ -176,7 +176,10 @@ $result_team = mysqli_query($connection, $retrive_team);
                 <div class="row team_area top-margin">
 
                     <?php while ($row = mysqli_fetch_array($result)) {
-                        $id = $row['id']; ?>
+                        $id = $row['id']; 
+                        $name = $row['name'];
+                        if (strpos($name, 'team') != true) {
+                        ?>
                         <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6 text-center">
 
                             <div class="single_team mb-30">
@@ -188,8 +191,8 @@ $result_team = mysqli_query($connection, $retrive_team);
                                         <a href="#"><img class="female" src=<?php echo $female ?> alt="img"></a>
                                     <?php } ?>
                                 </div>
-                                <span class="designation"><?php echo $row['occupation']; ?></span>
-                                <h5 class="member_name"><a href="#"><?php echo $row['name']; ?></a></h5>
+                                <span class="designation"><?php echo $row['department']; ?></span>
+                                <h5 class="member_name"><a href="#"><?php echo $name; ?></a></h5>
                                 <?php $retrive_keypople_link = "SELECT * FROM `social_media` WHERE  `reid`='$id' && `table_name`='volunteer' LIMIT 3";
                                 $result_link = mysqli_query($connection, $retrive_keypople_link); ?>
                                 <div class="member_social">
@@ -200,7 +203,7 @@ $result_team = mysqli_query($connection, $retrive_team);
                             </div>
 
                         </div>
-                    <?php } ?>
+                    <?php }} ?>
                 </div>
             </div>
         </div>
