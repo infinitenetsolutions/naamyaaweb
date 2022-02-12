@@ -150,7 +150,7 @@ $volunteer_data = mysqli_fetch_array($result_team1);
                                         <div class="row">
                                             <div class="col-12">
                                                 <small><span class="name3 " id="show<?php echo $id; ?>">
-                                                        <p class="d-flex"> <i class="fa fa-envelope mt-1" aria-hidden="true"></i>
+                                                        <p class="d-flex text-center"> <i class="fa fa-envelope mt-1" aria-hidden="true"></i>
                                                             &nbsp; <?php echo ' ' . $row['email']; ?> <br> <!-- Phone : <?php //echo $row['phone']
                                                                                                                         ?> -->
                                                         </p>
