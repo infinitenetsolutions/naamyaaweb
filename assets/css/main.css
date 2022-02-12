@@ -2785,8 +2785,8 @@ only screen and (min-width: 768px) and (max-width: 991px) {
 }
 
 .top_social a {
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 43px;
     display: inline-block;
     line-height: 50px;
     text-align: center;
@@ -15243,7 +15243,7 @@ only screen and (min-width: 1200px) and (max-width: 1400px) {
 
 .fab {
     padding: 0px !important;
-    font-size: 23px;
+    font-size: 18px;
 
 }
 
@@ -15305,6 +15305,9 @@ a {
     .header_menu_area_2 {
         margin-top: -45px !important;
         margin-bottom: -45px !important;
+    }
+    .text-left1{
+        margin-left: 120px
     }
 }
 

@@ -25,7 +25,7 @@
                      </div>
                  </div>
 
-                 <div class="col-xxl-3 col-xl-3 col-lg-4 text-start text-md-end mr-left-20">
+                 <div class="col-xxl-3 col-xl-3 col-lg-4 text-start text-md-end mr-left-0">
                      <div class="top_social">
 
                          <a target="_blank" href="https://twitter.com/TeamNaamyaa?t=TJ2RV4xfZVgxdNGKyCF9vw&s=03"
@@ -37,7 +37,7 @@
 
                          <span> &nbsp;</span>
                          <a class="covid19" href="donation.php" name="donate"
-                             class="g_btn2 g_btn theme1_bg to_right2 donation rad-30 p-60 mb-30"><strong>Covid19&nbspSupport</strong>
+                             class="g_btn2 g_btn theme1_bg to_right2 donation rad-30 p-60 mb-30"><strong class="text-left1" >Covid19&nbspSupport</strong>
                          </a>
                      </div>
                  </div>
