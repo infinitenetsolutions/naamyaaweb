@@ -48,16 +48,41 @@ $testimonial1 = "SELECT  * FROM `testimonial` WHERE `status`=1 ORDER BY id DESC 
 $testimonial_result1 = mysqli_query($connection, $testimonial1);
 
 ?>
-
-
-
-
 <!doctype html>
 <html class="no-js" lang="en">
 
 <head>
     <title> Home | Naamyaa</title>
     <?php include './naamaya.inc/head.php'; ?>
+
+    <style>
+        .d-load {
+            position: fixed;
+            bottom: 50%;
+            right: 0px;
+            z-index: 9999;
+        }
+
+        .d-load span {
+            font-size: 15px;
+            position: relative;
+            transform: rotate(90deg);
+            transform-origin: right top;
+            color: #fff;
+            display: block;
+            background: #e61975;
+            padding: 6px 15px;
+            border-radius: 4px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        .d-load span a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 
 <body>
@@ -383,8 +408,14 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                     <div class="heading text-center mx-auto">
 
 
-                        <h3 class="head back-border p-3"> <a href="" data-toggle="modal" data-target="#feedback" class="btn btn-info float-right">
-                                Feedback</a>What They Say</h3>
+                        <h3 class="head back-border p-3">
+                            <!-- sticky -->
+                            <div class="stick-right">
+                                <div class="d-load"><span><a data-toggle="modal" data-target="#feedback" href="">Feedback</a></span></div>
+                            </div>
+                            <!-- //sticky -->
+                            What They Say
+                        </h3>
 
                     </div>
 
