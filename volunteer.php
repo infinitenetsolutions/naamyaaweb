@@ -116,7 +116,6 @@ $volunteer_data = mysqli_fetch_array($result_team1);
         <!-- Newsletter cta area end-->
 
         <!-- Team area start -->
-        <?php if ($volunteer_data > 0) { ?>
             <div class="">
                 <div class="container">
                     <div class="back-border mrp">
@@ -137,7 +136,7 @@ $volunteer_data = mysqli_fetch_array($result_team1);
                                         <div class="team_thumb img_effect_white">
                                             <?php if (!empty($row['Image'])) { ?>
 
-                                                <a href="#"> <?php echo '<img class="male" src="data:image/jpeg;base64,' . base64_encode($row['Image']) . '"/>'; ?></a>
+                                                <a href="#"> <?php echo '<img class="img-fluid" src="data:image/jpeg;base64,' . base64_encode($row['Image']) . '"/>'; ?></a>
 
                                             <?php  } elseif ($row['gender'] == 'm') { ?>
                                                 <a href="#"><img class="male" src=<?php echo $male; ?> alt="img"></a>
@@ -176,10 +175,10 @@ $volunteer_data = mysqli_fetch_array($result_team1);
                     </div>
                 </div>
             </div>
-        <?php } ?>
         <!-- Team area end -->
 
         <!-- Team area start -->
+        <?php if ($volunteer_data < 0) { ?>
 
         <div class="">
             <div class="container">
@@ -222,6 +221,7 @@ $volunteer_data = mysqli_fetch_array($result_team1);
                 </div>
             </div>
         </div>
+        <?php } ?>
 
         <!-- Team area end -->
 
