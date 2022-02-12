@@ -86,7 +86,6 @@ $arc_result = mysqli_query($connection, $arc_data);
                                             </div>
                                             <p class="partnertext" align="justify"><?php echo $row['description']; ?></p><br><br>
 
-                                            <div class="partnertext" align="left"><a href="#"><i> » To know more click here</i></a></div>
                                         </div>
                                     </div>
                                 </div>
