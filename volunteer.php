@@ -199,9 +199,9 @@ $volunteer_data = mysqli_fetch_array($result_team1);
 
                                     <div class="team_thumb img_effect_white">
                                         <?php if ($row['gender'] == 'm') { ?>
-                                            <a href="#"><img class="male" src=<?php echo $male; ?> alt="img"></a>
+                                            <a href="#"><img class="img-fluid" src=<?php echo $male; ?> alt="img"></a>
                                         <?php } else { ?>
-                                            <a href="#"><img class="female" src=<?php echo $female; ?> alt="img"></a>
+                                            <a href="#"><img class="img-fluid" src=<?php echo $female; ?> alt="img"></a>
                                         <?php } ?>
                                     </div>
                                     <span class="designation"><?php echo $row['department']; ?></span>
