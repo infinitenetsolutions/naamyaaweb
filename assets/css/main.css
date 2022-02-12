@@ -5653,7 +5653,7 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
     .single_cause_content:is(.single_cause_content_2) {
         padding: 33px;
         padding-top: 28px;
-        
+
     }
 }
 
@@ -9655,7 +9655,7 @@ only screen and (min-width: 768px) and (max-width: 991px),
     width: 100%;
     max-height: 150px;
     min-height: 150px;
-padding: 20px;
+    padding: 20px;
 }
 
 .eventcount_img:hover img {
@@ -10356,8 +10356,8 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
     margin-top: -23px !important;
     display: inline-block;
 
-  
-   
+
+
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -15184,7 +15184,7 @@ only screen and (min-width: 1200px) and (max-width: 1400px) {
     font-size: 19px;
 }
 
-.background-reach{
+.background-reach {
 
     background-image: url('../images/our_reach.jpg');
     background-attachment: fixed;
@@ -15193,83 +15193,111 @@ only screen and (min-width: 1200px) and (max-width: 1400px) {
     background-size: cover;
 
 }
-.spacer-map{
+
+.spacer-map {
     background: radial-gradient(#fecc16, transparent);
     color: #111c2d;
 }
 
 
 @media (min-width: 1380px) {
-    .slider{
+    .slider {
         background: #ffffffad;
         background-size: cover;
         border-top-right-radius: 20px;
-      
+
     }
-  .custom-btn {
-    margin-top: 288px;
-    margin-left: -658px;
-  }
+
+    .custom-btn {
+        margin-top: 288px;
+        margin-left: -658px;
+    }
 }
 
-.eventcount_text h5{
+.eventcount_text h5 {
     font-size: 20px;
 }
-.male ,.female{
+
+.male,
+.female {
     max-height: 200px !important;
     min-height: 200px !important;
 }
-.member_name{
+
+.member_name {
     font-size: 15px !important;
     color: black;
     font-family: 'Font Awesome 5 Brands' !important;
 }
-.fab{
+
+.fab {
     padding: 0px !important;
     font-size: 23px;
 
 }
-.fa-facebook-square{
+
+.fa-facebook-square {
     color: blue !important;
 }
-.fa-youtube-square{
+
+.fa-youtube-square {
     color: red !important;
 }
-.fa-twitter-square{
+
+.fa-twitter-square {
     color: rgb(87, 149, 168) !important;
 }
-.fa-linkedIn-square{
+
+.fa-linkedIn-square {
     color: skyblue !important;
 }
-.fa-pinterest-square{
+
+.fa-pinterest-square {
     color: rgb(145, 20, 20) !important;
 }
 
-.fa-instagram-square{
+.fa-instagram-square {
     color: orange !important;
-} 
-.fa-reddit-square{
+}
+
+.fa-reddit-square {
     color: #c40f3e !important;
 }
 
-.d-flex{
+.d-flex {
     text-align: justify !important;
     font-size: 14px;
 }
-.justify{
+
+.justify {
     text-align: justify !important;
 
 }
 
-.title{
+.title {
     margin-top: -20px;
 }
-a{
+
+a {
     text-decoration: none;
 }
-.top_mailing a{
+
+.top_mailing a {
     font-weight: 600;
 }
-.top_mailing a:hover{
-color: yellow !important;
+
+.top_mailing a:hover {
+    color: yellow !important;
+}
+
+@media only screen and (max-width: 500px) {
+    .header_menu_area_2 {
+        margin-top: -45px !important;
+        margin-bottom: -45px !important;
+    }
+}
+
+.header_menu_area_2 {
+    margin-top: -57px;
+    margin-bottom: -27px;
 }
