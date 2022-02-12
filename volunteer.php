@@ -139,9 +139,9 @@ $volunteer_data = mysqli_fetch_array($result_team1);
                                                 <a href="#"> <?php echo '<img class="img-fluid" src="data:image/jpeg;base64,' . base64_encode($row['Image']) . '"/>'; ?></a>
 
                                             <?php  } elseif ($row['gender'] == 'm') { ?>
-                                                <a href="#"><img class="male" src=<?php echo $male; ?> alt="img"></a>
+                                                <a href="#"><img class="" src=<?php echo $male; ?> alt="img"></a>
                                             <?php } else { ?>
-                                                <a href="#"><img class="female" src=<?php echo $female; ?> alt="img"></a>
+                                                <a href="#"><img class="" src=<?php echo $female; ?> alt="img"></a>
                                             <?php } ?>
                                         </div>
 
