@@ -1,41 +1,49 @@
  <!-- Header One Start-->
- 
- <?php 
-//  here to geting the data of the contact
-$contact_data = "SELECT * FROM `contact_data` WHERE 1";
-$contact_result = mysqli_query($connection, $contact_data);
-$contact_row = mysqli_fetch_array($contact_result);
-$location = $contact_row['location'];
-$email = $contact_row['email'];
-$phone = $contact_row['phone'];
-$location_link = $contact_row['location_link'];
-?>
+
+ <?php
+ //  here to geting the data of the contact
+ $contact_data = 'SELECT * FROM `contact_data` WHERE 1';
+ $contact_result = mysqli_query($connection, $contact_data);
+ $contact_row = mysqli_fetch_array($contact_result);
+ $location = $contact_row['location'];
+ $email = $contact_row['email'];
+ $phone = $contact_row['phone'];
+ $location_link = $contact_row['location_link'];
+ ?>
  <header class="header-area">
      <div class="header_top_area">
          <div class="container">
              <div class="row align-items-center">
                  <div class="col-xxl-9 col-xl-9 col-lg-8  d-none d-lg-block">
                      <div class="top_mailing">
-                         <a href="mailto:<?php echo $email; ?>" class="theme-1"><i class="fal fa-envelope"></i><span class="__cf_email__" data-cfemail="fa9b9e979394ba9e95979b9394d4999597">[email&#160;protected]</span></a>
-                         <a href="tel:<?php echo $phone; ?>" class="theme-2"><i class="fal fa-phone"></i><?php echo $phone; ?></a>
+                         <a href="mailto:<?php echo $email; ?>" class="theme-1"><i class="fal fa-envelope"></i><span
+                                 class="__cf_email__"
+                                 data-cfemail="fa9b9e979394ba9e95979b9394d4999597">[email&#160;protected]</span></a>
+                         <a href="tel:<?php echo $phone; ?>" class="theme-2"><i
+                                 class="fal fa-phone"></i><?php echo $phone; ?></a>
                          <a href="#" class="theme-3"><i class="fal fa-map-marker-alt"></i><?php echo $location; ?></a>
                      </div>
                  </div>
 
                  <div class="col-xxl-3 col-xl-3 col-lg-4 text-start text-md-end mr-left-20">
                      <div class="top_social">
-                     
-                         <a target="_blank" href="https://twitter.com/TeamNaamyaa?t=TJ2RV4xfZVgxdNGKyCF9vw&s=03" class="twitter"><i class="fab fa-twitter"></i></a>
-                         <a target="_blank" href="https://www.facebook.com/Namya-106766691275997/" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                         <a target="_blank" href="https://www.instagram.com/teamnaamyaa/" class="instagram"><i class="fab fa-instagram"></i></a>
 
-<span> &nbsp;</span>
-                         <a class="covid19"  href="donation.php" name="donate" class="g_btn2 g_btn theme1_bg to_right2 donation rad-30 p-60 mb-30"><strong>Covid19&nbspSupport</strong> </a>
+                         <a target="_blank" href="https://twitter.com/TeamNaamyaa?t=TJ2RV4xfZVgxdNGKyCF9vw&s=03"
+                             class="twitter"><i class="fab fa-twitter"></i></a>
+                         <a target="_blank" href="https://www.facebook.com/Namya-106766691275997/"
+                             class="facebook"><i class="fab fa-facebook-f"></i></a>
+                         <a target="_blank" href="https://www.instagram.com/teamnaamyaa/" class="instagram"><i
+                                 class="fab fa-instagram"></i></a>
+
+                         <span> &nbsp;</span>
+                         <a class="covid19" href="donation.php" name="donate"
+                             class="g_btn2 g_btn theme1_bg to_right2 donation rad-30 p-60 mb-30"><strong>Covid19&nbspSupport</strong>
+                         </a>
                      </div>
                  </div>
-        
-                            
-               
+
+
+
              </div>
          </div>
      </div>
@@ -90,7 +98,7 @@ $location_link = $contact_row['location_link'];
                          </nav>
                      </div>
                  </div>
-                 
+
                  <div class="col-xxl-3 col-xl-3 col-lg-1 col-md-6 col-6">
                      <div class="header-right d-flex align-items-center justify-content-end">
                          <div class="header-sing d-inline-block d-none d-xl-block">

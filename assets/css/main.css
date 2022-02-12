@@ -15264,3 +15264,12 @@ only screen and (min-width: 1200px) and (max-width: 1400px) {
 .title{
     margin-top: -20px;
 }
+a{
+    text-decoration: none;
+}
+.top_mailing a{
+    font-weight: 600;
+}
+.top_mailing a:hover{
+color: yellow !important;
+}

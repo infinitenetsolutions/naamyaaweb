@@ -34,8 +34,7 @@ $total_archievment_result = mysqli_query($connection, $total_event);
 $categorie = "SELECT * FROM `categories` WHERE `status`=1";
 $result = mysqli_query($connection, $categorie);
 
-$event = "SELECT  * FROM `Event` WHERE `status`=1   ORDER BY `date` DESC  LIMIT 8  ";
-$event_result = mysqli_query($connection, $event);
+
 
 // getting the data for the goal 
 $goal = "SELECT  * FROM `goal` WHERE `status`=1 ";
@@ -125,8 +124,8 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                                         <option selected disabled>-Select your cause-</option>
                                         <option value="any">Anyone</option>
                                         <?php while ($row = mysqli_fetch_array($result)) {
-                                            $cat_name=$row['name'] ;
-                                            if ($cat_name!= "Social Media" && $cat_name != "Misc") {
+                                            $cat_name = $row['name'];
+                                            if ($cat_name != "Social Media" && $cat_name != "Misc") {
 
                                         ?>
                                                 <option value="<?php echo $row['name'];  ?>"><?php echo $row['name']; ?>
@@ -162,8 +161,8 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                     <div class="row ">
                         <div class="col-xxl-12 text-center">
                             <div class="section_title back-border mb-45">
-                                <a class="anchertag" href="#"> <span class="sub_title"> 
-                                    <h3 class="title">Target <span class="more">More</span></h3>
+                                <a class="anchertag" href="#"> <span class="sub_title">
+                                        <h3 class="title">Target <span class="more">More</span></h3>
                                 </a>
 
                             </div>
@@ -274,8 +273,8 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 d-flex align-items-center">
                             <div class="support_wrapper">
                                 <div class="section_title back-border">
-                                    <span class="sub_title text-title"> 
-                                    <h3 class="title">Want to volunteer?</h3>
+                                    <span class="sub_title text-title">
+                                        <h3 class="title">Want to volunteer?</h3>
                                 </div>
                                 <p class="mb-45 mt-2">Any individual who believes in ‘karma-yoga’ and ‘seva’ can join us for
                                     the sheer joy of serving. We promise you will never regret.
@@ -307,79 +306,9 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                     </div>
                 </div>
                 <div class="row mrt-40">
-                    <div class="col-xxl-12">
-                        <div class="">
-                            <?php while ($event_row = mysqli_fetch_array($event_result)) {
-                                $str = $event_row['date'];
-                                $newdate = str_replace('/', '-', $str);
-
-                                $present_date = date('Y-m-d');
-                                $event_id = $event_row['id'];
-                                $event_img = mysqli_query($connection, "SELECT * FROM `event_details` WHERE `event_id`='$event_id'");
-                                $event_img_result = mysqli_fetch_array($event_img);
-
-                            ?>
+                    <div class="col-xxl-12" id="featured_event">
 
 
-
-                                <div class="single_events_wrapper tab-border mb-30">
-                                    <div class="row align-items-center">
-                                        <div class="col-xxl-3 col-xl-3 col-lg-3 d-md-none d-lg-block">
-                                            <div class="eventcount_img w_img">
-                                                <a href="event-details.php?id=<?php echo $event_row['id']; ?>"><img <?php echo ' src="data:image/jpeg;base64,' . base64_encode($event_img_result['image1']) . '"' ?>></a>
-                                            </div>
-                                        </div>
-                                        <div class="col-xxl-3 col-xl-4 col-lg-3 col-md-5 text-center text-md-start">
-                                            <div class="eventcount_text heading-clr">
-                                                <h5><a href="event-details.php?id=<?php echo $event_row['id']; ?>"><?php echo $event_row['name']; ?></a></h5>
-                                                <span><?php echo $event_row['address'];
-                                                        echo " , ";
-                                                        echo $event_row['city'];
-                                                        echo " , ";
-                                                        echo $event_row['state']; ?></span>
-                                            </div>
-                                        </div>
-                                        <?php if ($newdate > $present_date) { ?>
-                                            <div class="col-xxl-6 col-xl-5 col-lg-6 col-md-7 text-center text-md-end">
-                                                <div class="count_down_box heading-clr" data-countdown="<?php echo $newdate; ?>"></div>
-                                            </div>
-                                        <?php } else { ?>
-                                            <div class="col-xxl-6 col-xl-5 col-lg-6 col-md-7 text-center text-md-end">
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <span class="justify"> <?php echo  substr($event_img_result['details'], 0, 155);  ?>.. <a class="text-danger" href="event-details.php?id=<?php echo $event_row['id']; ?>">Read more</a> </span>
-
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        <?php } ?>
-                                    </div>
-                                </div>
-                            <?php } ?>
-                        </div>
-                        <div class="tab-pane fade" id="water" role="tabpanel" aria-labelledby="nav-water">
-
-
-                            <div class="single_events_wrapper tab-border mb-70">
-                                <div class="row mrt-40 align-items-center">
-                                    <div class="col-xxl-3 col-xl-3 col-lg-3 d-md-none d-lg-block">
-                                        <div class="eventcount_img w_img">
-                                            <a href="event-details.php"><img src="assets/img/causes/cause6.jpg" alt="img"></a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xxl-3 col-xl-4 col-lg-3 col-md-5 text-center text-md-start">
-                                        <div class="eventcount_text heading-clr">
-                                            <h5><a href="event-details.php">Every Second Until the Event</a></h5>
-                                            <span>Douglas Park, Chicago, IL</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-xxl-6 col-xl-5 col-lg-6 col-md-7 text-center text-md-end">
-                                        <div class="count_down_box heading-clr" data-countdown="2021/08/19"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -571,23 +500,18 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
     </div>
     <!-- end fullscreen search -->
     <?php include './naamaya.inc/foot.php'; ?>
-</body>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/owl.carousel.min.js"></script>
-<script src="assets/js/slick.min.js"></script>
-<script src="assets/js/jquery.meanmenu.min.js"></script>
-<script src="assets/js/wow.min.js"></script>
-<script src="assets/js/jquery.scrollUp.min.js"></script>
-<script src="assets/js/jquery.magnific-popup.min.js"></script>
-<script src="assets/js/isotope.pkgd.min.js"></script>
-<script src="assets/js/imagesloaded.pkgd.min.js"></script>
-<script src="assets/js/jquery.nice-select.js"></script>
-<script src="assets/js/jquery.countdown.min.js"></script>
-<script src="assets/js/back-to-top.min.js"></script>
 
-<script src="assets/js/swiper-bundle.min.js"></script>
-<script src="assets/js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                document.getElementById("featured_event").innerHTML = this.responseText;
+            }
+            xhttp.open("GET", "ajaxindex.php", true);
+            xhttp.send();
+        });
+    </script>
+</body>
+
 
 </html>
