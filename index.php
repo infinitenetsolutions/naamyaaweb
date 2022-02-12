@@ -322,7 +322,7 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                                 <div class="heading">
                                     <h2>Our Reach</h>
                                 </div>
-                                <p class="text-gray"><b>We rise by lifting others.
+                                <p class="text-white"><b>We rise by lifting others.
                                         Naamyaa smile foundation a ngo in Jamshedpur , Jharkhand . To support the underserved has taken its intervention to the interiors of East Singhbhum , reaching the unreached in the remote areas and urban slums with our services and making this helping foundation in India , the best NGO in India.</b></p>
                                 <div class="row mrt-40 vdivide spacer">
                                     <div class="stories" id="stories">
@@ -351,7 +351,7 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                 </div>
             </div>
             <!-- Modal For map pop-up Start here-->
-            <div class="modal fade" id="map" tabindex="-1" role="dialog" aria-labelledby="project-4-label" aria-hidden="true">
+            <!-- <div class="modal fade" id="map" tabindex="-1" role="dialog" aria-labelledby="project-4-label" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -370,7 +370,7 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Modal For banner pop-up end here-->
         </section>
 

@@ -1936,8 +1936,8 @@ only screen and (min-width: 768px) and (max-width: 991px),
     text-align: center;
     min-width: 140px;
     font-weight: 700;
-    height: 60px;
-    line-height: 60px;
+    height: 45px;
+    line-height: 45px;
     z-index: 1;
     color: var(--clr-common-white);
     /* For Styling Button */
@@ -1984,8 +1984,8 @@ Hover start
     text-align: center;
     min-width: 140px;
     font-weight: 700;
-    height: 60px;
-    line-height: 60px;
+    height: 45px;
+    line-height: 45px;
     z-index: 1;
     color: whitesmoke;
     margin-top: 38%;
@@ -2712,7 +2712,7 @@ Hover start
 }
 
 .header-sing {
-    height: 60px;
+    height: 45px;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1400px) {
