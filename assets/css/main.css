@@ -2049,6 +2049,10 @@ Hover start
         position: relative;
         z-index: 1;
     }
+    .male, .female {
+        max-height: 300px !important; 
+        min-height: 300px !important;
+    }
 }
 
 .g_btn:is(.theme2_bg) {
