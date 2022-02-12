@@ -2005,8 +2005,8 @@ Hover start
         text-align: center;
         min-width: 140px;
         font-weight: 700;
-        height: 60px;
-        line-height: 60px;
+        height: 45px;
+        line-height: 45px;
         z-index: 1;
         color: whitesmoke;
         margin-top: 60%;
@@ -2042,6 +2042,12 @@ Hover start
 @media (max-width: 767px) {
     .g_btn:is(.slider_btn) {
         padding: 0 45px;
+    }
+
+    .section_title {
+        margin-top: 36px !important;
+        position: relative;
+        z-index: 1;
     }
 }
 
