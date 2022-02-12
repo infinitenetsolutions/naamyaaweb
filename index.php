@@ -162,7 +162,7 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                     <div class="row ">
                         <div class="col-xxl-12 text-center">
                             <div class="section_title back-border mb-45">
-                                <a class="anchertag" href="#"> <span class="sub_title"><i class="fal fa-heart"></i>Target</span>
+                                <a class="anchertag" href="#"> <span class="sub_title"> 
                                     <h3 class="title">Target <span class="more">More</span></h3>
                                 </a>
 
@@ -274,7 +274,7 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 d-flex align-items-center">
                             <div class="support_wrapper">
                                 <div class="section_title back-border">
-                                    <span class="sub_title text-title"><i class="fal fa-users"></i> Join Us</span>
+                                    <span class="sub_title text-title"> 
                                     <h3 class="title">Want to volunteer?</h3>
                                 </div>
                                 <p class="mb-45 mt-2">Any individual who believes in ‘karma-yoga’ and ‘seva’ can join us for
@@ -301,7 +301,7 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                 <div class="row mrt-40">
                     <div class="col-xxl-12">
                         <div class="section_title back-border back-border text-center mb-45">
-                            <span class="sub_title"><i class="fal fa-heart"></i> Events</span>
+                            <span class="sub_title"></span>
                             <h3 class="title">Featured Events</h3>
                         </div>
                     </div>

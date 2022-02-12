@@ -15260,3 +15260,7 @@ only screen and (min-width: 1200px) and (max-width: 1400px) {
     text-align: justify !important;
 
 }
+
+.title{
+    margin-top: -20px;
+}
