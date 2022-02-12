@@ -53,7 +53,7 @@ $result = mysqli_query($connection, $media_data);
         <div class="row">
             <?php while ($row = mysqli_fetch_array($result)) { ?>
                 <div class="col-md-4">
-                    <div class="thumbnail">
+                    <div class="thumbnail ">
                         <a href="<?php echo $row['link']; ?>" target="_blank">
                             <img class="max-height-510" <?php echo ' src="data:image/jpeg;base64,' . base64_encode($row['photos']) . '"' ?> alt="Lights" style="width:100%">
                             <div class="caption">

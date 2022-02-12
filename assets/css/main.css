@@ -15075,7 +15075,7 @@ only screen and (min-width: 1200px) and (max-width: 1400px) {
 }
 
 .max-height-510 {
-    max-height: 240px !important;
+    height: 240px !important;
 }
 
 .about_img {
@@ -15310,4 +15310,12 @@ a {
 .header_menu_area_2 {
     margin-top: -57px;
     margin-bottom: -27px;
+}
+
+.thumbnail{
+    border: #e6197563 solid 1px;
+    box-shadow: #777777 5px 5px 5px 5px ;
+    padding: 10px;
+    margin-bottom: 10px;
+
 }

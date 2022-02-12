@@ -1,13 +1,13 @@
 <?php
 
-$experience=2020;
-$date=date('Y');
-$experience=$date-$experience;
+$experience = 2020;
+$date = date('Y');
+$experience = $date - $experience;
 // here is detail of backend
 include './Backend/database.inc.php';
 include './Backend/database.inc.php';
-$female = "assets/img/team/me2.png";
-$male = "assets/img/team/me.png";
+$female = 'assets/img/team/me2.png';
+$male = 'assets/img/team/me.png';
 // retring the about page
 $retrive_about = "SELECT * FROM `about_us` WHERE `type`='About us'";
 $result = mysqli_query($connection, $retrive_about);
@@ -33,7 +33,7 @@ $result = mysqli_query($connection, $retrive_m_and_v);
         <!-- slide-bar start -->
         <?php include './naamaya.inc/header.php'; ?>
         <!-- Sidebar for Mobile -->
-        <?php include './naamaya.inc/mobile_slider.php';  ?>
+        <?php include './naamaya.inc/mobile_slider.php'; ?>
         <!-- Sidebar for Laptop -->
         <?php include './naamaya.inc/laptop_slider.php'; ?>
         <!-- slide-bar end -->
@@ -70,11 +70,12 @@ $result = mysqli_query($connection, $retrive_m_and_v);
                                 <div class="donate_img_wrapper about_img_wrapper mr-10">
                                     <div class="donate_img_inner about_img_inner p-rel">
                                         <!-- row<img class="about_block" src="assets/img/about/aboutus1.jpg" alt="img"> -->
-                                        <img class="about_block" <?php echo ' src="data:image/jpeg;base64,' . base64_encode($about_row['images']) . '"' ?>>
+                                        <img class="about_block" <?php echo ' src="data:image/jpeg;base64,' . base64_encode($about_row['images']) . '"'; ?>>
 
                                         <div class="about_champ_card about_abs_single">
                                             <i class="flaticon-creativity"></i>
-                                            <h5 class="abs_numb"><?php echo $experience ?> <span class="plus">+</span></h5>
+                                            <h5 class="abs_numb"><?php echo $experience; ?> <span
+                                                    class="plus">+</span></h5>
                                             <span>Years Experience</span>
                                         </div>
                                     </div>
@@ -105,8 +106,8 @@ $result = mysqli_query($connection, $retrive_m_and_v);
                     <div class="row">
                         <div class="col-xxl-12">
                             <div class="section_title text-center mb-60">
-                            
-                        
+
+
                             </div>
                         </div>
                     </div>
@@ -117,9 +118,9 @@ $result = mysqli_query($connection, $retrive_m_and_v);
                                     <div class="about_signle_video mb-40">
                                         <div class="img_effect_white about_video_image_wrapper">
                                             <a href="event.php">
-                                            <img <?php echo ' src="data:image/jpeg;base64,' . base64_encode($row['images']) . '"' ?>>
-    
-                                        </a>
+                                                <img <?php echo ' src="data:image/jpeg;base64,' . base64_encode($row['images']) . '"'; ?>>
+
+                                            </a>
                                         </div>
 
                                         <a href="<?php echo $row['youtube']; ?>" class="video_icon">
@@ -190,7 +191,8 @@ $result = mysqli_query($connection, $retrive_m_and_v);
                 <div class="container">
                     <div class="row">
                         <div class="col-xxl-12">
-                            <div class="about_video_section text-center p-2500 bg_cover" data-background="assets/img/bg/video_bg.jpg">
+                            <div class="about_video_section text-center p-2500 bg_cover"
+                                data-background="assets/img/bg/video_bg.jpg">
                                 <a href="#" class="play_btn p-rel popup-video ab_4"><i class="fas fa-play"></i></a>
                             </div>
                         </div>
@@ -211,7 +213,7 @@ $result = mysqli_query($connection, $retrive_m_and_v);
         <!-- back to top end -->
 
         <!-- Footer Area Start -->
-        <?php include './naamaya.inc/footer.php' ?>
+        <?php include './naamaya.inc/footer.php'; ?>
         <!-- Footer Area End -->
 
         <?php include './naamaya.inc/foot.php'; ?>
