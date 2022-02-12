@@ -57,7 +57,7 @@ $result = mysqli_query($connection, $Videos_data);
                      
                             <iframe class="max-height-510" src="<?php echo $row['link']; ?>" alt="Lights" style="width:100%"></iframe>
                             <div class="caption">
-                                <p class="text-justify" ><?php echo $row['description'] ?></p>
+                                <p style="font-size: 14px" class="text-justify" ><?php echo $row['description'] ?></p>
                             </div>
                      
                     </div>
