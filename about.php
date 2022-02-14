@@ -80,7 +80,7 @@ $result = mysqli_query($connection, $retrive_m_and_v);
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-7 col-lg-7">
+                            <div class="col-xl-7 col-lg-7 pt-3">
                                 <div class="about_wrapper pl-30">
                                     <div class="section_title">
                                         <!-- <span class="sub_title sub_title_2"><?php echo $about_row['type']; ?></span> -->
