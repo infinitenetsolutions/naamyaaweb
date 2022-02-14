@@ -259,7 +259,7 @@ $result_team = mysqli_query($connection, $retrive_team);
     }
 </script>
 <style>
-    p{
+    p {
         font-size: 14px;
     }
 </style>
