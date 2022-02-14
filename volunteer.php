@@ -258,3 +258,8 @@ $result_team = mysqli_query($connection, $retrive_team);
         $("#show" + id).toggle();
     }
 </script>
+<style>
+    p{
+        font-size: 14px;
+    }
+</style>
