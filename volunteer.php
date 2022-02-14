@@ -92,9 +92,9 @@ $result_team = mysqli_query($connection, $retrive_team);
 
                                     </div>
                                     <span class="designation"><?php echo $row['post']; ?></span>
-                                    <h5 class="member_name"><a href="#"><?php echo $row['name']; ?></a> </h5>
-                                    <small><?php echo substr($description, 0, 35); ?> <span class="name3 " id="show<?php echo $id; ?>">
-                                            <p class=""> <?php echo substr($description, 36); ?> </p>
+                                    <h5 class="member_name  "><a href="#"><?php echo $row['name']; ?></a> </h5>
+                                    <small><?php echo substr($description, 0, 35); ?> <span class="name3 text-justify" id="show<?php echo $id; ?>">
+                                            <p class="text-justify"> <?php echo substr($description, 36); ?> </p>
                                         </span> <?php if ($description != '') {  ?> <b class="text-danger" href="#" onclick="show('<?php echo $id; ?>')">Read
                                                 more</b> <?php } ?></small>
                                     <?php $retrive_keypople_link = "SELECT * FROM `social_media` WHERE  `reid`='$id' && `table_name`='keypepole' LIMIT 4";

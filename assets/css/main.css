@@ -15314,6 +15314,8 @@ a {
         width: 100%;
         max-height: 450px !important;
         min-height: 450px !important;
+        font-size: 14px;
+
     }
 }
 
@@ -15335,4 +15337,5 @@ a {
     width: 100%;
     max-height: 300px;
     min-height: 300px;
+    font-size: 14px;
 }
