@@ -153,6 +153,8 @@ $result_team = mysqli_query($connection, $retrive_team);
                                         <h5 class="member_name"><a href="#"><?php echo $name; ?></a></h5>
                                         <div class="row">
                                             <div class="col-12">
+                                            <?php if (trim($description)!='') {  ?>
+
                                                 <small><span class="name3 " id="show<?php echo $id; ?>">
                                                         <p class=" text-center"> <i class="fa fa-envelope mt-1" aria-hidden="true"></i>
                                                             &nbsp; <?php echo ' ' . $row['email']; ?> <br> <!-- Phone : <?php //echo $row['phone']
@@ -160,6 +162,7 @@ $result_team = mysqli_query($connection, $retrive_team);
                                                         </p>
                                                     </span><b class="text-danger" href="#" onclick="show('<?php echo $id; ?>')">Read
                                                         more</b></small>
+                                                        <?php } ?>
                                             </div>
                                         </div>
 
