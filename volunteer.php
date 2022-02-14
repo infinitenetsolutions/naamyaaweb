@@ -94,7 +94,7 @@ $result_team = mysqli_query($connection, $retrive_team);
                                     <span class="designation"><?php echo $row['post']; ?></span>
                                     <h5 class="member_name"><a href="#"><?php echo $row['name']; ?></a> </h5>
                                     <small><?php echo substr($description, 0, 35); ?> <span class="name3 " id="show<?php echo $id; ?>">
-                                            <p class="d-flex"> <?php echo substr($description, 36); ?> </p>
+                                            <p class=""> <?php echo substr($description, 36); ?> </p>
                                         </span> <?php if ($description != '') {  ?> <b class="text-danger" href="#" onclick="show('<?php echo $id; ?>')">Read
                                                 more</b> <?php } ?></small>
                                     <?php $retrive_keypople_link = "SELECT * FROM `social_media` WHERE  `reid`='$id' && `table_name`='keypepole' LIMIT 4";
@@ -151,7 +151,7 @@ $result_team = mysqli_query($connection, $retrive_team);
                                         <div class="row">
                                             <div class="col-12">
                                                 <small><span class="name3 " id="show<?php echo $id; ?>">
-                                                        <p class="d-flex text-center"> <i class="fa fa-envelope mt-1" aria-hidden="true"></i>
+                                                        <p class=" text-center"> <i class="fa fa-envelope mt-1" aria-hidden="true"></i>
                                                             &nbsp; <?php echo ' ' . $row['email']; ?> <br> <!-- Phone : <?php //echo $row['phone']
                                                                                                                         ?> -->
                                                         </p>
