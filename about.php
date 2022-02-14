@@ -13,7 +13,7 @@ $retrive_about = "SELECT * FROM `about_us` WHERE `type`='About us'";
 $result = mysqli_query($connection, $retrive_about);
 $about_row = mysqli_fetch_array($result);
 //retriving the about mission and vission
-$retrive_m_and_v = "SELECT * FROM `about_us` WHERE `type`!='About us' && `type`!='donation'";
+$retrive_m_and_v = "SELECT * FROM `about_us` WHERE `type`!='About us' && `type`!='donation' ";
 $result = mysqli_query($connection, $retrive_m_and_v);
 ?>
 <!doctype php>
@@ -74,8 +74,7 @@ $result = mysqli_query($connection, $retrive_m_and_v);
 
                                         <div class="about_champ_card about_abs_single">
                                             <i class="flaticon-creativity"></i>
-                                            <h5 class="abs_numb"><?php echo $experience; ?> <span
-                                                    class="plus">+</span></h5>
+                                            <h5 class="abs_numb"><?php echo $experience; ?> <span class="plus">+</span></h5>
                                             <span>Years Experience</span>
                                         </div>
                                     </div>
@@ -101,49 +100,49 @@ $result = mysqli_query($connection, $retrive_m_and_v);
 
             <!--about feature area start -->
             <div class="about_features_area soft-grey-2 pt-205 pb-3901">
-                <?php while ($row=mysqli_fetch_array($result)){ ?>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xxl-12">
-                            <div class="section_title text-center mb-60">
+                <?php while ($row = mysqli_fetch_array($result)) { ?>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xxl-12">
+                                <div class="section_title text-center mb-60">
 
 
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="about_single_area pt-120 pb-80">
-                        <div class="container">
-                            <div class="row align-items-center">
-                                <div class="col-md-5">
-                                    <div class="about_signle_video mb-40">
-                                        <div class="img_effect_white about_video_image_wrapper">
-                                            <a href="event.php">
-                                                <img <?php echo ' src="data:image/jpeg;base64,' . base64_encode($row['images']) . '"'; ?>>
+                        <div class="about_single_area pt-120 pb-80">
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-md-5">
+                                        <div class="about_signle_video mb-40">
+                                            <div class="img_effect_white about_video_image_wrapper">
+                                                <a href="event.php">
+                                                    <img <?php echo ' src="data:image/jpeg;base64,' . base64_encode($row['images']) . '"'; ?>>
 
+                                                </a>
+                                            </div>
+
+                                            <a href="<?php echo $row['youtube']; ?>" class="video_icon">
+                                                <i class="fal fa-play"></i>
                                             </a>
                                         </div>
-
-                                        <a href="<?php echo $row['youtube']; ?>" class="video_icon">
-                                            <i class="fal fa-play"></i>
-                                        </a>
                                     </div>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="about_wrapper pl-50 mb-40">
-                                        <div class="section_title mb-30">
-                                            <!-- <span class="sub_title sub_title_2">OUR <?php echo $row['type']; ?></span> -->
-                                            <h5 class="title title_2 no_br"><?php echo $row['title']; ?></h5>
-                                        </div>
-                                        <p class="mb-55 justify"><?php echo $row['description']; ?></p>
+                                    <div class="col-md-7">
+                                        <div class="about_wrapper pl-50 mb-40">
+                                            <div class="section_title mb-30">
+                                                <!-- <span class="sub_title sub_title_2">OUR <?php echo $row['type']; ?></span> -->
+                                                <h5 class="title title_2 no_br"><?php echo $row['title']; ?></h5>
+                                            </div>
+                                            <p class="mb-55 justify"><?php echo $row['description']; ?></p>
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
-                </div>
-                <?php }?>
+                <?php } ?>
             </div>
 
             <div class="icon_box_area pt-120 pb-80">
@@ -191,8 +190,7 @@ $result = mysqli_query($connection, $retrive_m_and_v);
                 <div class="container">
                     <div class="row">
                         <div class="col-xxl-12">
-                            <div class="about_video_section text-center p-2500 bg_cover"
-                                data-background="assets/img/bg/video_bg.jpg">
+                            <div class="about_video_section text-center p-2500 bg_cover" data-background="assets/img/bg/video_bg.jpg">
                                 <a href="#" class="play_btn p-rel popup-video ab_4"><i class="fas fa-play"></i></a>
                             </div>
                         </div>

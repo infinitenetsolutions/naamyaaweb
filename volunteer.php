@@ -12,12 +12,9 @@ $result_kp = mysqli_query($connection, $retrive_keypople);
 // retriving the social media link from the database
 
 // our team
-$retrive_team = 'SELECT * FROM `volunteer` WHERE `status`=1';
+$retrive_team = 'SELECT * FROM `team_member` WHERE `status`=1';
 $result_team = mysqli_query($connection, $retrive_team);
 
-$retrive_team1 = 'SELECT * FROM `volunteer` WHERE `status`=1';
-$result_team1 = mysqli_query($connection, $retrive_team1);
-$volunteer_data = mysqli_fetch_array($result_team1);
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -178,7 +175,7 @@ $volunteer_data = mysqli_fetch_array($result_team1);
         <!-- Team area end -->
 
         <!-- Team area start -->
-        <?php if ($volunteer_data < 0) { ?>
+        <?php if (mysqli_num_rows($result) > 0) { ?>
 
             <div class="">
                 <div class="container">
@@ -191,7 +188,6 @@ $volunteer_data = mysqli_fetch_array($result_team1);
                         <?php while ($row = mysqli_fetch_array($result)) {
                             $id = $row['id'];
                             $name = $row['name'];
-                            if (strpos($name, 'team') != true) {
                         ?>
                                 <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6 text-center">
 
@@ -217,7 +213,7 @@ $volunteer_data = mysqli_fetch_array($result_team1);
 
                                 </div>
                         <?php }
-                        } ?>
+                         ?>
                     </div>
                 </div>
             </div>
