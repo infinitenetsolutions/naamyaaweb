@@ -191,8 +191,8 @@ $result = mysqli_query($connection, $sql_query);
     <?php include './naamaya.inc/footer.php'; ?>
     <!-- Footer Area End -->
     <?php include './naamaya.inc/foot.php'; ?>
+    <script src="./assets/js/bootstrap.js"></script>
 
-    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

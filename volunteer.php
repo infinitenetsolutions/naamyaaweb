@@ -247,6 +247,7 @@ $result_team = mysqli_query($connection, $retrive_team);
     <!-- Footer Area End -->
 
     <?php include './naamaya.inc/foot.php'; ?>
+    <script src="./assets/js/bootstrap.js"></script>
 </body>
 
 </html>

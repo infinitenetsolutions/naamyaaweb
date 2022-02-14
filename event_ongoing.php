@@ -190,6 +190,7 @@ $result = mysqli_query($connection, $sql_query);
     <!-- Footer Area Start -->
     <?php include './naamaya.inc/footer.php'; ?>
     <!-- Footer Area End -->
+    <script src="./assets/js/bootstrap.js"></script>
 
     <?php include './naamaya.inc/foot.php'; ?>
 
