@@ -66,7 +66,7 @@ $result = mysqli_query($connection, $retrive_m_and_v);
                 <div class="about_white_bg">
                     <div class="container">
                         <div class="row">
-                            <div class="col-xxl-6 col-xl-4 col-lg-4">
+                            <div class=" col-xl-5 col-lg-5">
                                 <div class="donate_img_wrapper about_img_wrapper mr-10">
                                     <div class="donate_img_inner about_img_inner p-rel">
                                         <!-- row<img class="about_block" src="assets/img/about/aboutus1.jpg" alt="img"> -->
@@ -81,7 +81,7 @@ $result = mysqli_query($connection, $retrive_m_and_v);
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xxl-6 col-xl-8 col-lg-8">
+                            <div class="col-xl-7 col-lg-7">
                                 <div class="about_wrapper pl-30">
                                     <div class="section_title">
                                         <!-- <span class="sub_title sub_title_2"><?php echo $about_row['type']; ?></span> -->
@@ -114,7 +114,7 @@ $result = mysqli_query($connection, $retrive_m_and_v);
                     <div class="about_single_area pt-120 pb-80">
                         <div class="container">
                             <div class="row align-items-center">
-                                <div class="col-xl-6">
+                                <div class="col-md-5">
                                     <div class="about_signle_video mb-40">
                                         <div class="img_effect_white about_video_image_wrapper">
                                             <a href="event.php">
@@ -128,7 +128,7 @@ $result = mysqli_query($connection, $retrive_m_and_v);
                                         </a>
                                     </div>
                                 </div>
-                                <div class="col-xl-6">
+                                <div class="col-md-7">
                                     <div class="about_wrapper pl-50 mb-40">
                                         <div class="section_title mb-30">
                                             <!-- <span class="sub_title sub_title_2">OUR <?php echo $row['type']; ?></span> -->
