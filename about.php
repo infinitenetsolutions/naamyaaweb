@@ -101,6 +101,38 @@ $result = mysqli_query($connection, $retrive_m_and_v);
             <!--about feature area start -->
             <div class="about_features_area soft-grey-2 pt-205 pb-3901">
                 <?php while ($row = mysqli_fetch_array($result)) { ?>
+
+
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter<?php echo $row['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <button type="button" class="close text-right p-2" data-dismiss="modal" aria-label="Close">
+                                    <i class="fa fa-times-circle" style="font-size:24px"></i>
+                                    </span>
+                                </button>
+                                <div class="modal-body">
+
+                                    <?php if (strpos($row['youtube'], 'naamyaafoundation') == true) { ?>
+                                        <video width="100%" controls src="<?php echo $row['youtube'] ?>"></video>
+                                    <?php } else {
+
+
+                                    ?>
+                                        <iframe class="max-height-510" src="<?php
+                                                                            echo str_replace("watch?v=", "embed/", $row['youtube']);
+                                                                            
+                                                                            
+                                                                            ?>" alt="Lights" style="width:100%"></iframe>
+                                    <?php } ?>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="container">
                         <div class="row">
                             <div class="col-xxl-12">
@@ -122,8 +154,8 @@ $result = mysqli_query($connection, $retrive_m_and_v);
                                                 </a>
                                             </div>
 
-                                            <a href="<?php echo $row['youtube']; ?>" class="video_icon">
-                                                <i class="fal fa-play"></i>
+                                            <a data-toggle="modal" data-target="#exampleModalCenter<?php echo $row['id'] ?>" class="video_icon">
+                                                <i class="fas fa-play"></i>
                                             </a>
                                         </div>
                                     </div>
