@@ -54,12 +54,15 @@ $result = mysqli_query($connection, $Videos_data);
             <?php while ($row = mysqli_fetch_array($result)) { ?>
                 <div class="col-md-4">
                     <div class="thumbnail">
-                     
-                            <iframe class="max-height-510" src="<?php echo $row['link']; ?>" alt="Lights" style="width:100%"></iframe>
-                            <div class="caption">
+                     <?php if(strpos($row['link'],'naamyaafoundation')==true) { ?>
+                        <video width="100%" controls src="<?php echo $row['link'] ?>"></video>    
+                        <?php }else{ ?>
+                        <iframe class="max-height-510" src="<?php echo $row['link']; ?>" alt="Lights" style="width:100%"></iframe>
+                           <?php } ?>
+                        
+                        <div class="caption">
                                 <p style="font-size: 14px" class="text-justify" ><?php echo $row['description'] ?></p>
-                            </div>
-                     
+                            </div>                  
                     </div>
                 </div>
             <?php } ?>

@@ -277,17 +277,17 @@ $testimonial_result1 = mysqli_query($connection, $testimonial1);
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12">
                             <div class="support_images_active swiper-container dots_style">
                                 <div class="swiper-wrapper">
-                                    <div class="support_img_single swiper-slide img_effect_white">
-                                        <a href="volunteer.php"><img class="support-img" src="assets/img/bg/support1.jpg" alt="img"></a>
+                                    <div class="support_img_single swiper-slide ">
+                                        <a href="volunteer.php"><img class="support-img img-fluid" src="assets/img/bg/support1.jpg" alt="img"></a>
                                     </div>
-                                    <div class="support_img_single swiper-slide img_effect_white">
-                                        <a href="volunteer.php"><img class="support-img" src="assets/img/bg/support2.jpg" alt="img"></a>
+                                    <div class="support_img_single swiper-slide ">
+                                        <a href="volunteer.php"><img class="support-img img-fluid" src="assets/img/bg/support2.jpg" alt="img"></a>
                                     </div>
-                                    <div class="support_img_single swiper-slide img_effect_white">
-                                        <a href="volunteer.php"><img class="support-img" src="assets/img/bg/support3.jpg" alt="img"></a>
+                                    <div class="support_img_single swiper-slide ">
+                                        <a href="volunteer.php"><img class="support-img img-fluid" src="assets/img/bg/support3.jpg" alt="img"></a>
                                     </div>
-                                    <div class="support_img_single swiper-slide img_effect_white">
-                                        <a href="volunteer.php"><img class="support-img" src="assets/img/bg/support4.jpg" alt="img"></a>
+                                    <div class="support_img_single swiper-slide ">
+                                        <a href="volunteer.php"><img class="support-img img-fluid" src="assets/img/bg/support4.jpg" alt="img"></a>
                                     </div>
 
                                 </div>
