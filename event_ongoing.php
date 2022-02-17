@@ -197,3 +197,9 @@ $result = mysqli_query($connection, $sql_query);
 </body>
 
 </html>
+<style>
+    .fab {
+    padding: 15px !important;
+    font-size: 18px;
+}
+</style>
