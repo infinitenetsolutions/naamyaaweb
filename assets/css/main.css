@@ -2049,8 +2049,10 @@ Hover start
         position: relative;
         z-index: 1;
     }
-    .male, .female {
-        max-height: 300px !important; 
+
+    .male,
+    .female {
+        max-height: 300px !important;
         min-height: 300px !important;
     }
 }
@@ -15306,15 +15308,17 @@ a {
         margin-top: -45px !important;
         margin-bottom: -45px !important;
     }
-    .text-left1{
+
+    .text-left1 {
         margin-left: 120px
     }
+
     .img_effect_white a img {
         transition: 0.5s;
         width: 100%;
         max-height: 450px !important;
         min-height: 450px !important;
-            font-size: 14px;
+        font-size: 14px;
 
     }
 
@@ -15328,9 +15332,9 @@ a {
     margin-bottom: -27px;
 }
 
-.thumbnail{
+.thumbnail {
     border: #e6197563 solid 1px;
-    box-shadow: #777777 5px 5px 5px 5px ;
+    box-shadow: #777777 5px 5px 5px 5px;
     padding: 10px;
     margin-bottom: 10px;
 
