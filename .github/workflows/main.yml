@@ -14,4 +14,3 @@ jobs:
         server: naamyaafoundation.org
         username:  naamyaa@naamyaafoundation.org
         password: ${{ secrets.ftp_password }}
-        # password changed
