@@ -15317,6 +15317,10 @@ a {
             font-size: 14px;
 
     }
+
+    .support-img {
+        height: 185px !important;
+    }
 }
 
 .header_menu_area_2 {
