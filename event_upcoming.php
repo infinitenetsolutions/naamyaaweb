@@ -203,7 +203,7 @@ $result = mysqli_query($connection, $sql_query);
 
 <style>
     .fab {
-    padding: 15px !important;
+        margin-top: 15px !important;
     font-size: 18px;
 }
 </style>
