@@ -130,7 +130,6 @@ $result_team = mysqli_query($connection, $retrive_team);
                         <?php while ($row = mysqli_fetch_array($result_team)) {
                             $id = $row['id'];
                             $name = $row['name'];
-                            if (strpos($name, 'team') !== false) {
                                 $name = str_replace('-team', '', $name);
                         ?>
                                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-6 text-center">
@@ -177,7 +176,7 @@ $result_team = mysqli_query($connection, $retrive_team);
                                     </div>
 
                                 </div>
-                        <?php }
+                        <?php 
                         } ?>
                     </div>
                 </div>
