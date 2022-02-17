@@ -15324,6 +15324,7 @@ a {
 
     .support-img {
         height: 185px !important;
+        width: 100% !important;
     }
 }
 
